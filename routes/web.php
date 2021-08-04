@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\Login;
 use App\Http\Livewire\Register;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,4 @@ Route::get('/', function () {
 
 Route::get('/login', Login::class);
 Route::get('/register', Register::class);
-
-Route::get('/dashboard',function(){
-    return view('layouts.app');
-});
+Route::get('/dashboard', Dashboard::class);
