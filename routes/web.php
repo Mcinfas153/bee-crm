@@ -21,3 +21,7 @@ Route::get('/', function () {
 
 Route::get('/login', Login::class);
 Route::get('/register', Register::class);
+
+Route::get('/dashboard',function(){
+    return view('layouts.app');
+});
