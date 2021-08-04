@@ -1,6 +1,6 @@
 <div class="register-box">
-    <div class="register-logo">
-        <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <div class="register-logo">        
+        <a href="../../index2.html"><b>BEE </b><img src="{{ asset('assets/dist/img/logos/logo.png') }}" alt="logo" width="50px" class="logo__img"> CRM</a>
     </div>
 
     <div class="card">
@@ -68,8 +68,9 @@
                     Sign up using Google+
                 </a>
             </div>
-
-            <a href="{{ URL::to('/login') }}" class="text-center">I already have a membership</a>
+    <div class="text-center mt-1">
+        <a href="{{ URL::to('/login') }}" class="text-center hover__underlined">I already have a membership</a>
+    </div>       
         </div>
         <!-- /.form-box -->
     </div><!-- /.card -->

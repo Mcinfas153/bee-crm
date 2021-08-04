@@ -1,0 +1,7 @@
+.hover__underlined:hover {
+    text-decoration: underline !important;
+}
+
+.logo__img {
+    margin-top: -10px;
+}

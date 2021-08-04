@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('assets/dist/img/favicon/favicon.png') }}" type="image/x-icon">
     <title>AdminLTE 3 | {{ $title }}</title>
 
     <!-- Google Font: Source Sans Pro -->
@@ -15,6 +17,8 @@
     <link rel="stylesheet" href="{{ asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{{ asset('assets/dist/css/custom.css') }}">
     <livewireStyles />
 </head>
 

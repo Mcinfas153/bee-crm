@@ -1,6 +1,6 @@
 <div class="login-box">
     <div class="login-logo">
-        <a href="../../index2.html"><b>Admin</b>LTE</a>
+        <a href="../../index2.html"><b>BEE </b><img src="{{ asset('assets/dist/img/logos/logo.png') }}" alt="logo" width="50px" class="logo__img"> CRM</a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
@@ -52,11 +52,11 @@
             </div>
             <!-- /.social-auth-links -->
 
-            <p class="mb-1">
-                <a href="forgot-password.html">I forgot my password</a>
+            <p class="mb-1 text-center">
+                <a href="forgot-password.html" class="hover__underlined">I forgot my password</a>
             </p>
-            <p class="mb-0">
-                <a href="{{ URL::to('/register') }}" class="text-center">Register a new membership</a>
+            <p class="mb-0 text-center">
+                <a href="{{ URL::to('/register') }}" class="hover__underlined">Register a new membership</a>
             </p>
         </div>
         <!-- /.login-card-body -->
