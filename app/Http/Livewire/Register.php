@@ -39,6 +39,7 @@ class Register extends Component
         $user->utype = config('usertypes.user');
         $user->save();
         session()->flash('message', 'User successfully created. Please login with your account now');
+        session()->flash('alertType', 'alert-success');
         return redirect()->to('/login');
     }
 

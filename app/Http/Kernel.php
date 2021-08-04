@@ -36,12 +36,20 @@ class Kernel extends HttpKernel
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
-            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,           
         ],
 
         'api' => [
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ],
+
+        'authUser' => [
+            \App\Http\Middleware\IsUserLogged::class,
+        ],
+
+        'guestUser' => [
+            \App\Http\Middleware\IsUserNotLogged::class,
         ],
     ];
 
