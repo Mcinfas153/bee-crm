@@ -1,6 +1,15 @@
 <div class="login-box">
+    <div>
+        @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+        @endif
+    </div>
+
     <div class="login-logo">
-        <a href="../../index2.html"><b>BEE </b><img src="{{ asset('assets/dist/img/logos/logo.png') }}" alt="logo" width="50px" class="logo__img"> CRM</a>
+        <a href="../../index2.html"><b>BEE </b><img src="{{ asset('assets/dist/img/logos/logo.png') }}" alt="logo"
+                width="50px" class="logo__img"> CRM</a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
