@@ -5,6 +5,14 @@
                     width="50px" class="logo__img"> CRM</a>
         </div>
 
+        <div>
+            @if (session()->has('message'))
+            <div class="alert {{ session('alertType') }}">
+                {{ session('message') }}
+            </div>
+            @endif
+        </div>
+
         <div class="card">
             <div class="card-body register-card-body">
                 <p class="login-box-msg">Register a new membership</p>

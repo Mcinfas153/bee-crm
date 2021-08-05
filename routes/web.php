@@ -26,6 +26,6 @@ Route::middleware(['authUser'])->group(function () {
 });
 
 Route::middleware(['guestUser'])->group(function () {
-    Route::get('/login', Login::class);
-    Route::get('/register', Register::class);
+    Route::get('/login', Login::class)->name('login');
+    Route::get('/register', Register::class)->name('register');
 });

@@ -32,15 +32,21 @@ class Register extends Component
     public function register()
     {
         $this->validate();
-        $user = new User();
-        $user->name = $this->fullname;
-        $user->email = $this->email;
-        $user->password = Hash::make($this->password);
-        $user->utype = config('usertypes.user');
-        $user->save();
-        session()->flash('message', 'User successfully created. Please login with your account now');
-        session()->flash('alertType', 'alert-success');
-        return redirect()->to('/login');
+        $existUser = User::where('email',$this->email)->count();
+        if($existUser === 0){
+            $user = new User();
+            $user->name = $this->fullname;
+            $user->email = $this->email;
+            $user->password = Hash::make($this->password);
+            $user->utype = config('usertypes.user');
+            $user->save();
+            session()->flash('message', 'User successfully created. Please login with your account now');
+            session()->flash('alertType', 'alert-success');
+            return redirect()->to('/login');
+        } else {
+            session()->flash('message', 'User email found in database. Please login with your account');
+            session()->flash('alertType', 'alert-danger');
+        }
     }
 
     public function render()
