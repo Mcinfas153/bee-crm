@@ -40,8 +40,7 @@ class Register extends Component
             $user->password = Hash::make($this->password);
             $user->utype = config('usertypes.user');
             $user->save();
-            session()->flash('message', 'User successfully created. Please login with your account now');
-            session()->flash('alertType', 'alert-success');
+            toast('User successfully created. Please login with your account now','success');
             return redirect()->to('/login');
         } else {
             session()->flash('title', 'Failed');
