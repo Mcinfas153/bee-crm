@@ -26,7 +26,6 @@
 
     {{ $slot }}
 
-    @include('sweetalert::alert')
     <!-- jQuery -->
     <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->
