@@ -1,4 +1,10 @@
 <div>
+    <div>
+        @if (session()->has('message'))
+        <livewire:alerts title="Successfully Logged" icon="success" />
+        @endif
+    </div>
+
     <section class="content">
         <!-- Default box -->
         <div class="card">

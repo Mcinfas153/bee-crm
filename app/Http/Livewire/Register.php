@@ -44,8 +44,9 @@ class Register extends Component
             session()->flash('alertType', 'alert-success');
             return redirect()->to('/login');
         } else {
-            session()->flash('message', 'User email found in database. Please login with your account');
-            session()->flash('alertType', 'alert-danger');
+            session()->flash('title', 'Failed');
+            session()->flash('message', "Your email already found in our database.");
+            session()->flash('alertType', 'danger');
         }
     }
 

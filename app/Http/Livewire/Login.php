@@ -38,8 +38,9 @@ class Login extends Component
 
         } else {
 
-            session()->flash('message', 'Your email or password didn\'t match with our database');
-            session()->flash('alertType', 'alert-danger');
+            session()->flash('title', 'Failed');
+            session()->flash('message', "Your email or password did not match with our database");
+            session()->flash('alertType', 'danger');
 
         }
     }

@@ -1,11 +1,13 @@
 <div class="login-box">
-    <div>
-        @if (session()->has('message'))
-        <div class="alert {{ session('alertType') }}">
-            {{ session('message') }}
-        </div>
-        @endif
+
+    @if (session()->has('message'))
+    <div class="alert alert-{{ session('alertType') }} alert-dismissible fade show" role="alert">
+        <strong>{{ session('title') }}!</strong> {{ session('message') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
+    @endif
 
     <div class="login-logo">
         <a href="../../index2.html"><b>BEE </b><img src="{{ asset('assets/dist/img/logos/logo.png') }}" alt="logo"

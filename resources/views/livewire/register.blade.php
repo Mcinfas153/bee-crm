@@ -5,13 +5,14 @@
                     width="50px" class="logo__img"> CRM</a>
         </div>
 
-        <div>
-            @if (session()->has('message'))
-            <div class="alert {{ session('alertType') }}">
-                {{ session('message') }}
-            </div>
-            @endif
+        @if (session()->has('message'))
+        <div class="alert alert-{{ session('alertType') }} alert-dismissible fade show" role="alert">
+            <strong>{{ session('title') }}!</strong> {{ session('message') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
+        @endif
 
         <div class="card">
             <div class="card-body register-card-body">

@@ -5,7 +5,6 @@ use App\Http\Livewire\LeadUi;
 use App\Http\Livewire\Login;
 use App\Http\Livewire\Register;
 use Illuminate\Support\Facades\Route;
-use RealRashid\SweetAlert\Facades\Alert;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +18,6 @@ use RealRashid\SweetAlert\Facades\Alert;
 */
 
 Route::get('/', function () {
-    Alert::success('Success Title', 'Success Message');
     return view('welcome');
 });
 
