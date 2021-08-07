@@ -19,34 +19,40 @@
                 <p class="login-box-msg">Register a new membership</p>
 
                 <form wire:submit.prevent="register">
-                    <div class="input-group mb-3">
+                    <div class="input-group">
                         <input type="text" class="form-control" placeholder="Full name" wire:model.lazy="fullname" />
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
                             </div>
                         </div>
-                        @error('fullname') <span class="error">{{ $message }}</span> @enderror
                     </div>
-                    <div class="input-group mb-3">
+                    <div class="mb-3 ml-2">
+                        @error('fullname') <span class="error error__msg"> <i class="fas fa-exclamation-triangle"></i> {{ $message }}</span> @enderror
+                    </div>
+                    <div class="input-group">
                         <input type="email" class="form-control" placeholder="Email" wire:model.lazy="email">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
                             </div>
                         </div>
-                        @error('email') <span class="error">{{ $message }}</span> @enderror
                     </div>
-                    <div class="input-group mb-3">
+                    <div class="mb-3 ml-2">
+                        @error('email') <span class="error error__msg"> <i class="fas fa-exclamation-triangle"></i> {{ $message }}</span> @enderror
+                    </div>
+                    <div class="input-group">
                         <input type="password" class="form-control" placeholder="Password" wire:model.lazy="password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
-                        @error('password') <span class="error">{{ $message }}</span> @enderror
                     </div>
-                    <div class="input-group mb-3">
+                    <div class="mb-3 ml-2">
+                        @error('password') <span class="error error__msg"> <i class="fas fa-exclamation-triangle"></i> {{ $message }}</span> @enderror
+                    </div>
+                    <div class="input-group">
                         <input type="password" class="form-control" placeholder="Retype password"
                             wire:model.lazy="confirmPassword">
                         <div class="input-group-append">
@@ -54,7 +60,9 @@
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
-                        @error('confirmPassword') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+                    <div class="mb-3 ml-2">
+                        @error('confirmPassword') <span class="error error__msg"> <i class="fas fa-exclamation-triangle"></i> {{ $message }}</span> @enderror
                     </div>
                     <div class="row">
                         <div class="col-8">
@@ -71,7 +79,9 @@
                             <button type="submit" class="btn btn-primary btn-block">Register</button>
                         </div>
                         <!-- /.col -->
-                        @error('agreed') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+                    <div class="mt-2 ml-2">
+                        @error('agreed') <span class="error error__msg"><i class="fas fa-exclamation-triangle"></i> {{ $message }}</span> @enderror
                     </div>
                 </form>
 

@@ -5,3 +5,8 @@
 .logo__img {
     margin-top: -10px;
 }
+
+.error__msg {
+    color: #E74C3C;
+    font-size: 15px;
+}

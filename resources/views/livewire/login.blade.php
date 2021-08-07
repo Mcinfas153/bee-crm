@@ -19,23 +19,27 @@
             <p class="login-box-msg">Sign in to start your session</p>
 
             <form wire:submit.prevent="login">
-                <div class="input-group mb-3">
+                <div class="input-group">
                     <input type="email" class="form-control" placeholder="Email" wire:model.lazy="email">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
                         </div>
                     </div>
-                    @error('email') <span class="error">{{ $message }}</span> @enderror
                 </div>
-                <div class="input-group mb-3">
+                <div class="mb-3 ml-2">
+                    @error('email') <span class="error error__msg"><i class="fas fa-exclamation-triangle"></i> {{ $message }}</span> @enderror
+                </div>
+                <div class="input-group">
                     <input type="password" class="form-control" placeholder="Password" wire:model.lazy="password">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
                         </div>
-                    </div>
-                    @error('password') <span class="error">{{ $message }}</span> @enderror
+                    </div> 
+                </div>
+                <div class="mb-3 ml-2">
+                    @error('password') <span class="error error__msg"><i class="fas fa-exclamation-triangle"></i> {{ $message }}</span> @enderror
                 </div>
                 <div class="row">
                     <div class="col-8">
