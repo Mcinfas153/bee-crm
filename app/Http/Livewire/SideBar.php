@@ -20,6 +20,8 @@ class SideBar extends Component
 
         session()->regenerateToken();
 
+        toast('Successfully Logout!','success');
+
         return redirect()->to('/');
     }
 }

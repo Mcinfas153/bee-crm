@@ -40,6 +40,7 @@
         </aside>
         <!-- /.control-sidebar -->
     </div>
+    @include('sweetalert::alert')
     <!-- ./wrapper -->
     <!-- jQuery -->
     <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>

@@ -33,7 +33,7 @@ class Login extends Component
         if (Auth::attempt($credentials)) {
             
             session()->regenerate();
-
+            toast('Successfully Logged!','success');
             return redirect()->intended('dashboard');
 
         } else {
