@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LeadController;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\LeadUi;
 use App\Http\Livewire\Login;
@@ -22,12 +23,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('students', [StudentController::class, 'index']);
-    Route::get('students/list', [StudentController::class, 'getStudents'])->name('students.list');
-
 Route::middleware(['authUser'])->group(function () {
     Route::get('/dashboard', Dashboard::class);
-    Route::get('/leads', LeadUi::class);  
+    Route::get('/leads', LeadUi::class);
+    Route::get('leads/list', [LeadController::class, 'getLeads'])->name('leads.list');  
 });
 
 Route::middleware(['guestUser'])->group(function () {

@@ -3,22 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Student;
+use App\Models\Lead;
 use DataTables;
 
-class StudentController extends Controller
+class LeadController extends Controller
 {
     //
-    public function index()
-    {
-        return view('welcome');
-    }
-
-
-    public function getStudents(Request $request)
+    public function getLeads(Request $request)
     {
         if ($request->ajax()) {
-            $data = Student::latest()->get();
+            $data = Lead::orderBy('id','DESC')->get();
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
