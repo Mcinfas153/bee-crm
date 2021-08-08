@@ -41,9 +41,13 @@
                 searchable: true
             },
         ]
-    });
-    
+    });    
   });
+
+  function deleteLead(id){
+        console.log(id)
+    }
+
 </script>
 <!-- DataTables  & Plugins -->
 <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>

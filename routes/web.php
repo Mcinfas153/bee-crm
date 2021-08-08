@@ -6,7 +6,7 @@ use App\Http\Livewire\LeadUi;
 use App\Http\Livewire\Login;
 use App\Http\Livewire\Register;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StudentController;
+use App\Http\Livewire\LeadTable;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +25,9 @@ Route::get('/', function () {
 
 Route::middleware(['authUser'])->group(function () {
     Route::get('/dashboard', Dashboard::class);
-    Route::get('/leads', LeadUi::class);
-    Route::get('leads/list', [LeadController::class, 'getLeads'])->name('leads.list');  
+    Route::get('/leads', LeadTable::class);
+    //Route::get('/leads', LeadUi::class);
+    //Route::get('leads/list', [LeadController::class, 'getLeads'])->name('leads.list');  
 });
 
 Route::middleware(['guestUser'])->group(function () {
