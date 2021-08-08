@@ -17,6 +17,8 @@ class LeadUi extends Component
     {
         return view('livewire.lead-ui',[
             'leads' => Lead::paginate(10)
-            ])->layout('layouts.app');
+            ])->layout('layouts.app',[
+                'title' => 'Leads'
+            ]);
     }
 }

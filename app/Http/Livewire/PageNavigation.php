@@ -6,6 +6,9 @@ use Livewire\Component;
 
 class PageNavigation extends Component
 {
+
+    public $title = '';
+
     public function render()
     {
         return view('livewire.page-navigation');
