@@ -31,7 +31,38 @@
                                             <td>{{ $lead->mobile }}</td>
                                             <td>{{ $lead->country }}</td>
                                             <td>{{ $lead->contact_time }}</td>
-                                            <td></td>
+                                            <td class="leadstable__button">
+                                                <a href="tel:{{ $lead->mobile }}"><button class="btn btn-success btn-block mb-1"><i class="fas fa-phone-alt mr-1"></i>Call</button></a>
+                                                <a href="mailto:{{ $lead->email }}"><button class="btn btn-primary btn-block mb-1"><i class="fas fa-envelope mr-1"></i>Email</button></a>
+                                                <a href="#"><button class="btn btn-warning btn-block" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-info-circle mr-1"></i>Status</button></a>
+                                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                      <div class="modal-content">
+                                                        <div class="modal-header">
+                                                          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                          </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                          <table class="table table-bordered table-striped" id="status--table">
+                                                              <thead>
+                                                                  <th>Lorem</th>
+                                                                  <th>Lorem</th>
+                                                              </thead>
+                                                              <tbody>
+                                                                  <td></td>
+                                                                  <td></td>
+                                                              </tbody>
+                                                          </table>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
