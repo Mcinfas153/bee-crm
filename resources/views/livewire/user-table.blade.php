@@ -58,7 +58,17 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Modal body text goes here.</p>
+                    <form>
+                        <input type="text" id="user" placeholder="Full Name" class="form-control mt-2 mb-2" name="user">
+                        <input type="text" id="user" placeholder="Email Address" class="form-control mb-2" name="email">
+                        <select id="user--type" name="userType" class="form-control mb-2">
+                            <option disabled="disabled" selected="selected">Select User Type</option>
+                            <option>Admin</option>
+                            <option>User</option>
+                        </select>
+                        <input type="password" id="password" placeholder="Password" class="form-control mb-2" name="password">
+                        <input type="password" id="retypePassword" placeholder="Retype Password" class="form-control mb-2" name="repassword">
+                    </form>                  
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
