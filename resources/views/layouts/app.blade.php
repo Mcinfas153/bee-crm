@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/dist/css/custom-style.css') }}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/dist/css/custom.css') }}">
     @livewireStyles
 
     <!-- jQuery -->

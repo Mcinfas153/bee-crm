@@ -10,45 +10,26 @@
                         <div class="card">
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <table id="leads" class="table table-bordered table-striped">
+                                <button class="btn btn-success" data-toggle="modal" data-target="#addUserModal">
+                                    <i class="fa fa-plus mr-2"></i>
+                                    Add User
+                                </button>
+                                <table id="users" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
                                             <th>Email</th>
-                                            <th>Mobile</th>
-                                            <th>Country</th>
-                                            <th>Contact Time</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($leads as $lead)
+                                        @foreach ($users as $user)
                                         <tr>
-                                            <td>{{ $lead->id }}</td>
-                                            <td>{{ $lead->name }}</td>
-                                            <td>{{ $lead->email }}</td>
-                                            <td>{{ $lead->mobile }}</td>
-                                            <td>{{ $lead->country }}</td>
-                                            <td>{{ $lead->contact_time }}</td>
-                                            <td class="leadstable__button">
-                                                <a href="tel:{{ $lead->mobile }}">
-                                                    <button class="btn btn-success btn-block mb-1">
-                                                        <i class="fas fa-phone-alt mr-1"></i>
-                                                        Call</button>
-                                                </a>
-                                                <a href="mailto:{{ $lead->email }}">
-                                                    <button class="btn btn-primary btn-block mb-1">
-                                                        <i class="fas fa-envelope mr-1"></i>
-                                                        Email</button>
-                                                </a>
-                                                <a href="#">
-                                                    <button class="btn btn-warning btn-block" data-toggle="modal"
-                                                        data-target="#exampleModalCenter">
-                                                        <i class="fas fa-info-circle mr-1"></i> Status
-                                                    </button>
-                                                </a>
-                                            </td>
+                                            <td>{{ $user->id }}</td>
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -66,10 +47,32 @@
         </div>
         <!-- /.container-fluid -->
     </section>
+    <!-- Add user Modal start-->
+    <div class="modal" tabindex="-1" id="addUserModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal__success">
+                    <h5 class="modal-title"><i class="fas fa-user mr-2"></i>Add user</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success btn-sm"><i class="fas fa-user mr-2"></i>Add
+                        user</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add user Modal end-->
 </div>
 <script>
     $(function () {
-        $("#leads").DataTable({
+        $("#users").DataTable({
       "responsive": true,
        "lengthChange": false,
         "autoWidth": false,

@@ -1,12 +1,13 @@
 .hover__underlined:hover {
     text-decoration: underline !important;
 }
-
 .logo__img {
     margin-top: -10px;
 }
-
 .error__msg {
     color: #E74C3C;
     font-size: 15px;
+}
+.leadstable__button>a>button{
+    font-size: 10px !important;
 }

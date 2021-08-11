@@ -1,0 +1,38 @@
+/* Modal Override */
+.modal__success {
+    background: #239B56;
+    border: 1px solid #239B56;
+}
+.modal__primary {
+    background: #239B56;
+    border: 1px solid #239B56;
+}
+.modal__warning {
+    background: #239B56;
+    border: 1px solid #239B56;
+}
+.modal__danger {
+    background: #239B56;
+    border: 1px solid #239B56;
+}
+.modal-header {
+    padding: 10px 20px;
+}
+.modal-footer {
+    padding: 10px 20px;
+}
+.modal-content {
+    border: none;
+}
+.modal-title {
+    font-size: 17px;
+    color: white;
+}
+/* Modal Override */
+
+/* Button Override */
+.btn-success {
+    background: #239B56;
+    border-color: #239B56;
+}
+/* Button Override */
