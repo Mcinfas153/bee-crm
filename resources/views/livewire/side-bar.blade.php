@@ -16,7 +16,7 @@
                 </div>
                 <div class="info">
                     @auth
-                    <a href="{{ URL::to('/profile') }}" class="d-block">{{ Auth::user()->pass }}</a>
+                    <a href="{{ URL::to('/profile') }}" class="d-block">{{ Auth::user()->name }}</a>
                     @endauth
                 </div>
             </div>

@@ -9,6 +9,15 @@
 <body>
 
     <h1>Welcome Blade</h1>
+    <ul>
+        @auth
+        <li><a href="{{ URL::to('dashboard') }}">Home</a></li>
+        @else
+        <li><a href="{{ URL::to('login') }}">Login</a></li>
+        <li><a href="{{ URL::to('register') }}">Register</a></li>
+        @endauth
+    </ul>
+
 
 </body>
 
