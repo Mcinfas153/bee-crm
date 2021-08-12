@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Lead;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -41,6 +42,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function members()
+    {
+        return $this->HasMany(User::class,'created_by');
+    }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class,'created_by');
+    }
 
     public function leads()
     {

@@ -24,11 +24,20 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($leads as $lead)
+                                        @can('view', $lead)
                                         <tr>
                                             <td>{{ $lead->id }}</td>
-                                            <td>{{ $lead->name }}</td>
-                                            <td>{{ $lead->email }}</td>
-                                            <td>{{ $lead->mobile }}</td>
+                                            <td>
+                                                <span title="{{ $lead->name }}">{{ Str::limit($lead->name,10) }}</span>
+                                            </td>
+                                            <td>
+                                                <a title="{{ $lead->email }}"
+                                                    href="mailto:{{ $lead->email }}">{{ Str::limit($lead->email,20) }}</a>
+                                            </td>
+                                            <td>
+                                                <a title="{{ $lead->mobile }}"
+                                                    href="tel:{{ $lead->mobile }}">{{ Str::limit($lead->mobile,15) }}</a>
+                                            </td>
                                             <td>{{ $lead->country }}</td>
                                             <td>{{ $lead->contact_time }}</td>
                                             <td class="leadstable__button">
@@ -50,6 +59,7 @@
                                                 </a>
                                             </td>
                                         </tr>
+                                        @endcan
                                         @endforeach
                                     </tbody>
                                 </table>

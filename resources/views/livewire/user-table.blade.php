@@ -10,10 +10,13 @@
                         <div class="card">
                             <!-- /.card-header -->
                             <div class="card-body">
+
+                                @can('create', App\models\User::class)
                                 <button class="btn btn-success" data-toggle="modal" data-target="#addUserModal">
                                     <i class="fa fa-plus mr-2"></i>
                                     Add User
                                 </button>
+                                @endcan
                                 <table id="users" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
@@ -62,13 +65,16 @@
                         <input type="text" id="user" placeholder="Full Name" class="form-control mt-2 mb-2" name="user">
                         <input type="text" id="user" placeholder="Email Address" class="form-control mb-2" name="email">
                         <select id="user--type" name="userType" class="form-control mb-2">
-                            <option disabled="disabled" selected="selected">Select User Type</option>
-                            <option>Admin</option>
-                            <option>User</option>
+                            <option disabled="disabled" selected="selected">Select user type</option>
+                            @foreach ($utypes as $utype)
+                            <option value="{{ $utype->id }}">{{ $utype->name }}</option>
+                            @endforeach
                         </select>
-                        <input type="password" id="password" placeholder="Password" class="form-control mb-2" name="password">
-                        <input type="password" id="retypePassword" placeholder="Retype Password" class="form-control mb-2" name="repassword">
-                    </form>                  
+                        <input type="password" id="password" placeholder="Password" class="form-control mb-2"
+                            name="password">
+                        <input type="password" id="retypePassword" placeholder="Retype Password"
+                            class="form-control mb-2" name="repassword">
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>

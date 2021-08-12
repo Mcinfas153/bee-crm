@@ -10,7 +10,7 @@ class UserTable extends Component
 {
     public function render()
     {
-        $users = DB::table('users')->get();
+        $users = DB::table('users')->where('created_by', Auth::user()->id)->get();
         $userTypes = DB::table('utype')->get();
         return view('livewire.user-table',[
             'users' => $users,
