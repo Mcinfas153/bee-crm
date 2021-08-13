@@ -14,3 +14,9 @@
 .leadstable__button>a>button {
     font-size: 10px !important;
 }
+
+.addUserLogo {
+    width: 150px;
+    height: 150px;
+    background-color: #ededed;
+}

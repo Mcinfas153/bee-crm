@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="{{ asset('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 <div>
+    <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -76,28 +76,28 @@
         </div>
         <!-- /.container-fluid -->
     </section>
+    <script>
+        $(function () {
+            $("#leads").DataTable({
+          "responsive": true,
+           "lengthChange": false,
+            "autoWidth": false,
+            select: true,
+            "order": [[ 0, "desc" ]],
+          "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+         });
+    </script>
+    <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jszip/jszip.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/pdfmake/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 </div>
-<script>
-    $(function () {
-        $("#leads").DataTable({
-      "responsive": true,
-       "lengthChange": false,
-        "autoWidth": false,
-        select: true,
-        "order": [[ 0, "desc" ]],
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
-     });
-</script>
-<script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
-<script src="{{ asset('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
-<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('assets/plugins/jszip/jszip.min.js') }}"></script>
-<script src="{{ asset('assets/plugins/pdfmake/pdfmake.min.js') }}"></script>
-<script src="{{ asset('assets/plugins/pdfmake/vfs_fonts.js') }}"></script>
-<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
-<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
-<script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
