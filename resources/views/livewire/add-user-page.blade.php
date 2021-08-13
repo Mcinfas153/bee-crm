@@ -1,3 +1,3 @@
 <div>
-    <button wire:click="addUser">Click</button>
+    <livewire:test-component />
 </div>
