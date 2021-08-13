@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Models\Utype;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class UtypePolicy
+class UtypesPolicy
 {
     use HandlesAuthorization;
 
@@ -19,7 +19,6 @@ class UtypePolicy
     public function viewAny(User $user)
     {
         //
-
     }
 
     /**
@@ -32,7 +31,7 @@ class UtypePolicy
     public function view(User $user, Utype $utype)
     {
         //
-        return $user->utype >= $utype->id;
+        return $user->utype <= $utype->id;
     }
 
     /**

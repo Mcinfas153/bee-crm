@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class UtypeSeeder extends Seeder
+class UtypesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class UtypeSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('utype')->insert([
+        DB::table('utypes')->insert([
             ['name' => 'Super Admin'],
             ['name' => 'Admin'],
             ['name' => 'User'],

@@ -8,6 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Utype extends Model
 {
     use HasFactory;
-
-    protected $table = 'utype';
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUtypeTable extends Migration
+class CreateUtypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUtypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('utype', function (Blueprint $table) {
+        Schema::create('utypes', function (Blueprint $table) {
             $table->id();
             $table->string('name', 20);
             $table->unsignedInteger('created_by')->default(1);
@@ -28,6 +28,6 @@ class CreateUtypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('utype');
+        Schema::dropIfExists('utypes');
     }
 }

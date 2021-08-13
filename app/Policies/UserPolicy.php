@@ -15,6 +15,14 @@ class UserPolicy
      * @param  \App\Models\User  $user
      * @return \Illuminate\Auth\Access\Response|bool
      */
+
+    public function before(User $user)
+    {
+        if ($user->utype === 1) {
+            return true;
+        }
+    }
+
     public function viewAny(User $user)
     {
         //
@@ -31,7 +39,7 @@ class UserPolicy
     public function view(User $user, User $user_model)
     {
         //
-        return $user->id === $user_model->creator->id;
+        return $user->id === $user_model->created_by;
     }
 
     /**

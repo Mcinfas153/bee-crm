@@ -28,12 +28,14 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($users as $user)
+                                        @can('view', $user)
                                         <tr>
                                             <td>{{ $user->id }}</td>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
                                             <td></td>
                                         </tr>
+                                        @endcan
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -67,7 +69,9 @@
                         <select id="user--type" name="userType" class="form-control mb-2">
                             <option disabled="disabled" selected="selected">Select user type</option>
                             @foreach ($utypes as $utype)
+                            @can('view', $utype)
                             <option value="{{ $utype->id }}">{{ $utype->name }}</option>
+                            @endcan
                             @endforeach
                         </select>
                         <input type="password" id="password" placeholder="Password" class="form-control mb-2"

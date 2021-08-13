@@ -18,13 +18,8 @@ class LeadTable extends Component
     public function render(User $user, Lead $lead)
     {
 
-        $allLeads = Lead::orderBy('id', 'DESC')->get();
-        foreach($allLeads as $lead){
-            if (Auth::user()->can('view', $lead)) {
-                $leads[] = $lead;
-            }
-        }
-         
+        $leads = Lead::orderBy('id', 'DESC')->get();
+                 
         return view('livewire.lead-table',['leads' => $leads])->layout('layouts.app',[
             'title' => 'Leads'
         ]);
