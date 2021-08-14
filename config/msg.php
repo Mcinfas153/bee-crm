@@ -7,4 +7,5 @@ return [
     '4' => 'Successfully Logged',
     '5' => 'Your email or password did not match with our database',
     '6' => 'User successfully created',
+    '7' => 'Changes update successfully',
 ];
