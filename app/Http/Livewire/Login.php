@@ -33,13 +33,13 @@ class Login extends Component
         if (Auth::attempt($credentials)) {
             
             session()->regenerate();
-            toast('Successfully Logged!','success');
+            toast(''.config('msg.4').'','success');
             return redirect()->intended('dashboard');
 
         } else {
 
             session()->flash('title', 'Failed');
-            session()->flash('message', "Your email or password did not match with our database");
+            session()->flash('message', ''.config('msg.5').'');
             session()->flash('alertType', 'danger');
 
         }

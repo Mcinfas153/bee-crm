@@ -2,6 +2,6 @@
 
 return [
     'superAdmin' => 1,
-    'Admin' => 2,
+    'admin' => 2,
     'user' => 3
 ];

@@ -31,7 +31,7 @@ class UtypesPolicy
     public function view(User $user, Utype $utype)
     {
         //
-        return $user->utype <= $utype->id;
+        return $user->utype < $utype->id;
     }
 
     /**

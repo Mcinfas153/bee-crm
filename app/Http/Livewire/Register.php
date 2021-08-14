@@ -26,7 +26,7 @@ class Register extends Component
     ];
 
     protected $messages = [
-        'agreed.required' => 'You shoud agree with our terms & conditions.',
+        'agreed.required' => 'You shoud agree with our terms & conditions',
     ];
 
     public function register()
@@ -38,13 +38,13 @@ class Register extends Component
             $user->name = $this->fullname;
             $user->email = $this->email;
             $user->password = Hash::make($this->password);
-            $user->utype = config('usertypes.user');
+            $user->utype = config('usertypes.admin');
             $user->save();
-            toast('User successfully created. Please login with your account now','success');
+            toast(''.config('msg.1').'','success');
             return redirect()->to('/login');
         } else {
             session()->flash('title', 'Failed');
-            session()->flash('message', "Your email already found in our database.");
+            session()->flash('message', ''.config('msg.2').'');
             session()->flash('alertType', 'danger');
         }
     }
