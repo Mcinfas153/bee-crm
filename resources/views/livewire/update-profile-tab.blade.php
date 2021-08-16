@@ -27,12 +27,12 @@
             <label for="" class="col-sm-2 col-from-label">Preview:</label>
             @if ($photo)
             <div class="col-sm-8">
-                <img src="{{ $photo->temporaryUrl() }}" width="60px">
+                <img src="{{ $photo->temporaryUrl() }}" width="130px" class="rounded-circle">
             </div>
             @else
             <div class="col-sm-8">
                 <img src="{{ Auth::user()->profile_url?asset('storage/'.Auth::user()->profile_url.''):generateAvatar(Auth::user()->name) }}"
-                    width="60px">
+                    width="130px" class="rounded-circle">
             </div>
             @endif
         </div>
