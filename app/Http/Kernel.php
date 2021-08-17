@@ -51,6 +51,10 @@ class Kernel extends HttpKernel
         'guestUser' => [
             \App\Http\Middleware\IsUserNotLogged::class,
         ],
+
+        'companyProfileValid' => [
+            \App\Http\Middleware\CompanyProfileValid::class,
+        ],
     ];
 
     /**

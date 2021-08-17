@@ -24,6 +24,7 @@ class CreateCompaniesTable extends Migration
             $table->unsignedInteger('country_id');
             $table->string('employee_count');
             $table->unsignedInteger('company_catogory_id');
+            $table->unsignedInteger('created_by')->default(1);
             $table->timestamps();
         });
     }

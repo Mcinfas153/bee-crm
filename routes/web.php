@@ -29,11 +29,13 @@ Route::get('/', function () {
 });
 
 Route::middleware(['authUser'])->group(function () {
-    Route::get('/dashboard', Dashboard::class);
-    Route::get('/leads', LeadTable::class);
-    Route::get('/users', UserTable::class);
-    Route::get('/profile', ProfilePage::class);
-    Route::get('/add-user',AddUserPage::class);
+    Route::middleware(['companyProfileValid'])->group(function () {
+        Route::get('/dashboard', Dashboard::class);
+        Route::get('/leads', LeadTable::class);
+        Route::get('/users', UserTable::class);
+        Route::get('/profile', ProfilePage::class);
+        Route::get('/add-user',AddUserPage::class);
+    });
     Route::get('/company',CompanyPage::class);
     //Route::get('/leads', LeadUi::class);
     //Route::get('leads/list', [LeadController::class, 'getLeads'])->name('leads.list');  
