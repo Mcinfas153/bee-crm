@@ -59,6 +59,7 @@ class AddUserPage extends Component
              $user->password = Hash::make($this->password);
              $user->utype = (int)$this->utype;
              $user->remember_token = Str::random(10);
+             $user->auth_code = Str::random(20);
              $user->created_by = Auth::user()->id;
              $user->save();
              toast(''.config('msg.6').'','success');

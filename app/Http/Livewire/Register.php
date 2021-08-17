@@ -3,9 +3,9 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
-use Illuminate\Http\JsonResponse;
 use Livewire\Component;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class Register extends Component
 {
@@ -38,6 +38,7 @@ class Register extends Component
             $user->name = $this->fullname;
             $user->email = $this->email;
             $user->password = Hash::make($this->password);
+            $user->auth_code = Str::random(20);
             $user->utype = config('usertypes.admin');
             $user->save();
             toast(''.config('msg.1').'','success');

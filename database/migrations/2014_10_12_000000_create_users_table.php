@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 class CreateUsersTable extends Migration
 {
@@ -21,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('utype')->default(1);
             $table->rememberToken();
+            $table->string('auth_code')->default(Str::random(20));
+            $table->unsignedInteger('is_active')->default(1);
             $table->timestamps();
         });
     }
