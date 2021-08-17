@@ -20,3 +20,9 @@
     height: 150px;
     background-color: #ededed;
 }
+
+.stpperButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
