@@ -99,7 +99,15 @@
                         <a href="{{ URL::to('/profile') }}" class="nav-link">
                             <i class="nav-icon fas fa-user-circle"></i>
                             <p>
-                                Profile
+                                User Profile
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ URL::to('/company') }}" class="nav-link">
+                            <i class="nav-icon fas fa-user-circle"></i>
+                            <p>
+                                Company Profile
                             </p>
                         </a>
                     </li>
