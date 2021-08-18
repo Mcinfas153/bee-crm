@@ -39,7 +39,7 @@ class LeadPolicy
     public function view(User $user, Lead $lead)
     {
         //
-        return $user->id === $lead->created_by;
+        return $user->id == $lead->created_by;
     }
 
     /**

@@ -19,9 +19,9 @@ class ApiController extends Controller
             ], 206);
         }
 
-        $user = User::where('auth_code',$auth_code)->first();
+        $user = User::where('auth_code', $auth_code)->first();
             
-        if($user->count() === 0) {
+        if(collect($user)->isEmpty()) {
             return response()->json([
                 'msg' => 'User not found'
             ], 206);              
@@ -33,8 +33,9 @@ class ApiController extends Controller
         $lead->mobile = $request->input('mobile');
         $lead->inquiry = $request->input('inquiry');
         $lead->project = $request->input('project');
-        $lead->contact_time = $request->input('contact_time');
-        $lead->country = $request->input('country');
+        $lead->ip_address = $request->input('ip_address');
+        // $lead->contact_time = $request->input('contact_time');
+        // $lead->country = $request->input('country');
         $lead->created_by = $user->id;
         $lead->save();
 

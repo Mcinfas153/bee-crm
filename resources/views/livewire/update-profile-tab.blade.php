@@ -32,7 +32,7 @@
             @else
             <div class="col-sm-8">
                 <img src="{{ Auth::user()->profile_url?asset('storage/'.Auth::user()->profile_url.''):generateAvatar(Auth::user()->name) }}"
-                    width="130px" class="rounded-circle">
+                    width="70px" class="rounded-circle">
             </div>
             @endif
         </div>

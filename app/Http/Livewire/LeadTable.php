@@ -19,7 +19,6 @@ class LeadTable extends Component
     {
 
         $leads = Lead::orderBy('id', 'DESC')->get();
-                 
         return view('livewire.lead-table',['leads' => $leads])->layout('layouts.app',[
             'title' => 'Leads'
         ]);

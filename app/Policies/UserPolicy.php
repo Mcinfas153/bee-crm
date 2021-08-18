@@ -39,7 +39,7 @@ class UserPolicy
     public function view(User $user, User $user_model)
     {
         //
-        return $user->id === $user_model->created_by;
+        return $user->id == $user_model->created_by;
     }
 
     /**
