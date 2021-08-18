@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCreatedByToUsersTable extends Migration
+class CreateLeadStatusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class AddCreatedByToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-            $table->unsignedInteger('created_by')->default(1)->after('remember_token');
+        Schema::create('lead_status', function (Blueprint $table) {
+            $table->id();
+            $table->string('name',20);
+            $table->tinyInteger('is_active')->default(1);
+            $table->timestamps();
         });
     }
 
@@ -26,8 +28,6 @@ class AddCreatedByToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('lead_status');
     }
 }

@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\CompanyCategory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CompanyCategorySeeder extends Seeder
 {
@@ -15,7 +15,27 @@ class CompanyCategorySeeder extends Seeder
     public function run()
     {
         //
-        CompanyCategory::factory()->count(30)->create();
-        
+        DB::table('company_categories')->insert(
+            ['name' => 'Arts, Entertainment and Recreation'],
+            ['name' => 'Accommodation and Food Services'],
+            ['name' => 'Finance and Insurance'],
+            ['name' => 'Agriculture, Forestry, Fishing and Hunting'],
+            ['name' => 'Utilities'],
+            ['name' => 'Other Services'],
+            ['name' => 'Healthcare and Social Assistance'],
+            ['name' => 'Transportation and Warehousing'],
+            ['name' => 'Professional, Scientific and Technical Services'],
+            ['name' => 'Construction'],
+            ['name' => 'Mining'],
+            ['name' => 'Educational Services'],
+            ['name' => 'Real Estate and Rental and Leasing'],
+            ['name' => 'Retail Trade'],
+            ['name' => 'Administration, Business Support and Waste Management Services'],
+            ['name' => 'Information'],
+            ['name' => 'Manufacturing'],
+            ['name' => 'Advisory and Financial Services'],
+            ['name' => 'Technology'],
+            ['name' => 'Online Retail'],
+        ); 
     }
 }

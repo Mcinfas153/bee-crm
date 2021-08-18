@@ -20,9 +20,10 @@ class CreateLeadsTable extends Migration
             $table->string('mobile',20);
             $table->text('inquiry');
             $table->string('project',50);
-            $table->string('contact_time');
-            $table->string('country',50);
-            $table->unsignedInteger('created_by');
+            $table->string('contact_time')->nullable();
+            $table->string('country',50)->nullable();
+            $table->unsignedSmallInteger('status')->default(1);
+            $table->unsignedInteger('created_by')->default(1);
             $table->unsignedInteger('assign_to')->nullable();
             $table->timestamps();
         });

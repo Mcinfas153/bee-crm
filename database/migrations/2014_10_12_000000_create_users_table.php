@@ -21,9 +21,11 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('utype')->default(1);
+            $table->string('profile_url')->nullable();
             $table->rememberToken();
             $table->string('auth_code')->default(Str::random(20));
             $table->unsignedInteger('is_active')->default(1);
+            $table->unsignedInteger('created_by')->default(1);
             $table->timestamps();
         });
     }

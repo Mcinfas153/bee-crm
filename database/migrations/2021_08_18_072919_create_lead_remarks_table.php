@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddProfileUrlToUsers extends Migration
+class CreateLeadRemarksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class AddProfileUrlToUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-            $table->string('profile_url')->after('utype')->nullable();
+        Schema::create('lead_remarks', function (Blueprint $table) {
+            $table->id();
+            $table->text('remark');
+            $table->unsignedInteger('lead_id');
+            $table->unsignedInteger('created_by');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +29,6 @@ class AddProfileUrlToUsers extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('lead_remarks');
     }
 }
