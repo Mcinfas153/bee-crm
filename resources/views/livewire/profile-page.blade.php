@@ -18,12 +18,12 @@
           <div class="card">
             <div class="card-header p-2">
               <ul class="nav nav-pills">
-                <li class="nav-item"><a class="nav-link" href="#activity" data-toggle="tab"><i
+                <li class="nav-item col-12 col-md-4 text-center"><a class="nav-link active" href="#addUser" data-toggle="tab"><i
+                  class="fas fa-user mr-1"></i> Profile Update</a></li>
+                <li class="nav-item col-12 col-md-4 text-center"><a class="nav-link" href="#activity" data-toggle="tab"><i
                       class="fas fa-history mr-1"></i> Activity</a></li>
-                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab"><i
+                <li class="nav-item col-12 col-md-4 text-center"><a class="nav-link" href="#timeline" data-toggle="tab"><i
                       class="fas fa-stream mr-1"></i> Timeline</a></li>
-                <li class="nav-item"><a class="nav-link active" href="#addUser" data-toggle="tab"><i
-                      class="fas fa-user mr-1"></i> Profile Update</a></li>
               </ul>
             </div><!-- /.card-header -->
             <div class="card-body">

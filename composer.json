@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "doctrine/dbal": "^3.1",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -18,8 +19,7 @@
         "laravolt/avatar": "^4.1",
         "livewire/livewire": "^2.5",
         "realrashid/sweet-alert": "^4.0",
-        "yajra/laravel-datatables-oracle": "^9.18",
-        "doctrine/dbal": "v2.4.2"
+        "yajra/laravel-datatables-oracle": "^9.18"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

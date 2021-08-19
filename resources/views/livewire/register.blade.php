@@ -65,17 +65,17 @@
                         @error('confirmPassword') <span class="error error__msg"> <i class="fas fa-exclamation-triangle"></i> {{ $message }}</span> @enderror
                     </div>
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-md-8">
                             <div class="icheck-primary">
                                 <input type="checkbox" id="agreeTerms" name="terms" value="agree"
                                     wire:model.lazy="agreed">
-                                <label for="agreeTerms">
+                                <label for="agreeTerms" class="mb-3">
                                     I agree to the <a href="#">terms</a>
                                 </label>
                             </div>
                         </div>
                         <!-- /.col -->
-                        <div class="col-4">
+                        <div class="col-md-4">
                             <button type="submit" class="btn btn-primary btn-block">Register</button>
                         </div>
                         <!-- /.col -->

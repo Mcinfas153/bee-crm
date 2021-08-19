@@ -6,7 +6,7 @@
           <div class="card">
             <!-- /.card-header -->
             <div class="card-body row">
-              <div class="col-5 text-center d-flex align-items-center justify-content-center">
+              <div class="col-md-5 text-center d-flex align-items-center justify-content-center">
                 <div class="">
                   <div class="addUserLogo rounded-circle mx-auto mb-3">
                     <img src="https://img.icons8.com/ios-filled/70/000000/bee.png" class="mt-5" />
@@ -17,7 +17,7 @@
                   </p>
                 </div>
               </div>
-              <div class="col-7">
+              <div class="col-md-7">
                 @if (session()->has('message'))
                 <div class="alert alert-{{ session('alertType') }} alert-dismissible fade show" role="alert">
                   <strong>{{ session('title') }}!</strong> {{ session('message') }}
