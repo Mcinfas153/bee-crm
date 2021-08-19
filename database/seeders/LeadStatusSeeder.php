@@ -15,13 +15,13 @@ class LeadStatusSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('lead_status')->insert(
-            ['name' => 'Un open'],
-            ['name' => 'Open'],
-            ['name' => 'Following'],
-            ['name' => 'Interested'],
-            ['name' => 'Not Interested'],
-            ['name' => 'Closed'],
-        );
+        DB::table('lead_status')->insert([
+            ['name' => 'Unopened', 'class_color' => 'secondary'],
+            ['name' => 'Opened', 'class_color' => 'info'],
+            ['name' => 'Following', 'class_color' => 'primary'],
+            ['name' => 'Interested', 'class_color' => 'warning'],
+            ['name' => 'Not Interested', 'class_color' => 'danger'],
+            ['name' => 'Closed', 'class_color' => 'success'],
+        ]);
     }
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Livewire\AddUserPage;
 use App\Http\Livewire\CompanyPage;
 use App\Http\Livewire\Dashboard;
+use App\Http\Livewire\LeadPage;
 use App\Http\Livewire\Login;
 use App\Http\Livewire\Register;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,7 @@ Route::middleware(['authUser'])->group(function () {
         Route::get('/profile', ProfilePage::class);
         Route::get('/add-user', AddUserPage::class);
         Route::get('/setting', SettingPage::class);
+        Route::get('/lead/{id}', LeadPage::class);
     });
     Route::get('/company', CompanyPage::class)->name('company-profile');
     Route::post('/add-company', [CompanyController::class,'addCompany']);

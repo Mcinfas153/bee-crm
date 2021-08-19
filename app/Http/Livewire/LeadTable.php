@@ -17,10 +17,9 @@ class LeadTable extends Component
 
     public function render(User $user, Lead $lead)
     {
-
-        $leads = Lead::orderBy('id', 'DESC')->get();
+        $leads = Lead::orderBy('id', 'DESC')->limit(300)->get();
         return view('livewire.lead-table',['leads' => $leads])->layout('layouts.app',[
-            'title' => 'Leads'
+            'title' => 'Latest Leads'
         ]);
     }
 }

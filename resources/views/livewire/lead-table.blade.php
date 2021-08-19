@@ -51,10 +51,9 @@
                                                         <i class="fas fa-envelope mr-1"></i>
                                                         Email</button>
                                                 </a>
-                                                <a href="#">
-                                                    <button class="btn btn-warning btn-block" data-toggle="modal"
-                                                        data-target="#exampleModalCenter">
-                                                        <i class="fas fa-info-circle mr-1"></i> Status
+                                                <a href="/lead/{{ $lead->id }}">
+                                                    <button class="btn btn-warning btn-block">
+                                                        <i class="fas fa-info-circle mr-1"></i> Details
                                                     </button>
                                                 </a>
                                             </td>

@@ -72,7 +72,7 @@
                       <select class="form-control select2" style="width: 100%;" name="country">
                         <option selected="selected" disabled="disabled">Select a country</option>
                         @foreach ($countries as $c)
-                        <option value="{{ $c->id }}" {{ ($c->id === $country)?'selected="selected"':'' }}>
+                        <option value="{{ $c->id }}" {{ ($c->id == $country)?'selected="selected"':'' }}>
                           {{ $c->name }}
                         </option>
                         @endforeach
@@ -105,7 +105,7 @@
                       <select class="form-control select2" style="width: 100%;" name="category">
                         <option selected="selected" disabled="disabled">Select Inductry</option>
                         @foreach ($categories as $ca)
-                        <option value="{{ $ca->id }}" {{ ($ca->id === $category)?'selected="selected"':'' }}>
+                        <option value="{{ $ca->id }}" {{ ($ca->id == $category)?'selected="selected"':'' }}>
                           {{ $ca->name }}</option>
                         @endforeach
                       </select>

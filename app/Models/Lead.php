@@ -13,4 +13,9 @@ class Lead extends Model
     {
         return $this->belongsTo(User::class,'created_by');
     }
+
+    public function leadStatus()
+    {
+        return $this->belongsTo(LeadStatus::class, 'status');
+    }
 }
