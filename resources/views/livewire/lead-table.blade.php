@@ -41,12 +41,14 @@
                                             <td>{{ $lead->country }}</td>
                                             <td>{{ $lead->contact_time }}</td>
                                             <td class="leadstable__button">
-                                                <a href="tel:{{ $lead->mobile }}">
+                                                <a href="tel:{{ $lead->mobile }}" target="_BLANK"
+                                                    wire:click="makeCall({{ $lead->id }})">
                                                     <button class="btn btn-success btn-block mb-1">
                                                         <i class="fas fa-phone-alt mr-1"></i>
                                                         Call</button>
                                                 </a>
-                                                <a href="mailto:{{ $lead->email }}">
+                                                <a href="mailto:{{ $lead->email }}" target="_BLANK"
+                                                    wire:click="sentEmail({{ $lead->id }})">
                                                     <button class="btn btn-primary btn-block mb-1">
                                                         <i class="fas fa-envelope mr-1"></i>
                                                         Email</button>

@@ -18,4 +18,36 @@ class Lead extends Model
     {
         return $this->belongsTo(LeadStatus::class, 'status');
     }
+
+    public function timeline()
+    {
+        return $this->hasMany(LeadTimeline::class, 'lead_id');
+    }
+
+    public function getCountryAttribute($value)
+    {
+        if(!isset($value)){
+            return '-';
+        }
+
+        return $value;
+    }
+
+    public function getContactTimeAttribute($value)
+    {
+        if(!isset($value)){
+            return '-';
+        }
+
+        return $value;
+    }
+
+    public function getIpAddressAttribute($value)
+    {
+        if(!isset($value)){
+            return '-';
+        }
+
+        return $value;
+    }
 }

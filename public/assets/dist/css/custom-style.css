@@ -6,18 +6,18 @@
 }
 
 .modal__primary {
-    background: #239B56;
-    border: 1px solid #239B56;
+    background: #2E86C1;
+    border: 1px solid #2E86C1;
 }
 
 .modal__warning {
-    background: #239B56;
-    border: 1px solid #239B56;
+    background: #F1C40F;
+    border: 1px solid #F1C40F;
 }
 
 .modal__danger {
-    background: #239B56;
-    border: 1px solid #239B56;
+    background: #dc3545;
+    border: 1px solid #dc3545;
 }
 
 .modal-header {
@@ -59,31 +59,51 @@
 }
 
 .btn-danger {
-    background: #D35400;
-    border-color: #D35400;
+    background: #dc3545;
+    border-color: #dc3545;
 }
 
 
 /* Button Override */
 
+/* card Override */
+
 .card-primary {
     border-color: #2E86C1;
 }
 
+/* card Override */
 
-/* Extra small devices (phones, 600px and down) */
+/* BG Override */
 
-@media only screen and (max-width: 600px) {
-    .bs-stepper {
-        padding: 20px;
-    }
+.bg-primary{
+    background-color: #2E86C1 !important;
+}
+.bg-warning{
+    background-color: #F1C40F !important;
+}
+.bg-success{
+    background-color: #239B56 !important;
+}
+.bg-danger{
+    background-color: #dc3545 !important;
 }
 
+/* BG Override */
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-
-@media only screen and (min-width: 600px) {
-    .bs-stepper {
-        padding: 20px;
-    }
+/* Text Override */
+.text-primary{
+    color: #2E86C1 !important;
 }
+.text-warning{
+    color: #F1C40F !important;
+}
+.text-success{
+    color: #239B56 !important;
+}
+.text-danger{
+    color: #dc3545 !important;
+}
+/* Text Override */
+
+

@@ -14,13 +14,15 @@ class LeadPage extends Component
     public function render()
     {
         $lead = Lead::find($this->leadId);
+        $classes = ['danger', 'success', 'primary', 'warning', 'info'];
 
         if (Auth::user()->cannot('view', $lead)) {
             abort(403);
         }
 
         return view('livewire.lead-page',[
-            'lead' => $lead
+            'lead' => $lead,
+            'classes' =>$classes
         ])->layout('layouts.app',[
             'title' => 'Lead Details'
         ]);
