@@ -16,6 +16,7 @@ class CompanyCategorySeeder extends Seeder
     {
         //
         DB::table('company_categories')->insert(
+            [
             ['name' => 'Arts, Entertainment and Recreation'],
             ['name' => 'Accommodation and Food Services'],
             ['name' => 'Finance and Insurance'],
@@ -36,6 +37,7 @@ class CompanyCategorySeeder extends Seeder
             ['name' => 'Advisory and Financial Services'],
             ['name' => 'Technology'],
             ['name' => 'Online Retail'],
+            ]
         ); 
     }
 }

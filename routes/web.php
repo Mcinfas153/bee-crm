@@ -1,11 +1,9 @@
 <?php
 
-use App\Http\Controllers\LeadController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Livewire\AddUserPage;
 use App\Http\Livewire\CompanyPage;
 use App\Http\Livewire\Dashboard;
-use App\Http\Livewire\LeadUi;
 use App\Http\Livewire\Login;
 use App\Http\Livewire\Register;
 use Illuminate\Support\Facades\Route;
@@ -38,7 +36,8 @@ Route::middleware(['authUser'])->group(function () {
         Route::get('/add-user', AddUserPage::class);
         Route::get('/setting', SettingPage::class);
     });
-    Route::get('/company',CompanyPage::class);
+    Route::get('/company', CompanyPage::class)->name('company-profile');
+    Route::post('/add-company', [CompanyController::class,'addCompany']);
     //Route::get('/leads', LeadUi::class);
     //Route::get('leads/list', [LeadController::class, 'getLeads'])->name('leads.list');  
 });

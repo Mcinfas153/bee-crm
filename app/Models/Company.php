@@ -10,4 +10,9 @@ class Company extends Model
     use HasFactory;
 
     protected $table = 'companies';
+
+    public function members()
+    {
+        return $this->hasMany(User::class, 'created_by');
+    }
 }

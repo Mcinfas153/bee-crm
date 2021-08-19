@@ -18,7 +18,7 @@ class CompanyProfileValid
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Company::where('created_by',Auth::user()->id)->count() !== 0){
+        if(Company::where('created_by', Auth::user()->id)->count() === 0){
             return redirect('/company');
         }
         
