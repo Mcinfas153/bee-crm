@@ -9,4 +9,6 @@ return [
     '6' => 'User successfully created',
     '7' => 'Changes update successfully',
     '8' => 'Company profile updated successfully',
+    '9' => 'Password changed successfully',
+    '100' => 'Something went wrong',
 ];
