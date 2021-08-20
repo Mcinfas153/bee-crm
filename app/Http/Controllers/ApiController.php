@@ -43,6 +43,7 @@ class ApiController extends Controller
                 'inquiry' => $request->input('inquiry'),
                 'project' => $request->input('project'),
                 'ip_address' => $request->input('ip_address'),
+                'created_by' => $user->id,
             ]);
     
             $leadTimeline = LeadTimeline::create([
