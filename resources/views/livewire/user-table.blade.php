@@ -11,7 +11,7 @@
                             <div class="card-body">
 
                                 @can('create', App\models\User::class)
-                                <button class="btn btn-success" wire:click="goToAddUsers">
+                                <button class="btn btn-success mb-2" wire:click="goToAddUsers">
                                     <i class="fa fa-plus mr-2"></i>
                                     Add User
                                 </button>

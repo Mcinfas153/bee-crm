@@ -7,13 +7,36 @@
                 <span class="text-warning">Warning : Don't share API key with others</span>
             </div>
             <div class="card-body">
-                <div class="">
+                <div class="col-12 settingOption rounded-top bg-warning" type="button" data-toggle="collapse"
+                    data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <h5 class="ml-4 mt-1 font-weight-bold">
+                        <i class="fas fa-shield-alt mr-2"></i>Privacy</h5>
+                    <i class="fas fa-chevron-down mr-3"></i>
+                </div>
+                <div class="collapse optionContent rounded-bottom" id="collapseExample">
+                    <fieldset disabled>
+                        <div class="form-group ml-4">
+                            <label>API Auth Code :</label>
+                            <div class="input-group mb-2 mr-sm-2 col-md-10 text-center">
+                                <input type="text" id="apiCode" class="form-control form-control-sm"
+                                    value="{{ $user->auth_code }}">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text rounded-right" onclick="copyToClipboard('#apiCode')"><i
+                                            class="fas fa-copy"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="mt-4">
                     @if (session()->has('message'))
                     <div class="alert alert-success">
                         {{ session('message') }}
                     </div>
                     @endif
-                    <form class="settingForm" wire:submit.prevent="changePassword">
+                    <h5 class="ml-4"><i class="fas fa-key mr-1"></i> Password Settings</h5>
+                    <form class="settingForm ml-5 mt-3" wire:submit.prevent="changePassword">
                         <div class="form-group">
                             <label>New Password :</label>
                             <div class="input-group mb-2 mr-sm-2 col-md-10 text-center">
@@ -43,28 +66,6 @@
                             </div>
                         </div>
                     </form>
-                </div>
-                <div class="col-12 settingOption rounded-top bg-warning mt-5" type="button" data-toggle="collapse"
-                    data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    <h5 class="ml-4 mt-1 font-weight-bold">
-                        <i class="fas fa-shield-alt mr-2"></i>Privacy</h5>
-                    <i class="fas fa-chevron-down mr-3"></i>
-                </div>
-                <div class="collapse optionContent rounded-bottom" id="collapseExample">
-                    <fieldset disabled>
-                        <div class="form-group">
-                            <label>API Auth Code :</label>
-                            <div class="input-group mb-2 mr-sm-2 col-md-10 text-center">
-                                <input type="text" id="apiCode" class="form-control form-control-sm"
-                                    value="{{ $user->auth_code }}">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text rounded-right" onclick="copyToClipboard('#apiCode')"><i
-                                            class="fas fa-copy"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
                 </div>
             </div>
             <!-- /.card-body -->

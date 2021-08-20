@@ -9,13 +9,13 @@
             <div class="card-body">
                 <div class="card">
                     <!-- /.card-header -->
-                    <div class="card-body p-0">
+                    <div class="card-body leadScrollableTable p-0">
                         <table class="table table-striped table-bordered">
                             <thead>
                                 <tr class="bg-{{ $lead->leadStatus->class_color }}">
                                     <th style="width: 20%">Current Status</th>
                                     <th style="width: 60%">{{ $lead->leadStatus->name }}</th>
-                                    <th style="width: 15%">#</th>
+                                    <th style="width: 100%">#</th>
                                     <th style="width: 5%">#</th>
                                 </tr>
                             </thead>
