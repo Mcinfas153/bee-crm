@@ -16,12 +16,12 @@ class LeadStatusSeeder extends Seeder
     {
         //
         DB::table('lead_status')->insert([
-            ['name' => 'Unopened', 'class_color' => 'secondary'],
-            ['name' => 'Opened', 'class_color' => 'info'],
-            ['name' => 'Following', 'class_color' => 'primary'],
-            ['name' => 'Interested', 'class_color' => 'warning'],
-            ['name' => 'Not Interested', 'class_color' => 'danger'],
-            ['name' => 'Closed', 'class_color' => 'success'],
+            ['name' => 'unopened', 'class_color' => 'secondary'],
+            ['name' => 'opened', 'class_color' => 'info'],
+            ['name' => 'following', 'class_color' => 'primary'],
+            ['name' => 'interested', 'class_color' => 'warning'],
+            ['name' => 'not_interested', 'class_color' => 'danger'],
+            ['name' => 'closed', 'class_color' => 'success'],
         ]);
     }
 }
