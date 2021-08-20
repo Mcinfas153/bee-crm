@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lead;
+use App\Models\LeadTimeline;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Stmt\TryCatch;
+use Symfony\Component\Console\Input\Input;
 
 class ApiController extends Controller
 {
@@ -27,20 +32,39 @@ class ApiController extends Controller
             ], 206);              
         }
 
-        $lead = new Lead();
-        $lead->name = $request->input('name');
-        $lead->email = $request->input('email');
-        $lead->mobile = $request->input('mobile');
-        $lead->inquiry = $request->input('inquiry');
-        $lead->project = $request->input('project');
-        $lead->ip_address = $request->input('ip_address');
-        // $lead->contact_time = $request->input('contact_time');
-        // $lead->country = $request->input('country');
-        $lead->created_by = $user->id;
-        $lead->save();
+        DB::beginTransaction();
 
-        return response()->json([
-           $lead
-        ],201);
+        try{
+
+            $lead = Lead::create([
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+                'mobile' => $request->input('mobile'),
+                'inquiry' => $request->input('inquiry'),
+                'project' => $request->input('project'),
+                'ip_address' => $request->input('ip_address'),
+            ]);
+    
+            $leadTimeline = LeadTimeline::create([
+                'type' => config('leadtimelinetypes.create'),
+                'message' => config('leadtimelinetypes.createMsg'),
+                'lead_id' => $lead->id,
+                'created_by' => $user->id
+            ]);
+
+            DB::commit();
+
+            return response()->json([
+                $lead
+            ], 201);
+
+        } catch(Exception $ex) {
+
+            DB::rollBack();
+            return response()->json([
+                'msg' => 'Something went wrong'
+            ]);
+
+        }       
     }
 }

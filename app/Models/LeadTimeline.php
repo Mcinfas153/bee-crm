@@ -9,6 +9,8 @@ class LeadTimeline extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     protected $table = 'leads_timeline';
 
     public function timelineType()

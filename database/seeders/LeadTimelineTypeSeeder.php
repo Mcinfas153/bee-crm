@@ -20,6 +20,7 @@ class LeadTimelineTypeSeeder extends Seeder
             ['name' => 'mail', 'icon' => 'fas fa-envelope'],
             ['name' => 'remark', 'icon' => 'fas fa-pencil-alt'],
             ['name' => 'meeting', 'icon' => 'fas fa-handshake'],
+            ['name' => 'create', 'icon' => 'fas fa-plus'],
         ]);
     }
 }
