@@ -113,22 +113,11 @@
                             <!-- /.timeline-label -->
                             <!-- timeline item -->
                             @foreach ($lead->timeline->sortByDesc('created_at') as $timeline)
-                            <div>
-                                <i class="{{ $timeline->timelineType->icon }} bg-{{ Arr::random($classes) }}"></i>
-                                <div class="timeline-item">
-                                    <span class="time"><i
-                                            class="fas fa-clock mr-1 text-{{ Arr::random($classes) }}"></i>
-                                        {{ $timeline->created_at->diffForHumans() }}</span>
-                                    <h3 class="timeline-header no-border">
-                                        <a href="#"
-                                            class="text-{{ Arr::random($classes) }} mr-5">{{ $timeline->creator->name }}
-                                        </a>
-                                    </h3>
-                                    <div class="timeline-body">
-                                        {{ $timeline->message }}
-                                    </div>
-                                </div>
-                            </div>
+
+                            <livewire:timeline-component icon="{{ $timeline->timelineType->icon }}"
+                                class="{{ Arr::random($classes) }}" time="{{ $timeline->created_at->diffForHumans() }}"
+                                message=" {{ $timeline->message }}" creator="{{ $timeline->creator->name }}" />
+
                             @endforeach
                             <!-- END timeline item -->
                             <div>

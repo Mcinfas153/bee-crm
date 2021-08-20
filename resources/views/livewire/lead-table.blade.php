@@ -9,17 +9,17 @@
                     <div class="card">
                         <div class="card">
                             <!-- /.card-header -->
-                            <div class="card-body">
+                            <div class="card-body" id="example2_wrapper">
                                 <table id="leads" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Mobile</th>
-                                            <th>Country</th>
-                                            <th>Contact Time</th>
-                                            <th>Action</th>
+                                            <th class="text-center">Email</th>
+                                            <th class="text-center">Mobile</th>
+                                            <th class="text-center">Campaign</th>
+                                            <th class="text-center">Lead Status</th>
+                                            <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -30,16 +30,19 @@
                                             <td>
                                                 <span title="{{ $lead->name }}">{{ Str::limit($lead->name,10) }}</span>
                                             </td>
-                                            <td>
+                                            <td class="text-center">
                                                 <a title="{{ $lead->email }}"
                                                     href="mailto:{{ $lead->email }}">{{ Str::limit($lead->email,20) }}</a>
                                             </td>
-                                            <td>
+                                            <td class="text-center">
                                                 <a title="{{ $lead->mobile }}"
                                                     href="tel:{{ $lead->mobile }}">{{ Str::limit($lead->mobile,15) }}</a>
                                             </td>
-                                            <td>{{ $lead->country }}</td>
-                                            <td>{{ $lead->contact_time }}</td>
+                                            <td class="text-center">{{ $lead->project }}</td>
+                                            <td class="text-center">
+                                                <span
+                                                    class="badge bg-{{ $lead->leadStatus->class_color }}">{{ $lead->leadStatus->name }}</span>
+                                            </td>
                                             <td class="leadstable__button">
                                                 <a href="tel:{{ $lead->mobile }}" target="_BLANK"
                                                     wire:click="makeCall({{ $lead->id }})">
