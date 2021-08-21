@@ -10,7 +10,7 @@ class PlansPage extends Component
     public function render()
     {
         $plans = Plan::all();
-        $class = ['bg-success','bg-danger'];
+        $class = ['bg-success','bg-danger','bg-info','bg-primary'];
         return view('livewire.plans-page',[
             'plans' => $plans,
             'class' => $class

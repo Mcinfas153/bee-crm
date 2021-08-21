@@ -9,7 +9,7 @@
                         <div class="small-box {{ Arr::random($class) }} p-5">
                             <div class="inner">
                                 <h3>{{$plan->title}}</h3>
-                                <h4>{{ $plan->price }} AED / Month</h4>
+                                <h4>{{(int)$plan->price }} AED / Month</h4>
                                 <hr>
                                 <p class="mb-1"><i class="fas fa-check fa-xs text-warning mr-2"></i>Up to
                                     {{ $plan->accounts_count }} accounts
