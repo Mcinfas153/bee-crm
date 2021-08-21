@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\Subscriptions\PaymentController;
 use App\Http\Livewire\AddUserPage;
 use App\Http\Livewire\CompanyPage;
 use App\Http\Livewire\Dashboard;
@@ -9,6 +10,7 @@ use App\Http\Livewire\Login;
 use App\Http\Livewire\Register;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\LeadTable;
+use App\Http\Livewire\PlansPage;
 use App\Http\Livewire\ProfilePage;
 use App\Http\Livewire\SettingPage;
 use App\Http\Livewire\UserTable;
@@ -40,6 +42,13 @@ Route::middleware(['authUser'])->group(function () {
     });
     Route::get('/company', CompanyPage::class)->name('company-profile');
     Route::post('/add-company', [CompanyController::class,'addCompany']);
+
+    Route::get('plans', PlansPage::class)->name('plans');
+    Route::group(['namespace' => 'Subscriptions'], function() {
+        Route::get('/payments', [PaymentController::class,'index'])->name('payments');
+        Route::post('/payments', [PaymentController::class,'store'])->name('payments.store');
+    });
+
     //Route::get('/leads', LeadUi::class);
     //Route::get('leads/list', [LeadController::class, 'getLeads'])->name('leads.list');  
 });

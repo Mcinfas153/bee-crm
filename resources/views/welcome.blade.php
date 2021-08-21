@@ -17,8 +17,6 @@
         <li><a href="{{ URL::to('register') }}">Register</a></li>
         @endauth
     </ul>
-
-
 </body>
 
 </html>

@@ -112,6 +112,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ URL::to('/plans') }}" class="nav-link">
+                            <i class="nav-icon fab fa-cc-mastercard"></i>
+                            <p>
+                                Payments
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ URL::to('/setting') }}" class="nav-link">
                             <i class="nav-icon fas fa-cog"></i>
                             <p>
