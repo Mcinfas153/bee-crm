@@ -10,5 +10,6 @@ return [
     '7' => 'Changes update successfully',
     '8' => 'Company profile updated successfully',
     '9' => 'Password changed successfully',
+    '200' => 'Your subscription activated successfully',
     '100' => 'Something went wrong',
 ];

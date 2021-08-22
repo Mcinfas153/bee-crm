@@ -31,6 +31,7 @@
 </head>
 
 <body class="hold-transition sidebar-mini">
+    <div class="loading">Processing...</div>
     <!-- Site wrapper -->
     <div class="wrapper">
         <livewire:navbar />

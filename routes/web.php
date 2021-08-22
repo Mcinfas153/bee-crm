@@ -10,6 +10,7 @@ use App\Http\Livewire\Login;
 use App\Http\Livewire\Register;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\LeadTable;
+use App\Http\Livewire\PaymentPage;
 use App\Http\Livewire\PlansPage;
 use App\Http\Livewire\ProfilePage;
 use App\Http\Livewire\SettingPage;
@@ -44,8 +45,8 @@ Route::middleware(['authUser'])->group(function () {
     Route::post('/add-company', [CompanyController::class,'addCompany']);
 
     Route::get('plans', PlansPage::class)->name('plans');
-    Route::group(['namespace' => 'Subscriptions'], function() {
-        Route::get('/payments', [PaymentController::class,'index'])->name('payments');
+    Route::get('/payments', PaymentPage::class)->name('payments');
+    Route::group(['namespace' => 'Subscriptions'], function() {        
         Route::post('/payments', [PaymentController::class,'store'])->name('payments.store');
     });
 
