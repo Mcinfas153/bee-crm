@@ -2,6 +2,6 @@
 
 return [
     'appVersion' => '1.0 BETA',
-    'webUrl' => 'https://leadmediaproduction.com/',
+    'webUrl' => 'https://beeonline.xyz/',
     'webAppName' => 'Bee CRM'
 ];
