@@ -1,4 +1,4 @@
-<div class="card card-primary">
+<div class="custom__box card-primary">
     <div class="card-header">
         <h3 class="card-title">About Me</h3>
     </div>

@@ -1,7 +1,7 @@
 <div>
-    <section class="content">
+    <section class="content px-3">
         <!-- Default box -->
-        <div class="card">
+        <div class="custom__box">
             <div class="card-header">
                 <h3 class="card-title">Title</h3>
 

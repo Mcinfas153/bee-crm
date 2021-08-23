@@ -1,7 +1,7 @@
 <div>
-    <section class="content p-2">
+    <section class="content px-3">
         <!-- Default box -->
-        <div class="card">
+        <div class="custom__box">
             <div class="card-header">
                 <i class="fas fa-exclamation-triangle text-warning mr-2"></i>
                 <span class="text-warning">Warning : Don't share API key with others</span>
@@ -61,7 +61,9 @@
                         </div>
                         <div class="form-group">
                             <div class="input-group mb-2 mr-sm-2 col-md-10 text-center">
-                                <button class="btn btn-success btn-sm float-right" type="submit">Change
+                                <button class="btn btn-success btn-sm float-right" type="submit">
+                                    <i class="fas fa-edit mr-2"></i>
+                                    Change
                                     Password</button>
                             </div>
                         </div>

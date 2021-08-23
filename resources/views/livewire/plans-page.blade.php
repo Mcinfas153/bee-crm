@@ -1,12 +1,12 @@
 <div>
-    <section class="p-2">
-        <div class="card">
+    <section class="content pl-3 pr-3">
+        <div class="custom__box">
             <div class="card-body">
                 <div class="row">
                     @foreach($plans as $plan)
                     <div class="col-lg-5 col-6 mx-auto">
                         <!-- small box -->
-                        <div class="small-box {{ Arr::random($class) }} p-5">
+                        <div class="custom__box {{ Arr::random($class) }} p-5">
                             <div class="inner">
                                 <h3>{{$plan->title}}</h3>
                                 <h4>{{(int)$plan->price }} AED / Month</h4>

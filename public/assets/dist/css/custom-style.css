@@ -42,6 +42,10 @@
 
 
 /* Button Override */
+.btn {
+    font-size: 12px !important;
+    padding: 5px 15px !important;
+}
 
 .btn-success {
     background: #239B56;
@@ -104,6 +108,28 @@
 .text-danger{
     color: #dc3545 !important;
 }
+a {
+    color: #f9d020;
+}
 /* Text Override */
+
+/* customs */
+.page-item.active .page-link {
+    color: #000;
+    background-color: #fbd949;
+    border-color: #fbd949;
+}
+.card-primary.card-outline {
+    border-top: 3px solid #2E86C1;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #2e86c1;
+}
+.nav-pills .nav-link:not(.active):hover {
+    color: #2e86c1;
+}
+.card-primary:not(.card-outline)>.card-header {
+    background-color: #2e86c1;
+}
 
 

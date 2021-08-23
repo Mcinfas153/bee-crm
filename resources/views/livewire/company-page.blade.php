@@ -4,11 +4,14 @@
 
   <section class="container-fluid">
     <div class="col-md-12">
-      <div class="card card-default">
+      <div class="custom__box">
         <div class="card-header">
-            <h3 class="text-warning mt-2"> Important Notes :</h3>
-            <p class="text-danger companyHeaderCaption ml-4"><img src="https://img.icons8.com/emoji/18/000000/warning-emoji.png"/> "  *** mark inputs are required inputs. Please filled all
-            *** marks inputs to save your time. "</p>
+          <h3 class="text-warning mt-2"> Important Notes :</h3>
+          <p class="text-danger ml-4"> <span><img
+                src="https://img.icons8.com/emoji/18/000000/warning-emoji.png" /></span>*** mark inputs are required
+            inputs.
+            Please filled all
+            *** marks inputs to save your time.</p>
         </div>
         <div class="card-body p-0">
           <div class="bs-stepper">

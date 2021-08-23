@@ -112,12 +112,27 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ URL::to('/plans') }}" class="nav-link">
+                        <a href="javascript:void(0)" class="nav-link">
                             <i class="nav-icon fab fa-cc-mastercard"></i>
                             <p>
                                 Payments
+                                <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ URL::to('/plans') }}" class="nav-link">
+                                    <i class="fas fa-cubes nav-icon"></i>
+                                    <p>Plans</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ URL::to('/invoices') }}" class="nav-link">
+                                    <i class="fas fa-file-invoice nav-icon"></i>
+                                    <p>Invoices</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a href="{{ URL::to('/setting') }}" class="nav-link">

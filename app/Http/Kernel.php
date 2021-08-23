@@ -55,6 +55,10 @@ class Kernel extends HttpKernel
         'companyProfileValid' => [
             \App\Http\Middleware\CompanyProfileValid::class,
         ],
+
+        'subcribeUserValid' => [
+            \App\Http\Middleware\EnsureUserIsSubscribed::class,
+        ],
     ];
 
     /**

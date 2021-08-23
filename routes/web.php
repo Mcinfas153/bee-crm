@@ -5,6 +5,7 @@ use App\Http\Controllers\Subscriptions\PaymentController;
 use App\Http\Livewire\AddUserPage;
 use App\Http\Livewire\CompanyPage;
 use App\Http\Livewire\Dashboard;
+use App\Http\Livewire\InvoiceListPage;
 use App\Http\Livewire\LeadPage;
 use App\Http\Livewire\Login;
 use App\Http\Livewire\Register;
@@ -32,7 +33,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['authUser'])->group(function () {
-    Route::middleware(['companyProfileValid'])->group(function () {
+    Route::middleware(['subcribeUserValid'])->group(function () {
         Route::get('/dashboard', Dashboard::class);
         Route::get('/leads', LeadTable::class);
         Route::get('/users', UserTable::class);
@@ -40,12 +41,14 @@ Route::middleware(['authUser'])->group(function () {
         Route::get('/add-user', AddUserPage::class);
         Route::get('/setting', SettingPage::class);
         Route::get('/lead/{id}', LeadPage::class);
+        Route::get('/company', CompanyPage::class)->name('company-profile');
+        Route::post('/add-company', [CompanyController::class,'addCompany']);
+        Route::get('/invoices', InvoiceListPage::class);
     });
-    Route::get('/company', CompanyPage::class)->name('company-profile');
-    Route::post('/add-company', [CompanyController::class,'addCompany']);
 
     Route::get('plans', PlansPage::class)->name('plans');
     Route::get('/payments', PaymentPage::class)->name('payments');
+
     Route::group(['namespace' => 'Subscriptions'], function() {        
         Route::post('/payments', [PaymentController::class,'store'])->name('payments.store');
     });
