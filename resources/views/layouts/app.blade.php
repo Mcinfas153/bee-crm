@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('application.webAppName') }} | {{ $title }}</title>
 
-    <!-- Google Font: Source Sans Pro -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Theme style -->
@@ -25,6 +24,9 @@
     <script src="{{ asset('assets/dist/js/adminlte.min.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('assets/dist/js/demo.js') }}"></script>
+    <!-- Sweet Alert -->
+    <script src="{{ asset('assets/plugins/sweetalert2/sweetalert2.all.js') }}"></script>
+    <!-- Stripe js -->
     <script src="https://js.stripe.com/v3/"></script>
 </head>
 
@@ -55,6 +57,10 @@
     </div>
     @include('sweetalert::alert')
     <!-- ./wrapper -->
+    <script>
+        const BASEURL = "{{ url('') }}"
+    </script>
+    <script src="{{ asset('assets/dist/js/custom.js') }}"></script>
     @livewireScripts
 </body>
 

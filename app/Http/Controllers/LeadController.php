@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Lead;
+use App\Models\LeadTimeline;
 use DataTables;
+use Exception;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class LeadController extends Controller
 {
@@ -22,5 +26,58 @@ class LeadController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
+    }
+
+    public function assignLead(Request $request)
+    {
+        DB::beginTransaction();
+
+        try{
+
+            $leads = $request->input('leads');
+
+            foreach($leads as $lead){
+
+                $lead = Lead::find((int)$lead);
+
+                $lead->assign_to = (int)$request->user;
+
+                $lead->save();
+                
+                $leadTimeline = new LeadTimeline();
+                
+                $leadTimeline->type = config('leadtimelinetypes.assign');
+
+                $leadTimeline->message = config('leadtimelinetypes.assignMsg') . ' to '.$lead->assignUser->name;
+
+                $leadTimeline->lead_id = $lead->id;
+
+                $leadTimeline->created_by = Auth::user()->id;
+
+                $leadTimeline->save();
+                
+                DB::commit();
+
+                $status = 201;
+
+                $msg = config('msg.300');
+                
+            }        
+
+        } catch(Exception $ex) {
+
+            throw $ex;
+
+            DB::rollBack();
+
+            $status = 500;
+
+            $msg = config('msg.100');
+        }
+
+        return response()->json([
+            'status' => $status,
+            'msg' => $msg
+        ]);
     }
 }

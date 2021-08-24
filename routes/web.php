@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\LeadController;
 use App\Http\Controllers\Subscriptions\PaymentController;
 use App\Http\Livewire\AddUserPage;
 use App\Http\Livewire\CompanyPage;
@@ -44,6 +45,7 @@ Route::middleware(['authUser'])->group(function () {
         Route::get('/company', CompanyPage::class)->name('company-profile');
         Route::post('/add-company', [CompanyController::class,'addCompany']);
         Route::get('/invoices', InvoiceListPage::class);
+        Route::post('/assign-lead', [LeadController::class, 'assignLead']);
     });
 
     Route::get('plans', PlansPage::class)->name('plans');

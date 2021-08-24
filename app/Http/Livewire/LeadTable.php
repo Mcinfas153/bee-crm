@@ -7,6 +7,7 @@ use App\Models\Lead;
 use App\Models\User;
 use Livewire\WithPagination;
 use App\Http\Controllers\LeadTimelineController as LeadTimeline;
+use Illuminate\Support\Facades\Auth;
 
 class LeadTable extends Component
 {
@@ -18,7 +19,11 @@ class LeadTable extends Component
     public function render(User $user, Lead $lead)
     {
         $leads = Lead::orderBy('id', 'DESC')->limit(300)->get();
-        return view('livewire.lead-table',['leads' => $leads])->layout('layouts.app',[
+        $users = User::where('created_by', Auth::user()->id)->get();
+        return view('livewire.lead-table',[
+            'leads' => $leads,
+            'users' => $users
+            ])->layout('layouts.app',[
             'title' => 'Latest Leads'
         ]);
     }

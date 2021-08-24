@@ -21,7 +21,7 @@ class LeadTimelineTypeSeeder extends Seeder
             ['name' => 'remark', 'icon' => 'fas fa-pencil-alt'],
             ['name' => 'meeting', 'icon' => 'fas fa-handshake'],
             ['name' => 'create', 'icon' => 'fas fa-plus'],
-            ['name' => 'open', 'icon' => 'fa fa-envelope-open-o'],
+            ['name' => 'open', 'icon' => 'fas fa-envelope-open'],
             ['name' => 'assign', 'icon' => 'fa fa-user'],
         ]);
     }
