@@ -22,3 +22,17 @@ if(!function_exists('storeImage')){
         return $fileName;
     }
 }
+
+if(!function_exists('checkHotLead')){
+    function checkHotLead($lead)
+    {
+
+       if(Str::length($lead->inquiry) > 20){
+            return true;
+       } else if(preg_match('/\p{Arabic}/u', $lead->inquiry) || preg_match('/\p{Arabic}/u', $lead->name)){
+            return true;
+       }
+
+       return false;
+    }
+}

@@ -40,19 +40,28 @@
                                             <span title="{{ $lead->name }}">{{ Str::limit($lead->name,10) }}</span>
                                         </td>
                                         <td class="text-center">
-                                            <a title="{{ $lead->email }}"
-                                                href="mailto:{{ $lead->email }}">{{ Str::limit($lead->email,20) }}</a>
+                                            <a title="{{ $lead->email }}" href="mailto:{{ $lead->email }}"
+                                                wire:click="sentEmail({{ $lead->id }})"
+                                                target="_BLANK">{{ Str::limit($lead->email,20) }}</a>
                                         </td>
                                         <td class="text-center">
-                                            <a title="{{ $lead->mobile }}"
-                                                href="tel:{{ $lead->mobile }}">{{ Str::limit($lead->mobile,15) }}</a>
+                                            <a title="{{ $lead->mobile }}" href="tel:{{ $lead->mobile }}"
+                                                wire:click="makeCall({{ $lead->id }})">{{ Str::limit($lead->mobile,15) }}</a>
                                         </td>
                                         <td class="text-center">{{ $lead->project }}</td>
                                         <td class="text-center">
                                             <span
                                                 class="cusom__box p-1 px-3 bg-{{ $lead->leadStatus->class_color }}">{{ $lead->leadStatus->name }}</span>
+
+                                            @if (checkHotLead($lead))
+                                            <div class="cusom__box bg-danger mt-3 p-1 text-center"><span
+                                                    class="fa fa-fire mr-1"></span>
+                                                Hot Lead
+                                            </div>
+                                            @endif
+
                                         </td>
-                                        @can('viewAssign', $lead)
+                                        @can('viewAssign', User::class)
                                         <td class="text-center">
                                             {{ $lead->assign_to ? $lead->assignUser->name : '-' }}
                                         </td>

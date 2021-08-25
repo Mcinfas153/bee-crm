@@ -150,7 +150,8 @@
                         </form>
                         <div class="remark__panel mt-3" id="remark__panel">
                             @foreach ($remarks as $r)
-                            <livewire:remark-component creator="{{ $r->created_by }}" message="{{ $r->message }}" />
+                            <livewire:remark-component creator="{{ $r->creator->name }}" message="{{ $r->message }}"
+                                class="{{ Arr::random($classes) }}" />
                             @endforeach
                         </div>
                     </div>

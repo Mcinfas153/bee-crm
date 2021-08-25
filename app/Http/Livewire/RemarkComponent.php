@@ -14,6 +14,7 @@ class RemarkComponent extends Component
 
     public $creator;
     public $message;
+    public $class;
 
     public function render()
     {

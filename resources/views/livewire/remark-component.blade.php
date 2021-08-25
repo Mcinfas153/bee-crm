@@ -1,5 +1,5 @@
-<div class="callout callout-danger">
-    <h5>{{ $creator }}</h5>
+<div class="callout callout-{{ $class }}">
+    <h6 class="text-{{ $class }}">{{ $creator }}</h6>
 
     <p>{{ $message }}</p>
 </div>

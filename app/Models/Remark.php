@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Remark extends Model
 {
     use HasFactory;
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
 }
