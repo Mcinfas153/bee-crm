@@ -19,6 +19,7 @@
         "laravel/tinker": "^2.5",
         "laravolt/avatar": "^4.1",
         "livewire/livewire": "^2.5",
+        "nesbot/carbon": "^2.52",
         "realrashid/sweet-alert": "^4.0",
         "yajra/laravel-datatables-oracle": "^9.18"
     },

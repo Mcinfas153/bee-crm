@@ -90,6 +90,10 @@ button.close {
   color: black;
   margin-right: 0px !important;
 }
+.databox__icon{
+  font-size: 30px;
+  font-weight: 700;
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 
