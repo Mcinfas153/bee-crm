@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use App\Models\Lead;
 use App\Models\LeadTimeline;
+use App\Http\Controllers\LeadTimelineController;
+use App\Models\Remark;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -13,10 +15,12 @@ class LeadPage extends Component
 {
 
     public $leadId;
-
+    public $remark;
+    public $remarks;
+    
     public function render()
     {
-        $lead = Lead::find($this->leadId);
+        $lead = Lead::find($this->leadId);        
         $classes = ['danger', 'success', 'primary', 'warning', 'info'];
 
         if (Auth::user()->cannot('view', $lead) || !$lead) {
@@ -43,7 +47,7 @@ class LeadPage extends Component
 
             return view('livewire.lead-page',[
                 'lead' => $lead,
-                'classes' =>$classes
+                'classes' =>$classes,
             ])->layout('layouts.app',[
                 'title' => 'Lead Details'
             ]);
@@ -60,5 +64,23 @@ class LeadPage extends Component
     public function mount($id)
     {
         $this->leadId = $id;
+        $this->remarks = Remark::where('lead_id', $this->leadId)->orderBy('created_at','desc')->get();
     }
+
+    public function sentEmail($leadId)
+    {
+        $type = config('leadtimelinetypes.mail');
+        $message = config('leadtimelinetypes.mailMsg');
+        $timeline = new LeadTimelineController();
+        $timeline->addItem($type, $message, $leadId);
+    }
+
+    public function makeCall($leadId)
+    {
+        $type = config('leadtimelinetypes.call');
+        $message = config('leadtimelinetypes.callMsg');
+       $timeline = new LeadTimelineController();
+       $timeline->addItem($type, $message, $leadId);
+    }
+
 }

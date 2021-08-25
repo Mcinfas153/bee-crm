@@ -39,7 +39,7 @@ class LeadPolicy
     public function view(User $user, Lead $lead)
     {
         //
-        return $user->id == $lead->created_by || $user->id === $lead->assign_to;
+        return $user->id == $lead->created_by || $user->id == $lead->assign_to;
     }
 
     /**
@@ -99,5 +99,10 @@ class LeadPolicy
     public function forceDelete(User $user, Lead $lead)
     {
         //
+    }
+
+    public function viewAssign(User $user)
+    {
+        return $user->utype != config('usertypes.user');
     }
 }

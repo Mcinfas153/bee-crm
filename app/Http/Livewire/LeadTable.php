@@ -6,7 +6,7 @@ use Livewire\Component;
 use App\Models\Lead;
 use App\Models\User;
 use Livewire\WithPagination;
-use App\Http\Controllers\LeadTimelineController as LeadTimeline;
+use App\Http\Controllers\LeadTimelineController;
 use Illuminate\Support\Facades\Auth;
 
 class LeadTable extends Component
@@ -22,7 +22,7 @@ class LeadTable extends Component
         $users = User::where('created_by', Auth::user()->id)->get();
         return view('livewire.lead-table',[
             'leads' => $leads,
-            'users' => $users
+            'users' => $users,
             ])->layout('layouts.app',[
             'title' => 'Latest Leads'
         ]);
@@ -32,7 +32,7 @@ class LeadTable extends Component
     {
         $type = config('leadtimelinetypes.call');
         $message = config('leadtimelinetypes.callMsg');
-       $timeline = new LeadTimeline();
+       $timeline = new LeadTimelineController();
        $timeline->addItem($type, $message, $leadId);
     }
 
@@ -40,7 +40,7 @@ class LeadTable extends Component
     {
         $type = config('leadtimelinetypes.mail');
         $message = config('leadtimelinetypes.mailMsg');
-       $timeline = new LeadTimeline();
+       $timeline = new LeadTimelineController();
        $timeline->addItem($type, $message, $leadId);
     }
 }

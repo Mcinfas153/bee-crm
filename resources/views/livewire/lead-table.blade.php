@@ -21,7 +21,9 @@
                                         <th class="text-center">Mobile</th>
                                         <th class="text-center">Campaign</th>
                                         <th class="text-center">Lead Status</th>
+                                        @can('viewAssign', User::class)
                                         <th class="text-center">Assign to</th>
+                                        @endcan
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -50,9 +52,11 @@
                                             <span
                                                 class="cusom__box p-1 px-3 bg-{{ $lead->leadStatus->class_color }}">{{ $lead->leadStatus->name }}</span>
                                         </td>
+                                        @can('viewAssign', $lead)
                                         <td class="text-center">
                                             {{ $lead->assign_to ? $lead->assignUser->name : '-' }}
                                         </td>
+                                        @endcan
                                         <td class="leadstable__button">
                                             <a href="tel:{{ $lead->mobile }}" target="_BLANK"
                                                 wire:click="makeCall({{ $lead->id }})">

@@ -12,5 +12,6 @@ return [
     '9' => 'Password changed successfully',
     '200' => 'Your subscription activated successfully',
     '300' => 'Lead assign successfully',
+    '301' => 'Remark added successfully',
     '100' => 'Something went wrong',
 ];

@@ -29,7 +29,8 @@
                                 <td>Email</td>
                                 <td>{{ $lead->email }} </td>
                                 <td>
-                                    <a href="mailto:{{ $lead->email }}">
+                                    <a href="mailto:{{ $lead->email }}" target="_BLANK"
+                                        wire:click="sentEmail({{ $lead->id }})">
                                         <button class="btn btn-block btn-primary btn-sm"><i
                                                 class="fas fa-envelope mr-2"></i>MAIL
                                         </button>
@@ -40,7 +41,8 @@
                                 <td>Mobile</td>
                                 <td>{{ $lead->mobile }}</td>
                                 <td>
-                                    <a href="tel:{{ $lead->mobile }}">
+                                    <a href="tel:{{ $lead->mobile }}" target="_BLANK"
+                                        wire:click="makeCall({{ $lead->id }})">
                                         <button class="btn btn-block btn-success btn-sm"><i
                                                 class="fas fa-mobile-alt mr-2"></i>CALL
                                         </button>
@@ -129,28 +131,27 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <div class="callout callout-danger">
-                            <h5>I am a danger callout!</h5>
-
-                            <p>There is a problem that we need to fix. A wonderful serenity has taken possession of my
-                                entire
-                                soul,
-                                like these sweet mornings of spring which I enjoy with my whole heart.</p>
+                        @if (session()->has('message'))
+                        <div class="alert alert-success">
+                            {{ session('message') }}
                         </div>
-                        <div class="callout callout-info">
-                            <h5>I am an info callout!</h5>
-
-                            <p>Follow the steps to continue to payment.</p>
-                        </div>
-                        <div class="callout callout-warning">
-                            <h5>I am a warning callout!</h5>
-
-                            <p>This is a yellow callout.</p>
-                        </div>
-                        <div class="callout callout-success">
-                            <h5>I am a success callout!</h5>
-
-                            <p>This is a green callout.</p>
+                        @endif
+                        <form method="post" action="{{ url('add-remark') }}">
+                            @csrf
+                            <input type="hidden" value="{{ $leadId }}" name="lead_id" />
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" name="remark" required></textarea>
+                                @error('remark') <span class="error error__msg">{{ $message }}</span> @enderror
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-success" type="submit"><i
+                                        class="fas fa-edit mr-2"></i>Add</button>
+                            </div>
+                        </form>
+                        <div class="remark__panel mt-3" id="remark__panel">
+                            @foreach ($remarks as $r)
+                            <livewire:remark-component creator="{{ $r->created_by }}" message="{{ $r->message }}" />
+                            @endforeach
                         </div>
                     </div>
                     <!-- /.card-body -->
