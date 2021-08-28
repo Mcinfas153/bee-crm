@@ -55,6 +55,7 @@ class RemarkComponent extends Component
             DB::commit();
 
             $this->remarks->prepend($remark);
+            $this->remark = '';
 
             session()->flash('title', 'Success');
             session()->flash('message', ''.config('msg.301').'');
