@@ -132,5 +132,37 @@ a {
     background-color: #2e86c1;
 }
 
+@media only screen and (max-width: 600px) {
+    /* Font Size */
+    h3 {
+        font-size: 18px;
+    }
+    h5 {
+        font-size: 14px;
+    }
+    /* Font Size */
+    .bs-stepper {
+        padding: 20px;
+    }
+    .card-body {
+      padding: 0.4rem;
+    }
+    .timeline>div>.timeline-item>.timeline-header {
+      font-size: 12px;
+    }
+    .timeline>div>.timeline-item>.time {
+     font-size: 8px;
+    }
+    .timeline>div>.timeline-item {
+        margin-right: 0px;
+    }
+    .x-scroll-250 {
+        overflow-y: scroll;
+        height: 250px;
+    }
+    .optionContent {
+       padding: 10px !important;
+    }
+}
 
 

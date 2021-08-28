@@ -87,7 +87,7 @@
     <section class="content px-3">
         <div class="row">
             <div class="col-md-6">
-                <div class="card card-default">
+                <div class="custom__box card-default">
                     <div class="card-header">
                         <h3 class="card-title">
                             <i class="fas fa-clock mr-2"></i>
@@ -96,7 +96,7 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <div class="timeline">
+                        <div class="timeline x-scroll-250">
                             <!-- timeline time label -->
                             <div class="time-label">
                                 <span class="bg-{{ Arr::random($classes) }}">{{ date('d M. Y') }}</span>
@@ -123,7 +123,7 @@
             <!-- /.col -->
 
             <div class="col-md-6">
-                <div class="card card-default">
+                <div class="custom__box card-default">
                     <div class="card-header">
                         <h3 class="card-title">
                             <i class="fas fa-pencil-alt mr-2"></i>
@@ -132,7 +132,9 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <livewire:remark-component leadId="{{ $leadId }}" />
+                        <div class="remark x-scroll-250">
+                            <livewire:remark-component leadId="{{ $leadId }}" />
+                        </div>
                     </div>
                     <!-- /.card-body -->
                 </div>

@@ -40,10 +40,10 @@
                     </div>
                     @endif
                     <h5 class="ml-4"><i class="fas fa-key mr-1"></i> Password Settings</h5>
-                    <form class="settingForm ml-5 mt-3" wire:submit.prevent="changePassword">
+                    <form class="settingForm ml-2 mt-3" wire:submit.prevent="changePassword">
                         <div class="form-group">
                             <label>New Password :</label>
-                            <div class="input-group mb-2 mr-sm-2 col-md-10 text-center">
+                            <div class="input-group mb-2 mr-sm-2 col-md-6 text-center">
                                 <input type="password" id="newPassword" class="form-control form-control-sm"
                                     placeholder="Change Your Password" wire:model.lazy="newPassword">
                                 <div class="input-group-prepend">
@@ -54,7 +54,7 @@
                         </div>
                         <div class="form-group">
                             <label>Confirm New Password :</label>
-                            <div class="input-group mb-2 mr-sm-2 col-md-10 text-center">
+                            <div class="input-group mb-2 mr-sm-2 col-md-6 text-center">
                                 <input type="password" id="confirmPassword" class="form-control form-control-sm"
                                     placeholder="Confirm Your Password" wire:model.lazy="confirmPassword">
                                 <div class="input-group-prepend">

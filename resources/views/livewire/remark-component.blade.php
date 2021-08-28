@@ -18,7 +18,7 @@
     <div class="remark__panel mt-3" id="remark__panel">
         @foreach ($remarks as $r)
         <div class="callout callout-{{ Arr::random($classes) }}">
-            <h6 class="text-{{ Arr::random($classes) }}">{{ $r->creator->name }}</h6>
+            <h6 class="text-{{ Arr::random($classes) }} text-bold">{{ $r->creator->name }}</h6>
 
             <p>{{ $r->message }}</p>
         </div>

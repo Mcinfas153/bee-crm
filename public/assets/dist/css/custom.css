@@ -107,9 +107,7 @@ button.close {
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
-    .bs-stepper {
-        padding: 20px;
-    }
+    
 }
 
 /* Absolute Center Spinner */
