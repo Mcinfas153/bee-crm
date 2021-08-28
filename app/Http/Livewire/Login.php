@@ -34,6 +34,9 @@ class Login extends Component
             
             session()->regenerate();
             toast(''.config('msg.4').'','success');
+            if(Auth::user()->utype == config('usertypes.user')){
+                return redirect()->intended('leads');
+            }
             return redirect()->intended('dashboard');
 
         } else {

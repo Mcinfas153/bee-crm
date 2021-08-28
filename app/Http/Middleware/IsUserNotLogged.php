@@ -19,11 +19,11 @@ class IsUserNotLogged
     {
 
         if(Auth::check()){
-            if(Auth::user()->utype == config('usertypes.user')){
-                return redirect('/leads');
-            } else{
-                return redirect('/dashboard');
-            }
+            if(Auth::user()->utype === config('usertypes.user')){               
+                return redirect('leads');
+            } 
+
+            return redirect('dashboard');
         }
 
         return $next($request);
