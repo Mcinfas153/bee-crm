@@ -33,7 +33,7 @@ class UpdateProfileTab extends Component
         $this->validate();
         $user = User::find(Auth::user()->id);
         if($this->photo){
-            $fileName = storeImage($this->photo,'users');
+            $fileName = storeImage($this->photo);
             $user->profile_url = $fileName;
         }                
         $user->name = $this->name;        

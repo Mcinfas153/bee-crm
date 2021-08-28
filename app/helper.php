@@ -13,9 +13,9 @@ if(!function_exists('generateAvatar')){
 }
 
 if(!function_exists('storeImage')){
-    function storeImage($photo)
+    function storeImage($photo, $width = 128, $height = 128)
     {
-        $img = Image::make($photo)->encode('jpg');
+        $img = Image::make($photo)->resize($width, $height)->encode('jpg');
         $extension = $photo->extension();
         $fileName = Str::random('10').'.'.$extension;
         Storage::disk('public')->put($fileName,$img);
