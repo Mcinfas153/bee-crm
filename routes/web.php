@@ -47,7 +47,6 @@ Route::middleware(['authUser'])->group(function () {
         Route::post('/add-company', [CompanyController::class,'addCompany']);
         Route::get('/invoices', InvoiceListPage::class);
         Route::post('/assign-lead', [LeadController::class, 'assignLead']);
-        Route::post('/add-remark', [RemarkController::class, 'addRemark']);
     });
 
     Route::get('plans', PlansPage::class)->name('plans');

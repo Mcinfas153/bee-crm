@@ -15,7 +15,6 @@ class LeadPage extends Component
 {
 
     public $leadId;
-    public $remark;
     public $remarks;
     
     public function render()
@@ -64,7 +63,6 @@ class LeadPage extends Component
     public function mount($id)
     {
         $this->leadId = $id;
-        $this->remarks = Remark::where('lead_id', $this->leadId)->orderBy('created_at','desc')->get();
     }
 
     public function sentEmail($leadId)

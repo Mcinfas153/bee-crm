@@ -51,7 +51,7 @@
                                         <td class="text-center">{{ $lead->project }}</td>
                                         <td class="text-center">
                                             <span
-                                                class="cusom__box p-1 px-3 bg-{{ $lead->leadStatus->class_color }}">{{ $lead->leadStatus->name }}</span>
+                                                class="cusom__box p-1 px-3 bg-{{ $lead->leadStatus->class_color }}">{{ Str::ucfirst(Str::replace('_', ' ', $lead->leadStatus->name)) }}</span>
 
                                             @if (checkHotLead($lead))
                                             <div class="cusom__box bg-danger mt-3 p-1 text-center"><span
