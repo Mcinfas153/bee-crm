@@ -41,6 +41,7 @@
                     data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library -->
+                    @can('adminView', App\Models\User::class)
                     <li class="nav-item">
                         <a href="{{ URL::to('/dashboard') }}" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -49,6 +50,7 @@
                             </p>
                         </a>
                     </li>
+                    @endcan
                     <li class="nav-item">
                         <a href="javascript:void(0)" class="nav-link">
                             <i class="nav-icon fas fa-project-diagram"></i>
@@ -72,6 +74,7 @@
                             </li>
                         </ul>
                     </li>
+                    @can('adminView', App\Models\User::class)
                     <li class="nav-item">
                         <a href="javascript:void(0)" class="nav-link">
                             <i class="nav-icon fas fa-users"></i>
@@ -95,6 +98,8 @@
                             </li>
                         </ul>
                     </li>
+                    @endcan
+                    @can('adminView', App\Models\User::class)
                     <li class="nav-item">
                         <a href="{{ URL::to('/company') }}" class="nav-link">
                             <i class="fas fa-building nav-icon"></i>
@@ -103,6 +108,7 @@
                             </p>
                         </a>
                     </li>
+                    @endcan
                     <li class="nav-item">
                         <a href="{{ URL::to('/profile') }}" class="nav-link">
                             <i class="nav-icon fas fa-user-circle"></i>
@@ -111,6 +117,7 @@
                             </p>
                         </a>
                     </li>
+                    @can('adminView', App\Models\User::class)
                     <li class="nav-item">
                         <a href="javascript:void(0)" class="nav-link">
                             <i class="nav-icon fab fa-cc-mastercard"></i>
@@ -134,6 +141,7 @@
                             </li>
                         </ul>
                     </li>
+                    @endcan
                     <li class="nav-item">
                         <a href="{{ URL::to('/setting') }}" class="nav-link">
                             <i class="nav-icon fas fa-cog"></i>

@@ -51,6 +51,10 @@ class AddUserPage extends Component
 
     public function addUser()
     {
+        if (Auth::user()->can('create', User::class)) {
+            abort(403);
+        }
+
         $this->validate();
 
         $totalUsers = User::where('created_by', Auth::user()->id)->count();

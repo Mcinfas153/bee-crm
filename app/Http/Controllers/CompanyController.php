@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,6 +12,10 @@ class CompanyController extends Controller
     //
     public function addCompany(Request $request)
     {
+        if (Auth::user()->can('create', User::class)) {
+            abort(403);
+        }
+
         $existCompany = Company::where('created_by', Auth::user()->id)->first();
 
         if(collect($existCompany)->isEmpty()){

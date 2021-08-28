@@ -2,11 +2,14 @@
     <section class="content px-3">
         <!-- Default box -->
         <div class="custom__box">
+            @can('adminView', App\Models\User::class)
             <div class="card-header">
                 <i class="fas fa-exclamation-triangle text-warning mr-2"></i>
                 <span class="text-warning">Warning : Don't share API key with others</span>
             </div>
+            @endcan
             <div class="card-body">
+                @can('adminView', App\Models\User::class)
                 <div class="col-12 settingOption rounded-top bg-warning" type="button" data-toggle="collapse"
                     data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                     <h5 class="ml-4 mt-1 font-weight-bold">
@@ -29,6 +32,7 @@
                         </div>
                     </fieldset>
                 </div>
+                @endcan
                 <div class="mt-4">
                     @if (session()->has('message'))
                     <div class="alert alert-success">

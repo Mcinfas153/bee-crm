@@ -15,7 +15,8 @@
                         <thead>
                             <tr class="bg-{{ $lead->leadStatus->class_color }}">
                                 <th style="width: 20%">Current Status</th>
-                                <th style="width: 40%">{{ $lead->leadStatus->name }}</th>
+                                <th style="width: 40%">
+                                    {{ Str::ucfirst(Str::replace('_', ' ', $lead->leadStatus->name)) }}</th>
                                 <th style="width: 20%"></th>
                             </tr>
                         </thead>

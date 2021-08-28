@@ -21,7 +21,7 @@
                                         <th class="text-center">Mobile</th>
                                         <th class="text-center">Campaign</th>
                                         <th class="text-center">Lead Status</th>
-                                        @can('viewAssign', User::class)
+                                        @can('adminView', App\Models\User::class)
                                         <th class="text-center">Assign to</th>
                                         @endcan
                                         <th class="text-center">Action</th>
@@ -33,8 +33,10 @@
                                     <tr class="table__row">
                                         <td>
                                             <span>{{ $lead->id }}</span>
+                                            @can('adminView', App\Models\User::class)
                                             <input type="checkbox" name="lead_id" class="ml-2"
                                                 value="{{ $lead->id }}" />
+                                            @endcan
                                         </td>
                                         <td>
                                             <span title="{{ $lead->name }}">{{ Str::limit($lead->name,10) }}</span>
@@ -61,7 +63,7 @@
                                             @endif
 
                                         </td>
-                                        @can('viewAssign', User::class)
+                                        @can('adminView', App\Models\User::class)
                                         <td class="text-center">
                                             {{ $lead->assign_to ? $lead->assignUser->name : '-' }}
                                         </td>
@@ -103,6 +105,7 @@
     </section>
 
     <!-- User modal start -->
+    @can('adminView', App\Models\User::class)
     <div class="modal fade" id="user__modal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -136,6 +139,7 @@
         </div>
         <!-- /.modal-dialog -->
     </div>
+    @endcan
     <!-- User modal end -->
     <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>

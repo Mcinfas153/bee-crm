@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Plan;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
@@ -16,7 +17,7 @@ class PaymentController extends Controller
             ]);
     
             $plan = Plan::where('identifier', $request->plan)
-                ->orWhere('identifier', 'silver')
+                //->orWhere('identifier', 'silver')
                 ->first();
             
             $request->user()->newSubscription($request->plan, $plan->stripe_id)->create($request->token);

@@ -11,6 +11,10 @@ class PaymentPage extends Component
 {
     public function render()
     {
+        if (Auth::user()->cannot('adminView', App\Models\User::class)) {
+            abort(403);
+        }
+
         $data = [
             'intent' => Auth::user()->createSetupIntent()
         ];

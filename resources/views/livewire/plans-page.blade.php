@@ -4,12 +4,12 @@
             <div class="card-body">
                 <div class="row">
                     @foreach($plans as $plan)
-                    <div class="col-lg-5 col-6 mx-auto">
+                    <div class="col-lg-4 col-12 mx-auto">
                         <!-- small box -->
                         <div class="custom__box {{ Arr::random($class) }} p-5">
                             <div class="inner">
-                                <h3>{{$plan->title}}</h3>
-                                <h4>{{(int)$plan->price }} AED / Month</h4>
+                                <h5>{{$plan->title}}</h5>
+                                <h6>{{(int)$plan->price }} AED / Month</h6>
                                 <hr>
                                 <p class="mb-1"><i class="fas fa-check fa-xs text-warning mr-2"></i>Up to
                                     {{ $plan->accounts_count }} accounts

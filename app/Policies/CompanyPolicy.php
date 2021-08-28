@@ -2,10 +2,11 @@
 
 namespace App\Policies;
 
+use App\Models\Company;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class UserPolicy
+class CompanyPolicy
 {
     use HandlesAuthorization;
 
@@ -15,31 +16,21 @@ class UserPolicy
      * @param  \App\Models\User  $user
      * @return \Illuminate\Auth\Access\Response|bool
      */
-
-    public function before(User $user)
-    {
-        if ($user->utype === 1) {
-            return true;
-        }
-    }
-
     public function viewAny(User $user)
     {
         //
-        return true;
     }
 
     /**
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Company  $company
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, User $user_model)
+    public function view(User $user, Company $company)
     {
         //
-        return $user->id == $user_model->created_by;
     }
 
     /**
@@ -50,18 +41,17 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        //
-        return $user->utype !== config('usertypes.admin');
+        return $user->utype === config('usertypes.admin');
     }
 
     /**
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Company  $company
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, User $model)
+    public function update(User $user, Company $company)
     {
         //
     }
@@ -70,10 +60,10 @@ class UserPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Company  $company
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, User $model)
+    public function delete(User $user, Company $company)
     {
         //
     }
@@ -82,10 +72,10 @@ class UserPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Company  $company
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, User $model)
+    public function restore(User $user, Company $company)
     {
         //
     }
@@ -94,16 +84,11 @@ class UserPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Company  $company
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, User $model)
+    public function forceDelete(User $user, Company $company)
     {
         //
-    }
-
-    public function adminView(User $user)
-    {
-        return $user->utype == config('usertypes.admin');
     }
 }
