@@ -17,11 +17,11 @@ class EnsureUserIsSubscribed
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user() && ! Auth::user()->subscribed('default') && Auth::user()->utype === config('usertypes.admin')) {
+        if (Auth::user() && ! Auth::user()->subscribed('silver') && Auth::user()->utype === config('usertypes.admin')) {
             // This user is not a paying customer...
             return redirect('billing');
         }
-
+        
         return $next($request);
     }
 }

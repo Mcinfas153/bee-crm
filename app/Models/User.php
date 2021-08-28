@@ -73,4 +73,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Company::class);
     }
+
+    public function activatedPlans()
+    {
+        return $this->hasMany(Subscription::class, 'user_id');
+    }
 }

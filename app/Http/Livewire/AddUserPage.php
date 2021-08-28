@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\User;
 use App\Models\Utype;
+use Exception;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Illuminate\Support\Facades\Hash;
@@ -51,23 +52,47 @@ class AddUserPage extends Component
     public function addUser()
     {
         $this->validate();
-         $existUser = User::where('email',$this->email)->count();
-         if($existUser === 0){
-             $user = new User();
-             $user->name = $this->name;
-             $user->email = $this->email;
-             $user->password = Hash::make($this->password);
-             $user->utype = (int)$this->utype;
-             $user->remember_token = Str::random(10);
-             $user->auth_code = Str::random(20);
-             $user->created_by = Auth::user()->id;
-             $user->save();
-             toast(''.config('msg.6').'','success');
-             return redirect()->to('/users');
-         } else {
+
+        $totalUsers = User::where('created_by', Auth::user()->id)->count();
+
+        $currentPlan = Auth::user()->activatedPlans->last()->plan;
+        
+        if($totalUsers >= $currentPlan->accounts_count){
+            session()->flash('title', 'Failed');
+            session()->flash('message',''.config('msg.10').'');
+            session()->flash('alertType', 'danger');
+            return back();
+        }
+
+        if(User::where('email',$this->email)->count() != 0){
             session()->flash('title', 'Failed');
             session()->flash('message',''.config('msg.2').'');
             session()->flash('alertType', 'danger');
-         }
+            return back();           
+        }
+
+        try{
+
+            $user = new User();
+            $user->name = $this->name;
+            $user->email = $this->email;
+            $user->password = Hash::make($this->password);
+            $user->utype = (int)$this->utype;
+            $user->remember_token = Str::random(10);
+            $user->auth_code = Str::random(20);
+            $user->created_by = Auth::user()->id;
+            $user->save();
+            toast(''.config('msg.6').'','success');
+            return redirect()->to('/users');
+
+        } catch(Exception $ex){
+
+            throw $ex;
+
+            session()->flash('title', 'Failed');
+            session()->flash('message',''.config('msg.100').'');
+            session()->flash('alertType', 'danger');
+
+        }
     }
 }

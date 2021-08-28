@@ -19,7 +19,7 @@ class PaymentController extends Controller
                 ->orWhere('identifier', 'silver')
                 ->first();
             
-            $request->user()->newSubscription('default', $plan->stripe_id)->create($request->token);
+            $request->user()->newSubscription($request->plan, $plan->stripe_id)->create($request->token);
     
             toast(''.config('msg.200').'','success');
 
