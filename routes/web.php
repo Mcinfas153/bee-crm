@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\LeadTable;
 use App\Http\Livewire\PaymentPage;
 use App\Http\Livewire\PlansPage;
+use App\Http\Livewire\LandingPagePlans;
 use App\Http\Livewire\ProfilePage;
 use App\Http\Livewire\SettingPage;
 use App\Http\Livewire\UserTable;
@@ -35,6 +36,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['authUser'])->group(function () {
+    Route::get('landingpage-plans', LandingPagePlans::class)->name('landingpage-plans')->middleware('can:adminView,App\Models\User');
     Route::middleware(['subcribeUserValid'])->group(function () {
         Route::get('/dashboard', Dashboard::class)->middleware('can:adminView,App\Models\User');
         Route::get('/leads', LeadTable::class);
