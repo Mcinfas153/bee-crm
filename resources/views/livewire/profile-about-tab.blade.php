@@ -8,7 +8,6 @@
         <p class="text-muted">
             {{ Auth::user()->email }}
         </p>
-        <hr>
     </div>
     <!-- /.card-body -->
 </div>

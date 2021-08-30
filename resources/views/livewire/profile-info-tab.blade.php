@@ -8,8 +8,6 @@
         <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>
 
         <p class="text-muted text-center">{{ Auth::user()->userType->name }}</p>
-
-        <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
     </div>
     <!-- /.card-body -->
 </div>
