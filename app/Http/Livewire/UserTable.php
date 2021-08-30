@@ -42,4 +42,5 @@ class UserTable extends Component
     {
         return redirect()->to('/add-user');
     }
+
 }

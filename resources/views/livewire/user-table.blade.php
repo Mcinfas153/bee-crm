@@ -31,7 +31,15 @@
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
-                                        <td></td>
+                                        <td>
+                                            <div id="userAction__box">
+                                                <input type="checkbox" class="" {{ ($user->is_active)?'checked':'' }}
+                                                    onchange="userStatusToggle({{ $user->id }})" />
+                                                <p class="text-center mb-0 ml-2">
+                                                    {{ ($user->is_active)?'Active':'Disabled' }}
+                                                </p>
+                                            </div>
+                                        </td>
                                     </tr>
                                     @endcan
                                     @endforeach
@@ -73,4 +81,10 @@
     <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+    <script>
+        function userStatusToggle(userId)
+        {
+           
+        }
+    </script>
 </div>

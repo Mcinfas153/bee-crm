@@ -120,6 +120,11 @@ button.close {
 .navDropItem:hover {
     color: black !important;
 }
+#userAction__box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
