@@ -71,6 +71,11 @@
                                 <td></td>
                             </tr>
                             <tr>
+                                <td>Lead Source</td>
+                                <td>{{ $lead->lead_source }}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
                                 <td>IP Address</td>
                                 <td>{{ $lead->ip_address }}</td>
                                 <td></td>
