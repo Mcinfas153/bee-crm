@@ -19,4 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/add-lead',[ApiController::class,'saveLead']);
+Route::post('/add-lead', [ApiController::class,'saveLead']);
+Route::post('/json/add-lead', [ApiController::class,'saveLeadJson']);

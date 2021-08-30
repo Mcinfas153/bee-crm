@@ -16,9 +16,10 @@ class PlanSeeder extends Seeder
     {
         //
         DB::table('plans')->insert([
-            ['title' => 'Silver', 'identifier' => 'silver', 'stripe_id' => 'price_1JQnwRCWPCrcSE80E5EaFTvq', 'price' => 300, 'accounts_count' => 10],
-            ['title' => 'Gold', 'identifier' => 'gold', 'stripe_id' => 'price_1JQqwCCWPCrcSE80XAilQDcZ', 'price' => 800, 'accounts_count' => 30],
-            ['title' => 'Diamond', 'identifier' => 'diamond', 'stripe_id' => 'price_1JTNgYCWPCrcSE80YgWDpyLz', 'price' => 10000, 'accounts_count' => 100]
+            ['title' => 'Silver', 'identifier' => 'silver', 'stripe_id' => 'price_1JU3RSCJCY25ow47MUkzLDVM', 'price' => 500, 'accounts_count' => 10],
+            ['title' => 'Gold', 'identifier' => 'gold', 'stripe_id' => 'price_1JU3RsCJCY25ow47D8gt6jPh', 'price' => 1000, 'accounts_count' => 30],
+            ['title' => 'Diamond', 'identifier' => 'diamond', 'stripe_id' => 'price_1JU3SDCJCY25ow477u3Psuvh', 'price' => 10000, 'accounts_count' => 100],
+            ['title' => 'Platinum', 'identifier' => 'platinum', 'stripe_id' => 'price_1JU3SZCJCY25ow47eajS0FKi', 'price' => 20000, 'accounts_count' => 300]
         ]);
     }
 }
