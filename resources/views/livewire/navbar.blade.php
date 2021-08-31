@@ -34,9 +34,8 @@
 
             <!-- Messages Dropdown Menu -->
             <li class="nav-item dropdown">
-                <a class="nav-link" wire:click="logout" href="javascript:void(0)">
+                <a class="nav-link" wire:click="logout" href="javascript:void(0)" title="Logout">
                     <i class="fas fa-sign-out-alt"></i>
-                    Log out
                 </a>
             </li>
             <!-- Notifications Dropdown Menu -->

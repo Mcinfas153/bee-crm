@@ -17,9 +17,9 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
-                                        <th class="text-center">Email</th>
                                         <th class="text-center">Mobile</th>
                                         <th class="text-center">Campaign</th>
+                                        <th class="text-center">Lead Source</th>
                                         <th class="text-center">Lead Status</th>
                                         @can('adminView', App\Models\User::class)
                                         <th class="text-center">Assign to</th>
@@ -42,15 +42,11 @@
                                             <span title="{{ $lead->name }}">{{ Str::limit($lead->name,10) }}</span>
                                         </td>
                                         <td class="text-center">
-                                            <a title="{{ $lead->email }}" href="mailto:{{ $lead->email }}"
-                                                wire:click="sentEmail({{ $lead->id }})"
-                                                target="_BLANK">{{ Str::limit($lead->email,20) }}</a>
-                                        </td>
-                                        <td class="text-center">
                                             <a title="{{ $lead->mobile }}" href="tel:{{ $lead->mobile }}"
                                                 wire:click="makeCall({{ $lead->id }})">{{ Str::limit($lead->mobile,15) }}</a>
                                         </td>
                                         <td class="text-center">{{ $lead->project }}</td>
+                                        <td class="text-center">{{ $lead->lead_source }}</td>
                                         <td class="text-center">
                                             <span
                                                 class="cusom__box p-1 px-3 bg-{{ $lead->leadStatus->class_color }}">{{ Str::ucfirst(Str::replace('_', ' ', $lead->leadStatus->name)) }}</span>

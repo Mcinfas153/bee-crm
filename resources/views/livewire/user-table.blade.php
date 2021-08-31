@@ -21,7 +21,7 @@
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th>Action</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -31,7 +31,7 @@
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
-                                        <td>
+                                        <td class="text-center">
                                             <div id="userAction__box">
                                                 <input type="checkbox" class="" {{ ($user->is_active)?'checked':'' }}
                                                     onchange="userStatusToggle({{ $user->id }})" />
