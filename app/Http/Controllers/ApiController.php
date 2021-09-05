@@ -54,6 +54,8 @@ class ApiController extends Controller
                 'created_by' => $user->id
             ]);
 
+            sendMail($user->email, $lead);
+
             DB::commit();
 
             return response()->json([

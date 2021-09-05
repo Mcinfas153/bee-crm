@@ -1,5 +1,7 @@
 <?php
 
+use App\Mail\LeadMail;
+use Illuminate\Support\Facades\Mail;
 use Laravolt\Avatar\Facade as Avatar;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Str;
@@ -34,5 +36,20 @@ if(!function_exists('checkHotLead')){
        }
 
        return false;
+    }
+}
+
+if(!function_exists('sendMail')){
+     function sendMail($toAddress,$details)
+    {       
+        try{
+
+            Mail::to($toAddress)->send(new LeadMail($details));
+
+        } catch(Exception $ex){
+
+            return $ex;
+            
+        }
     }
 }

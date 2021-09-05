@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Lead;
 use App\Models\LeadTimeline;
+use App\Models\User;
 use DataTables;
 use Exception;
 use Illuminate\Support\Facades\Auth;
@@ -61,7 +62,9 @@ class LeadController extends Controller
                 $status = 201;
 
                 $msg = config('msg.300');
-                
+
+                sendMail(User::find($lead->assign_to)->email, $lead);
+
             }        
 
         } catch(Exception $ex) {

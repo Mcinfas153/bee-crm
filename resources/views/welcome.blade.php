@@ -57,7 +57,7 @@
             <a href="{{ URL::to('profile') }}" class="btn"><i class="fas fa-user"></i> Profile</a>
             @else
             <div class="cta">
-              <a href="{{ URL::to('register') }}" class="btn"><i class="fas fa-registered"></i> Register Now</a>
+              <a href="{{ URL::to('login') }}" class="btn"><i class="fas fa-sign-in-alt"></i> Login</a>
             </div>
             @endauth
 
