@@ -139,6 +139,12 @@
                                 <p>Landing Page Plans</p>
                             </a>
                         </li>
+                        <li class="nav-item rounded">
+                            <a href="{{ URL::to('/instapage-plans') }}" class="nav-link navDropItem">
+                                <i class="fas fa-cubes nav-icon"></i>
+                                <p>Instapage Plans</p>
+                            </a>
+                        </li>
                         <li class="nav-item sideNavItem rounded">
                             <a href="{{ URL::to('/invoices') }}" class="nav-link navDropItem">
                                 <i class="fas fa-file-invoice nav-icon"></i>

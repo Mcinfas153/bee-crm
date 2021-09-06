@@ -7,6 +7,7 @@ use App\Http\Controllers\Subscriptions\PaymentController;
 use App\Http\Livewire\AddUserPage;
 use App\Http\Livewire\CompanyPage;
 use App\Http\Livewire\Dashboard;
+use App\Http\Livewire\InstapagePlans;
 use App\Http\Livewire\InvoiceListPage;
 use App\Http\Livewire\LeadPage;
 use App\Http\Livewire\Login;
@@ -37,6 +38,8 @@ Route::get('/', function () {
 
 Route::middleware(['authUser'])->group(function () {
     Route::get('landingpage-plans', LandingPagePlans::class)->name('landingpage-plans')->middleware('can:adminView,App\Models\User');
+    Route::get('instapage-plans', InstapagePlans::class)->name('instapage-plans')->middleware('can:adminView,App\Models\User');
+
     Route::middleware(['subcribeUserValid'])->group(function () {
         Route::get('/dashboard', Dashboard::class)->middleware('can:adminView,App\Models\User');
         Route::get('/leads', LeadTable::class);
