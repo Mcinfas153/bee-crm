@@ -52,6 +52,7 @@ Route::middleware(['authUser'])->group(function () {
         Route::post('/add-company', [CompanyController::class,'addCompany']);
         Route::get('/invoices', InvoiceListPage::class)->middleware('can:adminView,App\Models\User');
         Route::post('/assign-lead', [LeadController::class, 'assignLead']);
+        Route::post('/update-lead-status', [LeadController::class, 'updateStatus']);
     });
 
     Route::get('plans', PlansPage::class)->name('plans')->middleware('can:adminView,App\Models\User');

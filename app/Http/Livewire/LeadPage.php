@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Lead;
 use App\Models\LeadTimeline;
 use App\Http\Controllers\LeadTimelineController;
+use App\Models\LeadStatus;
 use App\Models\Remark;
 use Exception;
 use Illuminate\Support\Facades\Auth;
@@ -16,11 +17,13 @@ class LeadPage extends Component
 
     public $leadId;
     public $remarks;
+    public $currentStatus;
     
     public function render()
     {
         $lead = Lead::find($this->leadId);        
         $classes = ['danger', 'success', 'primary', 'warning', 'info'];
+        $status = LeadStatus::all();
 
         if (Auth::user()->cannot('view', $lead) || !$lead) {
             abort(403);
@@ -47,6 +50,7 @@ class LeadPage extends Component
             return view('livewire.lead-page',[
                 'lead' => $lead,
                 'classes' =>$classes,
+                'allStatus' => $status
             ])->layout('layouts.app',[
                 'title' => 'Lead Details'
             ]);
@@ -63,6 +67,7 @@ class LeadPage extends Component
     public function mount($id)
     {
         $this->leadId = $id;
+        $this->currentStatus = Lead::find($id)->status;
     }
 
     public function sentEmail($leadId)
@@ -80,5 +85,4 @@ class LeadPage extends Component
        $timeline = new LeadTimelineController();
        $timeline->addItem($type, $message, $leadId);
     }
-
 }

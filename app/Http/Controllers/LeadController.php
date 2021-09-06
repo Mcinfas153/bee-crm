@@ -83,4 +83,39 @@ class LeadController extends Controller
             'msg' => $msg
         ]);
     }
+
+    public function updateStatus(Request $request)
+    {
+
+        DB::beginTransaction();
+
+        try {
+
+            $lead = Lead::find((int)$request->input('leadId'));
+            $lead->status = (int)$request->input('currentStatus');
+            $lead->save();
+
+            $leadTimeline = new LeadTimeline();
+            $leadTimeline->type = config('leadtimelinetypes.statusUpdate');
+            $leadTimeline->message = config('leadtimelinetypes.statusUpdateMsg').' to ' .$lead->leadStatus->name;
+            $leadTimeline->lead_id = $lead->id;
+            $leadTimeline->created_by = Auth::user()->id;
+            $leadTimeline->save();
+
+            DB::commit();
+
+            toast(''.config('msg.302').'','success');
+
+            return back();            
+
+        } catch (Exception $ex){
+
+            DB::rollBack();
+
+            toast(''.config('msg.100').'','error');
+
+            return back();
+
+        }
+    }
 }

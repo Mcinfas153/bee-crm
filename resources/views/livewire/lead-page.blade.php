@@ -14,7 +14,7 @@
                     <table class="table table-striped table-bordered" id="leadDetails">
                         <thead>
                             <tr class="bg-{{ $lead->leadStatus->class_color }}">
-                                <th style="width: 20%">Current Status</th>
+                                <th style="width: 20%">Current Lead Status</th>
                                 <th style="width: 40%">
                                     {{ Str::ucfirst(Str::replace('_', ' ', $lead->leadStatus->name)) }}</th>
                                 <th style="width: 20%"></th>
@@ -79,6 +79,27 @@
                                 <td>IP Address</td>
                                 <td>{{ $lead->ip_address }}</td>
                                 <td></td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td>{{ Str::ucfirst(Str::replace('_', ' ', $lead->leadStatus->name)) }}</td>
+                                <td>
+                                    <form action="{{ URL::to('/update-lead-status') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="leadId" value="{{ $leadId }}" />
+                                        <select class="form-control" name="currentStatus">
+                                            <option disabled="disabled">Change Lead Status</option>
+                                            @foreach ($allStatus as $as)
+                                            <option value="{{ $as->id }}"
+                                                {{ ($currentStatus == $as->id)? 'selected="selected"':"" }}>
+                                                {{ Str::ucfirst(Str::replace('_', ' ', $as->name)) }}
+                                            </option>
+                                            @endforeach
+                                        </select>
+                                        <button class="btn btn-warning btn-sm mt-2 float-right" type="submit"><i
+                                                class="fas fa-edit mr-2"></i>Update</button>
+                                    </form>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

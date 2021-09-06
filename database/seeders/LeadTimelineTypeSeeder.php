@@ -23,6 +23,7 @@ class LeadTimelineTypeSeeder extends Seeder
             ['name' => 'create', 'icon' => 'fas fa-plus'],
             ['name' => 'open', 'icon' => 'fas fa-envelope-open'],
             ['name' => 'assign', 'icon' => 'fa fa-user'],
+            ['name' => 'statusUpdate', 'icon' => 'fas fa-edit'],
         ]);
     }
 }

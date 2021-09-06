@@ -14,5 +14,6 @@ return [
     '200' => 'Your subscription activated successfully',
     '300' => 'Lead assign successfully',
     '301' => 'Remark added successfully',
+    '302' => 'Lead status updated successfully',
     '100' => 'Something went wrong',
 ];

@@ -8,6 +8,7 @@ return [
     'create' => 5,
     'open' => 6,
     'assign' => 7,
+    'statusUpdate' => 8,
     'callMsg' => 'Follow up call made to client',
     'mailMsg' => 'Follow up mail sent to client',
     'remarkMsg' => 'Wrote a remark about lead current status',
@@ -15,4 +16,5 @@ return [
     'createMsg' => 'Lead received',
     'openMsg' => 'Lead opened',
     'assignMsg' => 'Lead assigned',
+    'statusUpdateMsg' => 'Lead status change',
 ];
