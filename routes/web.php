@@ -4,6 +4,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\RemarkController;
 use App\Http\Controllers\Subscriptions\PaymentController;
+use App\Http\Controllers\UserController;
 use App\Http\Livewire\AddUserPage;
 use App\Http\Livewire\CompanyPage;
 use App\Http\Livewire\Dashboard;
@@ -53,6 +54,7 @@ Route::middleware(['authUser'])->group(function () {
         Route::get('/invoices', InvoiceListPage::class)->middleware('can:adminView,App\Models\User');
         Route::post('/assign-lead', [LeadController::class, 'assignLead']);
         Route::post('/update-lead-status', [LeadController::class, 'updateStatus']);
+        Route::post('/user-status-change', [UserController::class, 'updateStatus']);
     });
 
     Route::get('plans', PlansPage::class)->name('plans')->middleware('can:adminView,App\Models\User');

@@ -11,6 +11,7 @@ return [
     '8' => 'Company profile updated successfully',
     '9' => 'Password changed successfully',
     '10' => 'You reached maximum users limit. If you want to create an another account, you have to update the account',
+    '11' => 'User status updated successfully',
     '200' => 'Your subscription activated successfully',
     '300' => 'Lead assign successfully',
     '301' => 'Remark added successfully',
