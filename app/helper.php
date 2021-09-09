@@ -33,6 +33,8 @@ if(!function_exists('checkHotLead')){
             return true;
        } else if(preg_match('/\p{Arabic}/u', $lead->inquiry) || preg_match('/\p{Arabic}/u', $lead->name)){
             return true;
+       } else if(Str::contains($lead->country, 'United Arab Emirates ')){
+            return true;
        }
 
        return false;
