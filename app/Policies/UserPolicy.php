@@ -51,7 +51,7 @@ class UserPolicy
     public function create(User $user)
     {
         //
-        return $user->utype !== config('usertypes.admin');
+        return $user->utype != config('usertypes.admin');
     }
 
     /**
