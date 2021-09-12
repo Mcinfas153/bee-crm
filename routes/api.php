@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/add-lead', [ApiController::class,'saveLead']);
 Route::post('/json/add-lead', [ApiController::class,'saveLeadJson']);
+Route::post('register', [UserController::class, 'register'])->name('user.create');
