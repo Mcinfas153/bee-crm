@@ -25,6 +25,8 @@ $(function () {
 });
 
 function assignLead() {
+    const loader = $('.loading');
+    loader.show();
     let leads = [];
     $('input[name="lead_id"]:checked').each(function () {
         leads.push(this.value);
@@ -48,7 +50,9 @@ function assignLead() {
         })
             .done(function (res) {
                 userModalClose()
+                loader.hide();
                 if (res.status == 201) {
+                    location.reload()
                     Toast.fire({
                         icon: 'success',
                         title: res.msg
