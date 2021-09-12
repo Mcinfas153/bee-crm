@@ -27,6 +27,9 @@
                 </div>
                 @endif
                 <form wire:submit.prevent="addUser">
+                  <div wire:loading wire:target="addUser">
+                    <div class="loading" style="display: block">Processing...</div>
+                  </div>
                   <div class="form-group">
                     <label for="inputName">Name</label>
                     <input type="text" id="inputName" class="form-control form-control-sm" wire:model.lazy="name" />
