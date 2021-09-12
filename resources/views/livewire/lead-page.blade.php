@@ -84,7 +84,7 @@
                                 <td>Status</td>
                                 <td>{{ Str::ucfirst(Str::replace('_', ' ', $lead->leadStatus->name)) }}</td>
                                 <td>
-                                    <form action="{{ URL::to('/update-lead-status') }}" method="POST">
+                                    <form action="{{ URL::to('/update-lead-status') }}" method="POST" id="leadUpdate">
                                         @csrf
                                         <input type="hidden" name="leadId" value="{{ $leadId }}" />
                                         <select class="form-control" name="currentStatus">
