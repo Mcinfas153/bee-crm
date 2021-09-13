@@ -34,8 +34,8 @@
                                         <td>
                                             <span>{{ $lead->id }}</span>
                                             @can('adminView', App\Models\User::class)
-                                            <input type="checkbox" name="lead_id" class="ml-2"
-                                                value="{{ $lead->id }}" />
+                                            <input type="checkbox" class="regular-checkbox big-checkbox ml-2"
+                                                value="{{ $lead->id }}" name="lead_id" />
                                             @endcan
                                         </td>
                                         <td>

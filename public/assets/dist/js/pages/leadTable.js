@@ -26,7 +26,6 @@ $(function () {
 
 function assignLead() {
     const loader = $('.loading');
-    loader.show();
     let leads = [];
     $('input[name="lead_id"]:checked').each(function () {
         leads.push(this.value);
@@ -43,6 +42,7 @@ function assignLead() {
 
     } else {
 
+        loader.show();
         $.ajax({
             method: "POST",
             url: `${BASEURL}/assign-lead`,
@@ -65,6 +65,7 @@ function assignLead() {
                 }
             })
             .fail(function () {
+                loader.hide();
                 Toast.fire({
                     icon: 'error',
                     title: 'Something went wrong'
