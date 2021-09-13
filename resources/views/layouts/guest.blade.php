@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('assets/dist/img/favicon/favicon.png') }}" type="image/x-icon">
-    <title>AdminLTE 3 | {{ $title }}</title>
+    <title>{{ config('application.webAppName') }} | {{ $title }}</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"

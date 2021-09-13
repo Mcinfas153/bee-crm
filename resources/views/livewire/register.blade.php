@@ -19,6 +19,9 @@
                 <p class="login-box-msg">Register a new membership</p>
 
                 <form wire:submit.prevent="register">
+                    <div wire:loading wire:target="register">
+                        <div class="loading" style="display: block">Processing...</div>
+                    </div>
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Full name" wire:model.lazy="fullname" />
                         <div class="input-group-append">
@@ -28,7 +31,8 @@
                         </div>
                     </div>
                     <div class="mb-3 ml-2">
-                        @error('fullname') <span class="error error__msg"> <i class="fas fa-exclamation-triangle"></i> {{ $message }}</span> @enderror
+                        @error('fullname') <span class="error error__msg"> <i class="fas fa-exclamation-triangle"></i>
+                            {{ $message }}</span> @enderror
                     </div>
                     <div class="input-group">
                         <input type="email" class="form-control" placeholder="Email" wire:model.lazy="email">
@@ -39,7 +43,8 @@
                         </div>
                     </div>
                     <div class="mb-3 ml-2">
-                        @error('email') <span class="error error__msg"> <i class="fas fa-exclamation-triangle"></i> {{ $message }}</span> @enderror
+                        @error('email') <span class="error error__msg"> <i class="fas fa-exclamation-triangle"></i>
+                            {{ $message }}</span> @enderror
                     </div>
                     <div class="input-group">
                         <input type="password" class="form-control" placeholder="Password" wire:model.lazy="password">
@@ -50,7 +55,8 @@
                         </div>
                     </div>
                     <div class="mb-3 ml-2">
-                        @error('password') <span class="error error__msg"> <i class="fas fa-exclamation-triangle"></i> {{ $message }}</span> @enderror
+                        @error('password') <span class="error error__msg"> <i class="fas fa-exclamation-triangle"></i>
+                            {{ $message }}</span> @enderror
                     </div>
                     <div class="input-group">
                         <input type="password" class="form-control" placeholder="Retype password"
@@ -62,7 +68,8 @@
                         </div>
                     </div>
                     <div class="mb-3 ml-2">
-                        @error('confirmPassword') <span class="error error__msg"> <i class="fas fa-exclamation-triangle"></i> {{ $message }}</span> @enderror
+                        @error('confirmPassword') <span class="error error__msg"> <i
+                                class="fas fa-exclamation-triangle"></i> {{ $message }}</span> @enderror
                     </div>
                     <div class="row">
                         <div class="col-md-8">
@@ -81,12 +88,13 @@
                         <!-- /.col -->
                     </div>
                     <div class="mt-2 ml-2">
-                        @error('agreed') <span class="error error__msg"><i class="fas fa-exclamation-triangle"></i> {{ $message }}</span> @enderror
+                        @error('agreed') <span class="error error__msg"><i class="fas fa-exclamation-triangle"></i>
+                            {{ $message }}</span> @enderror
                     </div>
                 </form>
 
                 <div class="social-auth-links text-center">
-                    <p>- OR -</p>
+                    {{-- <p>- OR -</p>
                     <a href="#" class="btn btn-block btn-primary">
                         <i class="fab fa-facebook mr-2"></i>
                         Sign up using Facebook
@@ -94,11 +102,11 @@
                     <a href="#" class="btn btn-block btn-danger">
                         <i class="fab fa-google-plus mr-2"></i>
                         Sign up using Google+
-                    </a>
+                    </a> --}}
                 </div>
                 <div class="text-center mt-1">
-                    <a href="{{ URL::to('/login') }}" class="text-center hover__underlined">I already have a
-                        membership</a>
+                    <a href="{{ URL::to('/login') }}" class="text-center hover__underlined">I already have an
+                        account</a>
                 </div>
             </div>
             <!-- /.form-box -->
