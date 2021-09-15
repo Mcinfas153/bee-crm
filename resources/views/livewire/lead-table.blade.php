@@ -76,8 +76,13 @@
                                                     Email</button>
                                             </a>
                                             <a href="/lead/{{ $lead->id }}">
-                                                <button class="btn btn-warning btn-flat btn-block">
+                                                <button class="btn btn-secondary btn-flat btn-block mb-1">
                                                     <i class="fas fa-info-circle mr-2"></i> Details
+                                                </button>
+                                            </a>
+                                            <a href="{{ URL::to('/edit-lead/'.$lead->id) }}">
+                                                <button class="btn btn-warning btn-flat btn-block">
+                                                    <i class="fas fa-edit mr-2"></i>Edit
                                                 </button>
                                             </a>
                                         </td>
