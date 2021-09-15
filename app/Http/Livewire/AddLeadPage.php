@@ -24,6 +24,8 @@ class AddLeadPage extends Component
         'mobile' => 'required',
         'inquiry' => 'required',
         'project' => 'required',
+        'country' => 'required',
+        'lead_source' => 'required',
     ];
 
     public function render()
