@@ -5,9 +5,12 @@ use App\Http\Controllers\LeadController;
 use App\Http\Controllers\RemarkController;
 use App\Http\Controllers\Subscriptions\PaymentController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\AddLeadPage;
 use App\Http\Livewire\AddUserPage;
+use App\Http\Livewire\AllLeadsPage;
 use App\Http\Livewire\CompanyPage;
 use App\Http\Livewire\Dashboard;
+use App\Http\Livewire\EditLeadPage;
 use App\Http\Livewire\InstapagePlans;
 use App\Http\Livewire\InvoiceListPage;
 use App\Http\Livewire\LeadPage;
@@ -21,6 +24,7 @@ use App\Http\Livewire\LandingPagePlans;
 use App\Http\Livewire\ProfilePage;
 use App\Http\Livewire\SettingPage;
 use App\Http\Livewire\UserTable;
+use Facade\Ignition\Middleware\AddLogs;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +47,11 @@ Route::middleware(['authUser'])->group(function () {
 
     Route::middleware(['subcribeUserValid'])->group(function () {
         Route::get('/dashboard', Dashboard::class)->middleware('can:adminView,App\Models\User');
-        Route::get('/leads', LeadTable::class);
+        Route::get('/leads', LeadTable::class)->name('leads.index');
+        Route::get('/add-lead', AddLeadPage::class);
+        Route::get('/edit-lead/{id}', EditLeadPage::class)->name('lead.edit.index');
+        Route::get('/all-leads', AllLeadsPage::class)->name('all-leads.index');
+        Route::get('all-leads/get-leads', [LeadController::class, 'getLeads'])->name('leads.getLeads');
         Route::get('/users', UserTable::class)->middleware('can:adminView,App\Models\User');
         Route::get('/profile', ProfilePage::class);
         Route::get('/add-user', AddUserPage::class)->middleware('can:adminView,App\Models\User');
@@ -62,10 +70,7 @@ Route::middleware(['authUser'])->group(function () {
 
     Route::group(['namespace' => 'Subscriptions'], function() {        
         Route::post('/payments', [PaymentController::class,'store'])->name('payments.store');
-    });
-
-    //Route::get('/leads', LeadUi::class);
-    //Route::get('leads/list', [LeadController::class, 'getLeads'])->name('leads.list');  
+    });  
 });
 
 Route::middleware(['guestUser'])->group(function () {

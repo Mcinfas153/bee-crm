@@ -69,6 +69,10 @@
                     <li class="nav-item rounded">
                         <a href="{{ URL::to('/leads') }}" class="nav-link navDropItem">
                             <i class="fas fa-tasks nav-icon"></i>
+                            <p>Recent Leads</p>
+                        </a>
+                        <a href="{{ URL::to('/all-leads') }}" class="nav-link navDropItem">
+                            <i class="fas fa-tasks nav-icon"></i>
                             <p>All Leads</p>
                         </a>
                     </li>

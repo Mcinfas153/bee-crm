@@ -16,12 +16,28 @@ class LeadController extends Controller
     //
     public function getLeads(Request $request)
     {
+        if(Auth::user()->utype == config('usertypes.admin')){
+
+            $whereField= 'leads.created_by';
+
+        } else{
+            
+            $whereField= 'leads.assign_to';
+
+        }
+
         if ($request->ajax()) {
-            $data = Lead::orderBy('id','DESC')->get();
+            $data = DB::table('leads')
+            ->leftJoin('users', 'users.id', '=', 'leads.assign_to')
+            ->where($whereField, Auth::user()->id)
+            ->select('leads.*','users.name as assign_user')            
+            ->orderByDesc('leads.created_at')
+            ->get();
+            
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-                    $actionBtn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm btn-block mb-2"><i class="fas fa-edit"></i> Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm btn-block" onClick="deleteLead()"><i class="fas fa-times"></i> Delete</a>';
+                    $actionBtn = '<a href="/edit-lead/'.$row->id.'" class="edit btn btn-success btn-sm btn-block mb-2"><i class="fas fa-edit"></i> Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm btn-block" onClick="deleteLead()"><i class="fas fa-times"></i> Delete</a>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action'])

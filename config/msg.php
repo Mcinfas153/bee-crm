@@ -16,5 +16,7 @@ return [
     '300' => 'Lead assign successfully',
     '301' => 'Remark added successfully',
     '302' => 'Lead status updated successfully',
+    '303' => 'Lead added successfully',
+    '304' => 'Lead updated successfully',
     '100' => 'Something went wrong',
 ];
