@@ -13,8 +13,10 @@ class AddLeadPage extends Component
     public $name;
     public $email;
     public $mobile;
-    public $inquiry;
     public $project;
+    public $inquiry;
+    public $country;
+    public $lead_source;
 
     protected $rules = [
         'name' => 'required',
@@ -43,6 +45,9 @@ class AddLeadPage extends Component
             $lead->email = $this->email;
             $lead->mobile = $this->mobile;
             $lead->inquiry = $this->inquiry;
+            $lead->project = $this->project;
+            $lead->country = $this->country;
+            $lead->lead_source = $this->lead_source;
             $lead->project = $this->project;
             $lead->created_by = (Auth::user()->creator->id != 1) ? Auth::user()->creator->id : Auth::user()->id;
             $lead->save();

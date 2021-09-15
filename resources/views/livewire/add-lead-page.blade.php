@@ -68,8 +68,24 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <button class="btn btn-success float-right"><i
-                                                class="fas fa-user-plus mr-1"></i> Add Lead</button>
+                                        <label for="inputCountry">Country</label>
+                                        <input type="text" id="inputCountry" class="form-control form-control-sm"
+                                            wire:model.defer="country" />
+                                        @error('country') <span class="error error__msg">{{ $message }}</span> @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputLeadSource">Lead Source</label>
+                                        <input type="text" id="inputLeadSource" class="form-control form-control-sm"
+                                            wire:model.defer="lead_source" />
+                                        @error('lead_source') <span class="error error__msg">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <button class="btn btn-success float-right"><i class="fas fa-magnet mr-1"></i>
+                                            Add Lead</button>
                                     </div>
                                 </form>
                             </div>
