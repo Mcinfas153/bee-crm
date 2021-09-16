@@ -37,7 +37,7 @@ class LeadController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-                    $actionBtn = '<a href="/edit-lead/'.$row->id.'" class="edit btn btn-success btn-sm btn-block mb-2"><i class="fas fa-edit"></i> Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm btn-block" onClick="deleteLead()"><i class="fas fa-times"></i> Delete</a>';
+                    $actionBtn = '<a href="/edit-lead/'.$row->id.'" class="edit btn btn-success btn-sm btn-block mb-2"><i class="fas fa-edit"></i> Edit</a> <a href="/delete-lead/'.$row->id.'" class="delete btn btn-danger btn-sm btn-block"><i class="fas fa-times"></i> Delete</a>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action'])
@@ -132,6 +132,23 @@ class LeadController extends Controller
 
             return back();
 
+        }
+    }
+
+    public function delete($id)
+    {
+        try {
+
+            $lead = Lead::find($id);
+            $lead->delete();
+            toast(''.config('msg.305').'','success');
+            return redirect()->to('/leads');
+
+        } catch(Exception $ex) {
+
+            session()->flash('title', 'Failed');
+            session()->flash('message',''.config('msg.100').'');
+            session()->flash('alertType', 'danger');
         }
     }
 }

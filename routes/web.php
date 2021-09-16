@@ -50,6 +50,7 @@ Route::middleware(['authUser'])->group(function () {
         Route::get('/leads', LeadTable::class)->name('leads.index');
         Route::get('/add-lead', AddLeadPage::class);
         Route::get('/edit-lead/{id}', EditLeadPage::class)->name('lead.edit.index');
+        Route::get('/delete-lead/{id}', [LeadController::class, 'delete'])->name('lead.delete');
         Route::get('/all-leads', AllLeadsPage::class)->name('all-leads.index');
         Route::get('all-leads/get-leads', [LeadController::class, 'getLeads'])->name('leads.getLeads');
         Route::get('/users', UserTable::class)->middleware('can:adminView,App\Models\User');
