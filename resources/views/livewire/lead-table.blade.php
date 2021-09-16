@@ -3,8 +3,6 @@
     <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-select/css/select.bootstrap4.min.css') }}">
-    <!-- iCheck for checkboxes and radio inputs -->
-    <link rel="stylesheet" href="{{ asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <section class="content px-2">
         <div class="container-fluid">
             <div class="row">
@@ -34,8 +32,8 @@
                                         <td>
                                             <span>{{ $lead->id }}</span>
                                             @can('adminView', App\Models\User::class)
-                                            <input type="checkbox" name="lead_id" class="ml-2"
-                                                value="{{ $lead->id }}" />
+                                            <input type="checkbox" class="regular-checkbox big-checkbox ml-2"
+                                                value="{{ $lead->id }}" name="lead_id" />
                                             @endcan
                                         </td>
                                         <td>
@@ -78,8 +76,13 @@
                                                     Email</button>
                                             </a>
                                             <a href="/lead/{{ $lead->id }}">
-                                                <button class="btn btn-warning btn-flat btn-block">
+                                                <button class="btn btn-secondary btn-flat btn-block mb-1">
                                                     <i class="fas fa-info-circle mr-2"></i> Details
+                                                </button>
+                                            </a>
+                                            <a href="{{ URL::to('/edit-lead/'.$lead->id) }}">
+                                                <button class="btn btn-warning btn-flat btn-block">
+                                                    <i class="fas fa-edit mr-2"></i>Edit
                                                 </button>
                                             </a>
                                         </td>

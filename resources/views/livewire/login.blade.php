@@ -10,7 +10,7 @@
     @endif
 
     <div class="login-logo">
-        <a href="../../index2.html"><b>BEE </b><img src="{{ asset('assets/dist/img/logos/logo.png') }}" alt="logo"
+        <a href="{{ URL::to('/') }}"><b>BEE </b><img src="{{ asset('assets/dist/img/logos/logo.png') }}" alt="logo"
                 width="50px" class="logo__img"> CRM</a>
     </div>
     <!-- /.login-logo -->
@@ -19,6 +19,9 @@
             <p class="login-box-msg">Sign in to start your session</p>
 
             <form wire:submit.prevent="login">
+                <div wire:loading wire:target="login">
+                    <div class="loading" style="display: block">Processing...</div>
+                </div>
                 <div class="input-group">
                     <input type="email" class="form-control" placeholder="Email" wire:model.lazy="email">
                     <div class="input-group-append">
@@ -28,7 +31,8 @@
                     </div>
                 </div>
                 <div class="mb-3 ml-2">
-                    @error('email') <span class="error error__msg"><i class="fas fa-exclamation-triangle"></i> {{ $message }}</span> @enderror
+                    @error('email') <span class="error error__msg"><i class="fas fa-exclamation-triangle"></i>
+                        {{ $message }}</span> @enderror
                 </div>
                 <div class="input-group">
                     <input type="password" class="form-control" placeholder="Password" wire:model.lazy="password">
@@ -36,10 +40,11 @@
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <div class="mb-3 ml-2">
-                    @error('password') <span class="error error__msg"><i class="fas fa-exclamation-triangle"></i> {{ $message }}</span> @enderror
+                    @error('password') <span class="error error__msg"><i class="fas fa-exclamation-triangle"></i>
+                        {{ $message }}</span> @enderror
                 </div>
                 <div class="row">
                     <div class="col-8">
@@ -59,21 +64,21 @@
             </form>
 
             <div class="social-auth-links text-center mb-3">
-                <p>- OR -</p>
+                {{-- <p>- OR -</p>
                 <a href="#" class="btn btn-block btn-primary">
                     <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
                 </a>
                 <a href="#" class="btn btn-block btn-danger">
                     <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-                </a>
+                </a> --}}
             </div>
             <!-- /.social-auth-links -->
 
             <p class="mb-1 text-center">
-                <a href="forgot-password.html" class="hover__underlined">I forgot my password</a>
+                <a href="#" class="hover__underlined">I forgot my password</a>
             </p>
             <p class="mb-0 text-center">
-                <a href="{{ URL::to('/register') }}" class="hover__underlined">Register a new membership</a>
+                <a href="{{ URL::to('/register') }}" class="hover__underlined">Register a new account</a>
             </p>
         </div>
         <!-- /.login-card-body -->

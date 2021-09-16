@@ -31,6 +31,10 @@ class Login extends Component
         ];
         
         if (Auth::attempt($credentials)) {
+
+            if(!Auth::user()->is_active){
+                abort(403);
+            }
             
             session()->regenerate();
             toast(''.config('msg.4').'','success');

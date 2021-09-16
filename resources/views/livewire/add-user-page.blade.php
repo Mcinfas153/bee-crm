@@ -12,8 +12,8 @@
                     <img src="https://img.icons8.com/color/100/000000/bee.png" class="mt-4" />
                   </div>
                   <h2>Bee <strong>CRM</strong></h2>
-                  <p class="lead mb-5">Marine View, Colombo 2,<br>
-                    Sri Lanka.
+                  <p class="lead mb-5">Marine View, California,<br>
+                    United State America.
                   </p>
                 </div>
               </div>
@@ -27,6 +27,9 @@
                 </div>
                 @endif
                 <form wire:submit.prevent="addUser">
+                  <div wire:loading wire:target="addUser">
+                    <div class="loading" style="display: block">Processing...</div>
+                  </div>
                   <div class="form-group">
                     <label for="inputName">Name</label>
                     <input type="text" id="inputName" class="form-control form-control-sm" wire:model.lazy="name" />

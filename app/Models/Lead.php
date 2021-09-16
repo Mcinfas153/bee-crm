@@ -9,7 +9,7 @@ class Lead extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $guarded = ['ip_address','created_by', 'created_at'];
 
     public function creator()
     {

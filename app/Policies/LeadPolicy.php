@@ -62,7 +62,7 @@ class LeadPolicy
      */
     public function update(User $user, Lead $lead)
     {
-        //
+        return $user->id == $lead->created_by || $user->id == $lead->assign_to;
     }
 
     /**

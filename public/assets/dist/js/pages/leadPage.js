@@ -4,4 +4,9 @@ $(function () {
         select: false,
         "ordering": false,
     })
+
+    $("#leadUpdate").on("submit", function () {
+        const loader = $('.loading');
+        loader.show();
+    });
 })

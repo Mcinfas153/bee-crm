@@ -16,6 +16,7 @@
         "intervention/image": "^2.6",
         "laravel/cashier": "^13.4",
         "laravel/framework": "^8.40",
+        "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravolt/avatar": "^4.1",
         "livewire/livewire": "^2.5",
