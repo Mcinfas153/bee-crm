@@ -91,8 +91,6 @@ class AddUserPage extends Component
 
         } catch(Exception $ex){
 
-            throw $ex;
-
             session()->flash('title', 'Failed');
             session()->flash('message',''.config('msg.100').'');
             session()->flash('alertType', 'danger');

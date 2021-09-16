@@ -63,9 +63,7 @@ class RemarkComponent extends Component
 
         } catch(Exception $ex) {
 
-            throw $ex;
-
-            DB::rollBack();
+           DB::rollBack();
 
             session()->flash('title', 'Failed');
             session()->flash('message', ''.config('msg.100').'');

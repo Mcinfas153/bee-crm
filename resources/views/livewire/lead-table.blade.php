@@ -10,6 +10,15 @@
                     <div class="custom__box">
                         <!-- /.card-header -->
                         <div class="card-body" id="example2_wrapper">
+                            @if (session()->has('message'))
+                            <div class="alert alert-{{ session('alertType') }} alert-dismissible fade show"
+                                role="alert">
+                                <strong>{{ session('title') }}!</strong> {{ session('message') }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            @endif
                             <table id="leads" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
@@ -81,8 +90,16 @@
                                                 </button>
                                             </a>
                                             <a href="{{ URL::to('/edit-lead/'.$lead->id) }}">
-                                                <button class="btn btn-warning btn-flat btn-block">
+                                                <button class="btn btn-warning btn-flat btn-block mb-1">
                                                     <i class="fas fa-edit mr-2"></i>Edit
+                                                </button>
+                                            </a>
+                                            <a href="javascript:void(0)" wire:click="deleteLead({{ $lead->id }})">
+                                                <div wire:loading wire:target="deleteLead">
+                                                    <div class="loading" style="display: block">Processing...</div>
+                                                </div>
+                                                <button class="btn btn-danger btn-flat btn-block">
+                                                    <i class="fas fa-trash mr-2"></i>Delete
                                                 </button>
                                             </a>
                                         </td>
