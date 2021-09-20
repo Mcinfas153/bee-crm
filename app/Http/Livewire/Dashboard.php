@@ -44,8 +44,6 @@ class Dashboard extends Component
         ->orderBy('createdAt')
         ->get();
 
-        //dd($lineChart);
-
         return view('livewire.dashboard', compact(['todayLeads','followupLeads','notInterestedLeads','closeLeads','lineChart']))->layout('layouts.app',[
             'title' => 'Dashboard'
         ]);;
