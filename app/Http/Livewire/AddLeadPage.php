@@ -54,7 +54,7 @@ class AddLeadPage extends Component
             $lead->created_by = (Auth::user()->creator->id != 1) ? Auth::user()->creator->id : Auth::user()->id;
             $lead->save();
             toast(''.config('msg.303').'','success');
-            return redirect()->to('/leads');
+            return redirect()->to('/all-leads');    
 
         } catch(Exception $ex){
 

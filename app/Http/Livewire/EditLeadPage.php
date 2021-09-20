@@ -74,7 +74,7 @@ class EditLeadPage extends Component
         $lead->save();
 
         toast(''.config('msg.304').'','success');
-        return redirect()->to('/leads');
+        return redirect()->to('/all-leads');    
 
         } catch(Exception $ex){
 

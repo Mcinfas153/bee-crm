@@ -10,6 +10,7 @@ use DataTables;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
 class LeadController extends Controller
 {
@@ -37,7 +38,22 @@ class LeadController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-                    $actionBtn = '<a href="/edit-lead/'.$row->id.'" class="edit btn btn-success btn-sm btn-block mb-2"><i class="fas fa-edit"></i> Edit</a> <a href="/delete-lead/'.$row->id.'" class="delete btn btn-danger btn-sm btn-block"><i class="fas fa-times"></i> Delete</a>';
+                    $actionBtn = '
+                    <a href="'.URL::to('/edit-lead').'/'.$row->id.'">
+                        <button class="btn btn-warning btn-flat btn-block mb-1">
+                            <i class="fas fa-edit mr-2"></i>Edit
+                        </button>
+                    </a> 
+                    <a href="'.URL::to('/lead').'/'.$row->id.'">
+                        <button class="btn btn-secondary btn-flat btn-block mb-1">
+                            <i class="fas fa-info-circle mr-2"></i> Details
+                        </button>
+                    </a>
+                    <a href="'.URL::to('/delete-lead').'/'.$row->id.'">                                                
+                        <button class="btn btn-danger btn-flat btn-block">
+                            <i class="fas fa-trash mr-2"></i>Delete
+                        </button>
+                    </a>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action'])
@@ -122,7 +138,7 @@ class LeadController extends Controller
 
             toast(''.config('msg.302').'','success');
 
-            return back();            
+            return redirect()->to('/all-leads');            
 
         } catch (Exception $ex){
 
@@ -142,7 +158,7 @@ class LeadController extends Controller
             $lead = Lead::find($id);
             $lead->delete();
             toast(''.config('msg.305').'','success');
-            return redirect()->to('/leads');
+            return redirect()->to('/all-leads');    
 
         } catch(Exception $ex) {
 
