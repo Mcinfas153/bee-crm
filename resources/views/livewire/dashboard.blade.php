@@ -6,8 +6,8 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-3 col-12">
-                        <livewire:databox-component title="Today Leads" count="{{ $todayLeads }}" icon="fas fa-magnet"
-                            class="info" />
+                        <livewire:databox-component title="Today Leads" count="{{ count($todayLeads) }}"
+                            icon="fas fa-magnet" class="info" />
                     </div>
                     <div class="col-md-3 col-12">
                         <livewire:databox-component title="Follow Up" count="{{ $followupLeads }}"
