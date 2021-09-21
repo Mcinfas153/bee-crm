@@ -29,6 +29,34 @@
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
+                    <div class="col-lg-4 col-12 mx-auto">
+                        <!-- small box -->
+                        <div class="custom__box p-5">
+                            <div class="inner mb-4">
+                                <h5>Standard <span>
+                                        <p>(User Request)</p>
+                                    </span></h5>
+                                <h6>2000 AED / Month</h6>
+                                <hr>
+                                <p class="mb-1"><i class="fas fa-check fa-xs text-warning mr-2"></i>Hot Lead Support
+                                </p>
+                                <p class="mb-1"><i class="fas fa-check fa-xs text-warning mr-2"></i>Upto 100 Landing
+                                    Pages</p>
+                                <p class="mb-1"><i class="fas fa-check fa-xs text-warning mr-2"></i>Free Mail Server</p>
+                                <p class="mb-1"><i class="fas fa-check fa-xs text-warning mr-2"></i>Bee CRM Support</p>
+                                <p class="mb-1"><i class="fas fa-check fa-xs text-warning mr-2"></i>Boostrap 5 Support
+                                </p>
+                                <p class="mb-1"><i class="fas fa-check fa-xs text-warning mr-2"></i>API Intergration
+                                </p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-bag"></i>
+                            </div>
+                            <a href="https://buy.stripe.com/6oE7vf37W6Hq3m0fZ4" target="_BLANK"
+                                class="small-box-footer mt-4 mr-2">SUBSCRIBE <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
                     <!-- ./col -->
                     <div class="col-lg-4 col-12 mx-auto">
                         <!-- small box -->
