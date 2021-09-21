@@ -24,7 +24,7 @@
                                     class="custom__box px-2 {{ $invoice->status == 'paid'? 'bg-success':'bg-danger' }}">{{ Str::ucfirst($invoice->status) }}</span>
                             </td>
                             <td class="text-center"><a class="btn btn-sm btn-primary btn-flat"
-                                    href="https://pay.stripe.com/invoice/acct_1JQnpKCWPCrcSE80/invst_K5Mzz26eJ3XunyVD3WF0oPV9Rt2XY8C/pdf">
+                                    href="{{ $invoice->invoice_pdf }}">
                                     <i class="fas fa-download mr-2"></i>
                                     Download</a></td>
                         </tr>
