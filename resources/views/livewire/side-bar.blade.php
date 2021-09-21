@@ -138,28 +138,28 @@
                         <li class="nav-item rounded">
                             <a href="{{ URL::to('/plans') }}" class="nav-link navDropItem">
                                 <i class="fas fa-cubes nav-icon"></i>
-                                <p>Plans</p>
+                                <p>Bee Plans</p>
                             </a>
                         </li>
                         <li class="nav-item rounded">
                             <a href="{{ URL::to('/landingpage-plans') }}" class="nav-link navDropItem">
                                 <i class="fas fa-cubes nav-icon"></i>
-                                <p>Landing Page Plans</p>
+                                <p>Inproto Plans</p>
                             </a>
                         </li>
-                        <li class="nav-item rounded">
+                        {{-- <li class="nav-item rounded">
                             <a href="{{ URL::to('/instapage-plans') }}" class="nav-link navDropItem">
-                                <i class="fas fa-cubes nav-icon"></i>
-                                <p>Instapage Plans</p>
-                            </a>
-                        </li>
-                        <li class="nav-item sideNavItem rounded">
-                            <a href="{{ URL::to('/invoices') }}" class="nav-link navDropItem">
-                                <i class="fas fa-file-invoice nav-icon"></i>
-                                <p>Invoices</p>
-                            </a>
-                        </li>
-                    </ul>
+                        <i class="fas fa-cubes nav-icon"></i>
+                        <p>Instapage Plans</p>
+                        </a>
+                </li> --}}
+                <li class="nav-item sideNavItem rounded">
+                    <a href="{{ URL::to('/invoices') }}" class="nav-link navDropItem">
+                        <i class="fas fa-file-invoice nav-icon"></i>
+                        <p>Invoices</p>
+                    </a>
+                </li>
+                </ul>
                 </li>
                 @endcan
                 <li class="nav-item sideNavItem rounded">

@@ -12,7 +12,7 @@
                                 <hr>
                                 <p class="mb-1"><i class="fas fa-check fa-xs text-warning mr-2"></i>Hot Lead Support
                                 </p>
-                                <p class="mb-1"><i class="fas fa-check fa-xs text-warning mr-2"></i>Upto 60 Landing
+                                <p class="mb-1"><i class="fas fa-check fa-xs text-warning mr-2"></i>Upto 45 Landing
                                     Pages</p>
                                 <p class="mb-1"><i class="fas fa-check fa-xs text-warning mr-2"></i>Free Mail Server</p>
                                 <p class="mb-1"><i class="fas fa-check fa-xs text-warning mr-2"></i>Bee CRM Support</p>
