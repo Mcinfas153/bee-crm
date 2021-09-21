@@ -3,6 +3,11 @@
         <div class="custom__box">
             <div class="card-body">
                 <div class="row">
+
+                    @php
+                    $currentSubscription = Auth::user()->subscriptions()->first();
+                    @endphp
+
                     @foreach($plans as $plan)
                     <div class="col-lg-4 col-12 mx-auto">
                         <!-- small box -->
@@ -28,9 +33,26 @@
                             <div class="icon">
                                 <i class="ion ion-bag"></i>
                             </div>
+
+                            @if (Auth::user()->subscribed('default'))
+                            <!-- if user subscribed -->
+
+                            @if ($currentSubscription->stripe_price == $plan->stripe_id)
+                            <!-- user current plan -->
+                            <a href="{{ URL::to('/unsubscribe') }}" class="small-box-footer mr-2">Unsubscribe
+                                Now <i class="fas fa-arrow-circle-right"></i></a>
+                            @else
+                            <!-- user upgradable plan -->
                             <a href="{{ route('payments', ['plan' => $plan->identifier]) }}"
-                                class="small-box-footer mr-2">START YOUR FREE TRIAL <i
-                                    class="fas fa-arrow-circle-right"></i></a>
+                                class="small-box-footer mr-2">Upgrade <i class="fas fa-arrow-circle-right"></i></a>
+                            @endif
+
+                            @else
+                            <!-- if user not subscribed -->
+                            <a href="{{ route('payments', ['plan' => $plan->identifier]) }}"
+                                class="small-box-footer mr-2">Subscribe <i class="fas fa-arrow-circle-right"></i></a>
+                            @endif
+
                         </div>
                     </div>
                     @endforeach

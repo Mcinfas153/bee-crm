@@ -60,12 +60,13 @@ Route::middleware(['authUser'])->group(function () {
         Route::get('/lead/{id}', LeadPage::class);
         Route::get('/company', CompanyPage::class)->name('company-profile')->middleware('can:adminView,App\Models\User');
         Route::post('/add-company', [CompanyController::class,'addCompany']);
-        Route::get('/invoices', InvoiceListPage::class)->middleware('can:adminView,App\Models\User');
+        Route::get('/unsubscribe', [PaymentController::class, 'unsubscribe']);
         Route::post('/assign-lead', [LeadController::class, 'assignLead']);
         Route::post('/update-lead-status', [LeadController::class, 'updateStatus']);
         Route::post('/user-status-change', [UserController::class, 'updateStatus']);
     });
 
+    Route::get('/invoices', InvoiceListPage::class)->middleware('can:adminView,App\Models\User');
     Route::get('plans', PlansPage::class)->name('plans')->middleware('can:adminView,App\Models\User');
     Route::get('/payments', PaymentPage::class)->name('payments')->middleware('can:adminView,App\Models\User');
 
