@@ -11,6 +11,7 @@ use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Str;
 
 class LeadController extends Controller
 {
@@ -28,14 +29,36 @@ class LeadController extends Controller
         }
 
         if ($request->ajax()) {
-            $data = DB::table('leads')
+
+            $leadsQuery = Lead::query();
+            
+            $startDate = (!empty($_GET['start_date'])) ? Str::of($_GET['start_date'])->trim() : '';
+            $endDate = (!empty($_GET['end_date'])) ? Str::of($_GET['end_date'])->trim() : '';
+
+            if($startDate && $endDate){
+ 
+                $startDate = date('Y-m-d', strtotime($startDate));
+                $endDate = date('Y-m-d', strtotime($endDate));
+            }
+            
+            DB::enableQueryLog();
+
+            $leads = DB::table('leads')
             ->leftJoin('users', 'users.id', '=', 'leads.assign_to')
             ->where($whereField, Auth::user()->id)
+            ->when($startDate, function ($query, $startDate) {
+                return $query->where('leads.created_at', '>=', $startDate. ' 00:00:00');
+            })
+            ->when($endDate, function ($query, $endDate) {
+                return $query->where('leads.created_at', '<=', $endDate. ' 23:59:00');
+            })
             ->select('leads.*','users.name as assign_user')            
             ->orderByDesc('leads.created_at')
             ->get();
-            
-            return Datatables::of($data)
+
+            $query = DB::getQueryLog();
+
+            return Datatables::of($leads)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
                     $actionBtn = '
