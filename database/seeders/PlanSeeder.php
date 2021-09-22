@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Plan;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,7 +15,9 @@ class PlanSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
+        Plan::truncate();
+
         DB::table('plans')->insert([
             // ['title' => 'Silver', 'identifier' => 'silver', 'stripe_id' => 'price_1JU3RSCJCY25ow47MUkzLDVM', 'price' => 500, 'accounts_count' => 10],
             // ['title' => 'Gold', 'identifier' => 'gold', 'stripe_id' => 'price_1JU3RsCJCY25ow47D8gt6jPh', 'price' => 1000, 'accounts_count' => 30],

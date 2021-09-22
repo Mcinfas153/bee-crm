@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\LeadTimelineType;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,7 +15,8 @@ class LeadTimelineTypeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        LeadTimelineType::truncate();
+        
         DB::table('lead_timeline_types')->insert([
             ['name' => 'call', 'icon' => 'fas fa-mobile-alt'],
             ['name' => 'mail', 'icon' => 'fas fa-envelope'],

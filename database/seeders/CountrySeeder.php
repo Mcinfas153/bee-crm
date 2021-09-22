@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Country;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,7 +15,8 @@ class CountrySeeder extends Seeder
      */
     public function run()
     {
-        //
+        Country::truncate();
+        
         $countries = [
             ['name' => 'Afghanistan', 'code' => 'AF'],
             ['name' => 'Åland Islands', 'code' => 'AX'],

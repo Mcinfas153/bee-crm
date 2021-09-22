@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\CompanyCategory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,7 +15,9 @@ class CompanyCategorySeeder extends Seeder
      */
     public function run()
     {
-        //
+        
+        CompanyCategory::truncate();
+
         DB::table('company_categories')->insert(
             [
             ['name' => 'Arts, Entertainment and Recreation'],
