@@ -31,6 +31,17 @@
 </head>
 
 <body class="hold-transition sidebar-mini">
+    <div class='loader__container'>
+        <div class='loader'>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--text'></div>
+        </div>
+    </div>
     <div class="loading">Processing...</div>
     <!-- Site wrapper -->
     <div class="wrapper">
