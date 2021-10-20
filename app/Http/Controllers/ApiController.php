@@ -23,6 +23,12 @@ class ApiController extends Controller
         }
 
         $user = User::where('auth_code', $auth_code)->first();
+
+        if (!$user->subscribed('default')) {
+            return response()->json([
+                'msg' => 'User not a subscriber'
+            ], 206);
+        }
             
         if(collect($user)->isEmpty()) {
             return response()->json([
