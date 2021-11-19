@@ -82,3 +82,7 @@ Route::middleware(['guestUser'])->group(function () {
     Route::get('/login', Login::class)->name('login');
     Route::get('/register', Register::class)->name('register');
 });
+
+Route::fallback(function () {
+    abort(404);
+});
