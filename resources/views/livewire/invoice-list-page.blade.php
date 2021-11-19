@@ -16,15 +16,15 @@
                         @foreach ($invoices as $invoice)
                         <tr>
                             <td>{{ $invoice->number }}</td>
-                            <td class="text-center">{{ $invoice->created }}</td>
-                            <td class="text-right">{{ number_format(substr($invoice->amount_paid, 0, -2), 2) }}
-                                {{ Str::upper($invoice->currency) }}
+                            <td class="text-center">{{ $invoice->date()->toFormattedDateString() }}</td>
+                            <td class="text-right">{{ $invoice->total() }}
                             </td>
                             <td class="text-center"><span
-                                    class="custom__box px-2 {{ $invoice->status == 'paid'? 'bg-success':'bg-danger' }}">{{ Str::ucfirst($invoice->status) }}</span>
+                                    class="custom__box px-2 {{ $invoice->status == 'paid'? 'bg-success':'bg-danger' }}">{{
+                                    Str::ucfirst($invoice->status) }}</span>
                             </td>
                             <td class="text-center"><a class="btn btn-sm btn-primary btn-flat"
-                                    href="{{ $invoice->invoice_pdf }}">
+                                    href="invoice/{{ $invoice->id }}">
                                     <i class="fas fa-download mr-2"></i>
                                     Download</a></td>
                         </tr>
@@ -40,13 +40,13 @@
     <script src="{{ asset('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
     <script>
         $('#invoice__table').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": false,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
     </script>
 </div>

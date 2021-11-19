@@ -40,4 +40,18 @@ class PaymentController extends Controller
 
         return redirect('/invoices');
     }
+
+    public function downloadInvoice($invoiceId)
+    {
+        return Auth::user()->downloadInvoice($invoiceId, [
+            'vendor' => 'Bee Inc.',
+            'product' => 'Bee CRM',
+            'street' => 'Marine Drive',
+            'location' => 'Colombo 02, Sri Lanka.',
+            'phone' => '+94 75 749 3693',
+            'email' => 'contact@beeonline.xyz',
+            'url' => 'https://beeonline.xyz',
+            'vendorVat' => 'LK123456789',
+        ]);
+    }
 }

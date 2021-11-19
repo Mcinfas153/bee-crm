@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\LeadController;
-use App\Http\Controllers\RemarkController;
 use App\Http\Controllers\Subscriptions\PaymentController;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\AddLeadPage;
@@ -25,7 +24,9 @@ use App\Http\Livewire\ProfilePage;
 use App\Http\Livewire\SettingPage;
 use App\Http\Livewire\UserTable;
 use App\Http\Middleware\EnsureUserIsSubscribed;
-use Facade\Ignition\Middleware\AddLogs;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\SubscriptionAdded;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +64,7 @@ Route::middleware(['authUser'])->group(function () {
 
             Route::group(['namespace' => 'Subscriptions'], function() {        
                 Route::post('/payments', [PaymentController::class,'store'])->name('payments.store');
+                Route::get('invoice/{id}', [PaymentController::class, 'downloadInvoice'])->name('download.invoice')->withoutMiddleware([EnsureUserIsSubscribed::class]);;
             });
         });       
 
@@ -85,4 +87,8 @@ Route::middleware(['guestUser'])->group(function () {
 
 Route::fallback(function () {
     abort(404);
+});
+
+Route::get('/notify', function(){
+    Notification::route('mail', 'infas@leadmediaproduction.com')->notify(new SubscriptionAdded());
 });
