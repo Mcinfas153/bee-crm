@@ -22,4 +22,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/add-lead', [ApiController::class,'saveLead']);
 Route::post('/json/add-lead', [ApiController::class,'saveLeadJson']);
-Route::post('register', [UserController::class, 'register'])->name('user.create');
+Route::post('register', [UserController::class, 'register'])->name('api.user.create');

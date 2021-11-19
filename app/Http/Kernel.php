@@ -60,6 +60,10 @@ class Kernel extends HttpKernel
         'subcribeUserValid' => [
             \App\Http\Middleware\EnsureUserIsSubscribed::class,
         ],
+
+        'admin' => [
+            \App\Http\Middleware\EnsureUserIsAdmin::class
+        ]
     ];
 
     /**

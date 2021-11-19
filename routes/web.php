@@ -42,36 +42,38 @@ Route::get('/', function () {
 });
 
 Route::middleware(['authUser'])->group(function () {
-    Route::get('landingpage-plans', LandingPagePlans::class)->name('landingpage-plans')->middleware('can:adminView,App\Models\User');
-    Route::get('instapage-plans', InstapagePlans::class)->name('instapage-plans')->middleware('can:adminView,App\Models\User');
+    
+    Route::middleware(['subcribeUserValid'])->group(function () { 
+        Route::middleware(['admin'])->group(function () {
+            Route::get('/dashboard', Dashboard::class)->name('dashboard');
+            Route::get('/users', UserTable::class)->name('users');  
+            Route::get('/company', CompanyPage::class)->name('company-profile')->name('company.profile');
+            Route::get('/add-user', AddUserPage::class)->name('user.create');
+            Route::post('/add-company', [CompanyController::class,'addCompany']);
+            Route::get('/unsubscribe', [PaymentController::class, 'unsubscribe']);
+            Route::post('/assign-lead', [LeadController::class, 'assignLead']);
+            Route::post('/update-lead-status', [LeadController::class, 'updateStatus']);
+            Route::post('/user-status-change', [UserController::class, 'updateStatus']);
+            Route::get('landingpage-plans', LandingPagePlans::class)->name('landingpage-plans');
+            Route::get('instapage-plans', InstapagePlans::class)->name('instapage-plans');
+            Route::get('/invoices', InvoiceListPage::class);
+            Route::get('plans', PlansPage::class)->name('plans');
+            Route::get('/payments', PaymentPage::class)->name('payments');
 
-    Route::middleware(['subcribeUserValid'])->group(function () {
-        Route::get('/dashboard', Dashboard::class)->middleware('can:adminView,App\Models\User');
+            Route::group(['namespace' => 'Subscriptions'], function() {        
+                Route::post('/payments', [PaymentController::class,'store'])->name('payments.store');
+            });
+        });       
+
         Route::get('/leads', LeadTable::class)->name('leads.index');
-        Route::get('/add-lead', AddLeadPage::class);
+        Route::get('/add-lead', AddLeadPage::class)->name('lead.create');
         Route::get('/edit-lead/{id}', EditLeadPage::class)->name('lead.edit.index');
         Route::get('/delete-lead/{id}', [LeadController::class, 'delete'])->name('lead.delete');
         Route::get('/all-leads', AllLeadsPage::class)->name('all-leads.index');
         Route::get('all-leads/get-leads', [LeadController::class, 'getLeads'])->name('leads.getLeads');
-        Route::get('/users', UserTable::class)->middleware('can:adminView,App\Models\User');
         Route::get('/profile', ProfilePage::class);
-        Route::get('/add-user', AddUserPage::class)->middleware('can:adminView,App\Models\User');
         Route::get('/setting', SettingPage::class);
-        Route::get('/lead/{id}', LeadPage::class);
-        Route::get('/company', CompanyPage::class)->name('company-profile')->middleware('can:adminView,App\Models\User');
-        Route::post('/add-company', [CompanyController::class,'addCompany']);
-        Route::get('/unsubscribe', [PaymentController::class, 'unsubscribe']);
-        Route::post('/assign-lead', [LeadController::class, 'assignLead']);
-        Route::post('/update-lead-status', [LeadController::class, 'updateStatus']);
-        Route::post('/user-status-change', [UserController::class, 'updateStatus']);
-    });
-
-    Route::get('/invoices', InvoiceListPage::class)->middleware('can:adminView,App\Models\User');
-    Route::get('plans', PlansPage::class)->name('plans')->middleware('can:adminView,App\Models\User');
-    Route::get('/payments', PaymentPage::class)->name('payments')->middleware('can:adminView,App\Models\User');
-
-    Route::group(['namespace' => 'Subscriptions'], function() {        
-        Route::post('/payments', [PaymentController::class,'store'])->name('payments.store');
+        Route::get('/lead/{id}', LeadPage::class);        
     });  
 });
 
