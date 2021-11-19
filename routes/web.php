@@ -24,6 +24,7 @@ use App\Http\Livewire\LandingPagePlans;
 use App\Http\Livewire\ProfilePage;
 use App\Http\Livewire\SettingPage;
 use App\Http\Livewire\UserTable;
+use App\Http\Middleware\EnsureUserIsSubscribed;
 use Facade\Ignition\Middleware\AddLogs;
 
 /*
@@ -54,11 +55,11 @@ Route::middleware(['authUser'])->group(function () {
             Route::post('/assign-lead', [LeadController::class, 'assignLead']);
             Route::post('/update-lead-status', [LeadController::class, 'updateStatus']);
             Route::post('/user-status-change', [UserController::class, 'updateStatus']);
-            Route::get('landingpage-plans', LandingPagePlans::class)->name('landingpage-plans');
+            Route::get('landingpage-plans', LandingPagePlans::class)->name('landingpage-plans')->withoutMiddleware([EnsureUserIsSubscribed::class]);
             Route::get('instapage-plans', InstapagePlans::class)->name('instapage-plans');
-            Route::get('/invoices', InvoiceListPage::class);
-            Route::get('plans', PlansPage::class)->name('plans');
-            Route::get('/payments', PaymentPage::class)->name('payments');
+            Route::get('/invoices', InvoiceListPage::class)->withoutMiddleware([EnsureUserIsSubscribed::class]);
+            Route::get('plans', PlansPage::class)->name('plans')->withoutMiddleware([EnsureUserIsSubscribed::class]);
+            Route::get('/payments', PaymentPage::class)->name('payments')->withoutMiddleware([EnsureUserIsSubscribed::class]);
 
             Route::group(['namespace' => 'Subscriptions'], function() {        
                 Route::post('/payments', [PaymentController::class,'store'])->name('payments.store');

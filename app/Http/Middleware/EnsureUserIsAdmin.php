@@ -18,7 +18,7 @@ class EnsureUserIsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()->utype === Config::get('usertypes.user')){
+        if(Auth::user()->utype == Config::get('usertypes.user')){
             abort(403);
         }
 
