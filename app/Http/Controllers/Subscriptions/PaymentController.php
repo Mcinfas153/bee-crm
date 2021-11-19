@@ -5,9 +5,10 @@ namespace App\Http\Controllers\Subscriptions;
 use App\Http\Controllers\Controller;
 use App\Models\Plan;
 use App\Models\User;
-use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\SubscriptionAdded;
 
 class PaymentController extends Controller
 {
@@ -24,6 +25,8 @@ class PaymentController extends Controller
             $request->user()->newSubscription('default', $plan->stripe_id)->create($request->token);
     
             toast(''.config('msg.200').'','success');
+
+            Notification::route('mail', Auth::user()->email)->notify(new SubscriptionAdded());
 
             return redirect('/dashboard');
     }
