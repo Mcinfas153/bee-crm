@@ -23,10 +23,12 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
+                                        <th>Date</th>
                                         <th>Name</th>
                                         <th class="text-center">Mobile</th>
                                         <th class="text-center">Campaign</th>
                                         <th class="text-center">Lead Source</th>
+                                        <th class="text-center">Country</th>
                                         <th class="text-center">Lead Status</th>
                                         @can('adminView', App\Models\User::class)
                                         <th class="text-center">Assign to</th>
@@ -46,17 +48,24 @@
                                             @endcan
                                         </td>
                                         <td>
+                                            {{ Carbon\Carbon::parse($lead->created_at)->settings([
+                                            'toStringFormat' => 'jS \o\f F, Y',
+                                            ]) }}
+                                        </td>
+                                        <td>
                                             <span title="{{ $lead->name }}">{{ Str::limit($lead->name,10) }}</span>
                                         </td>
                                         <td class="text-center">
                                             <a title="{{ $lead->mobile }}" href="tel:{{ $lead->mobile }}"
-                                                wire:click="makeCall({{ $lead->id }})">{{ Str::limit($lead->mobile,15) }}</a>
+                                                wire:click="makeCall({{ $lead->id }})">{{ Str::limit($lead->mobile,15)
+                                                }}</a>
                                         </td>
                                         <td class="text-center">{{ $lead->project }}</td>
                                         <td class="text-center">{{ $lead->lead_source }}</td>
+                                        <td class="text-center">{{ $lead->country }}</td>
                                         <td class="text-center">
-                                            <span
-                                                class="cusom__box p-1 px-3 bg-{{ $lead->leadStatus->class_color }}">{{ Str::ucfirst(Str::replace('_', ' ', $lead->leadStatus->name)) }}</span>
+                                            <span class="cusom__box p-1 px-3 bg-{{ $lead->leadStatus->class_color }}">{{
+                                                Str::ucfirst(Str::replace('_', ' ', $lead->leadStatus->name)) }}</span>
 
                                             @if (checkHotLead($lead))
                                             <div class="cusom__box bg-danger mt-3 p-1 text-center"><span
