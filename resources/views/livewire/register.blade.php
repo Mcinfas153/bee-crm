@@ -23,7 +23,8 @@
                         <div class="loading" style="display: block">Processing...</div>
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Full name" wire:model.lazy="fullname" />
+                        <input type="text" name="fullname" class="form-control" placeholder="Full name"
+                            wire:model.lazy="fullname" />
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -35,7 +36,8 @@
                             {{ $message }}</span> @enderror
                     </div>
                     <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Email" wire:model.lazy="email">
+                        <input type="email" name="email" class="form-control" placeholder="Email"
+                            wire:model.lazy="email">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -47,7 +49,8 @@
                             {{ $message }}</span> @enderror
                     </div>
                     <div class="input-group">
-                        <input type="password" class="form-control" placeholder="Password" wire:model.lazy="password">
+                        <input type="password" name="password" class="form-control" placeholder="Password"
+                            wire:model.lazy="password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -59,7 +62,7 @@
                             {{ $message }}</span> @enderror
                     </div>
                     <div class="input-group">
-                        <input type="password" class="form-control" placeholder="Retype password"
+                        <input type="password" name="confirmPassword" class="form-control" placeholder="Retype password"
                             wire:model.lazy="confirmPassword">
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -74,9 +77,9 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="icheck-primary">
-                                <input type="checkbox" id="agreeTerms" name="terms" value="agree"
+                                <input type="checkbox" name="agreeTerms" id="agreeTerms" name="terms" value="agree"
                                     wire:model.lazy="agreed">
-                                <label for="agreeTerms" class="mb-3">
+                                <label for="agreeTerms" class="mb-3 checkBox">
                                     I agree to the <a href="#">terms</a>
                                 </label>
                             </div>

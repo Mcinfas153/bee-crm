@@ -23,7 +23,7 @@
                     <div class="loading" style="display: block">Processing...</div>
                 </div>
                 <div class="input-group">
-                    <input type="email" class="form-control" placeholder="Email" wire:model.lazy="email">
+                    <input type="email" name="email" class="form-control" placeholder="Email" wire:model.lazy="email">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
@@ -35,7 +35,8 @@
                         {{ $message }}</span> @enderror
                 </div>
                 <div class="input-group">
-                    <input type="password" class="form-control" placeholder="Password" wire:model.lazy="password">
+                    <input type="password" name="password" class="form-control" placeholder="Password"
+                        wire:model.lazy="password">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
