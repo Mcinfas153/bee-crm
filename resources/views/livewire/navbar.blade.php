@@ -6,7 +6,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="{{ URL::to('/dashboard') }}" class="nav-link">Home</a>
+                <a href="{{ URL::to('/dashboard') }}" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i></a>
             </li>
         </ul>
 
@@ -32,18 +32,25 @@
                 </div>
             </li>
 
-            <!-- Messages Dropdown Menu -->
+            <!-- Profile Dropdown Menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" wire:click="Profile" href="{{ URL::to('/profile') }}" title="Profile">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                </a>
+            </li>
+
+            <!-- Sign out Dropdown Menu -->
             <li class="nav-item dropdown">
                 <a class="nav-link" wire:click="logout" href="javascript:void(0)" title="Logout">
                     <i class="fas fa-sign-out-alt"></i>
                 </a>
             </li>
-            <!-- Notifications Dropdown Menu -->
+            {{-- <!-- Expand Dropdown Menu -->
             <li class="nav-item">
                 <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                     <i class="fas fa-expand-arrows-alt"></i>
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </nav>
 </div>

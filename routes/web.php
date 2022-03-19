@@ -46,7 +46,7 @@ Route::middleware(['authUser'])->group(function () {
         Route::middleware(['admin'])->group(function () {
             Route::get('/dashboard', Dashboard::class)->name('dashboard');
             Route::get('/users', UserTable::class)->name('users');  
-            Route::get('/company', CompanyPage::class)->name('company-profile')->name('company.profile');
+            Route::get('/company', CompanyPage::class)->name('company-profile');
             Route::get('/add-user', AddUserPage::class)->name('user.create');
             Route::post('/add-company', [CompanyController::class,'addCompany']);
             Route::get('/unsubscribe', [PaymentController::class, 'unsubscribe']);

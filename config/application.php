@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'appVersion' => '1.0 BETA',
+    'appVersion' => '1.1 BETA',
     'webUrl' => 'https://beeonline.xyz/',
-    'webAppName' => 'Bee CRM',
+    'webAppName' => 'BEE CRM',
     'webContactMail' => 'contact@beeonline.xyz',
     'serverTimeZone' => env('SERVER_TIME_ZONE'),
     'mySQLTimezone' => env('MYSQL_TIME_ZONE'),

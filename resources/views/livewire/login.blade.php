@@ -9,12 +9,11 @@
     </div>
     @endif
 
-    <div class="login-logo">
-        <a href="{{ URL::to('/') }}"><b>BEE </b><img src="{{ asset('assets/dist/img/logos/logo.png') }}" alt="logo"
-                width="50px" class="logo__img"> CRM</a>
-    </div>
     <!-- /.login-logo -->
     <div class="card">
+        <div class="login-logo mt-3">
+            <a href="{{ URL::to('/') }}"><img src="{{ asset('assets/dist/img/logos/logo.png') }}" alt=""></a>
+        </div>
         <div class="card-body login-card-body">
             <p class="login-box-msg">Sign in to start your session</p>
 

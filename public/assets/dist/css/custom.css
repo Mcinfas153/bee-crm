@@ -18,8 +18,21 @@ textarea {
     text-decoration: underline !important;
 }
 
+.brand-link {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.user-panel {
+    align-items: center;
+}
+
 .logo__img {
     margin-top: -10px;
+}
+
+.navbar-nav {
+    align-items: baseline;
 }
 
 .error__msg {
@@ -57,12 +70,19 @@ textarea {
     align-items: center;
     align-content: center;
     background-color: #ededed;
-    padding: 10px;
+    padding: 10px 10px;
+    border-radius: 5px !important;
 }
 
 .optionContent {
     background-color: #ededed;
     padding: 30px;
+    margin-top: -3px !important;
+    border-radius: 6px !important;
+}
+
+.rounded-bottom {
+    border-radius: 6px 6px 0px 0px !important;
 }
 
 .leadScrollableTable {
@@ -85,10 +105,14 @@ textarea {
 }
 
 .custom__box {
-    border: 1px solid #eaebee;
+    border: 1.5px solid #eaebee;
     background: white;
-    border-radius: 3px;
+    border-radius: 6px;
     margin-bottom: 15px;
+}
+
+.card-body {
+    padding: 5% 5%;
 }
 
 button.close {
@@ -120,28 +144,36 @@ button.close {
 .navDropItem:hover {
     color: black !important;
 }
-#userAction__box{
+
+#userAction__box {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+
 /* The switch - the box around the slider */
+
 .switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
+}
+
+
+/* Hide default HTML checkbox */
+
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
-  
-  /* The slider */
-  .slider {
+}
+
+
+/* The slider */
+
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -151,9 +183,9 @@ button.close {
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  .slider:before {
+}
+
+.slider:before {
     position: absolute;
     content: "";
     height: 26px;
@@ -163,67 +195,82 @@ button.close {
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  input:checked + .slider {
+}
+
+input:checked+.slider {
     background-color: #2196F3;
-  }
-  
-  input:focus + .slider {
+}
+
+input:focus+.slider {
     box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
+}
+
+input:checked+.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-
-  .regular-checkbox {
-	-webkit-appearance: none;
-	background-color: #ffffff;
-    border: 1px solid #f1c40f;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
-	padding: 9px;
-	border-radius: 3px;
-	display: inline-block;
-	position: relative;
 }
-.regular-checkbox:active, .regular-checkbox:checked:active {
-	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.regular-checkbox {
+    -webkit-appearance: none;
+    background-color: #ffffff;
+    border: 1px solid #f1c40f;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 9px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+}
+
+.regular-checkbox:active,
+.regular-checkbox:checked:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .regular-checkbox:checked {
-	background-color: #e9ecee;
-	border: 1px solid #adb8c0;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
-	color: #99a1a7;
+    background-color: #e9ecee;
+    border: 1px solid #adb8c0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+    color: #99a1a7;
 }
+
 .regular-checkbox:checked:after {
-	content: '\2714';
-	font-size: 14px;
-	position: absolute;
-	top: 0px;
-	left: 3px;
-	color: #99a1a7;
+    content: '\2714';
+    font-size: 14px;
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    color: #99a1a7;
 }
+
 .big-checkbox {
-	padding: 13px !important;
+    padding: 13px !important;
 }
 
 .big-checkbox:checked:after {
-	font-size: 22px;
+    font-size: 22px;
     left: 3px;
     color: green;
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+    .card-body {
+        padding: 3% 5%;
+    }
 }
 
 
@@ -370,13 +417,14 @@ button.close {
         transform: rotate(360deg);
     }
 }
+
 .loader__container {
     height: 100vh;
     width: 100vw;
     font-family: Helvetica;
-  }
-  
-  .loader {
+}
+
+.loader {
     height: 20px;
     width: 250px;
     position: absolute;
@@ -385,8 +433,9 @@ button.close {
     left: 0;
     right: 0;
     margin: auto;
-  }
-  .loader--dot {
+}
+
+.loader--dot {
     animation-name: loader;
     animation-timing-function: ease-in-out;
     animation-duration: 3s;
@@ -397,72 +446,81 @@ button.close {
     background-color: black;
     position: absolute;
     border: 2px solid white;
-  }
-  .loader--dot:first-child {
+}
+
+.loader--dot:first-child {
     background-color: #8cc759;
     animation-delay: 0.5s;
-  }
-  .loader--dot:nth-child(2) {
+}
+
+.loader--dot:nth-child(2) {
     background-color: #8c6daf;
     animation-delay: 0.4s;
-  }
-  .loader--dot:nth-child(3) {
+}
+
+.loader--dot:nth-child(3) {
     background-color: #ef5d74;
     animation-delay: 0.3s;
-  }
-  .loader--dot:nth-child(4) {
+}
+
+.loader--dot:nth-child(4) {
     background-color: #f9a74b;
     animation-delay: 0.2s;
-  }
-  .loader--dot:nth-child(5) {
+}
+
+.loader--dot:nth-child(5) {
     background-color: #60beeb;
     animation-delay: 0.1s;
-  }
-  .loader--dot:nth-child(6) {
+}
+
+.loader--dot:nth-child(6) {
     background-color: #fbef5a;
     animation-delay: 0s;
-  }
-  .loader--text {
+}
+
+.loader--text {
     position: absolute;
     top: 200%;
     left: 0;
     right: 0;
     width: 4rem;
     margin: auto;
-  }
-  .loader--text:after {
+}
+
+.loader--text:after {
     content: "Loading";
     font-weight: bold;
     animation-name: loading-text;
     animation-duration: 3s;
     animation-iteration-count: infinite;
-  }
-  
-  @keyframes loader {
+}
+
+@keyframes loader {
     15% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
     45% {
-      transform: translateX(230px);
+        transform: translateX(230px);
     }
     65% {
-      transform: translateX(230px);
+        transform: translateX(230px);
     }
     95% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  }
-  @keyframes loading-text {
+}
+
+@keyframes loading-text {
     0% {
-      content: "Loading";
+        content: "Loading";
     }
     25% {
-      content: "Loading.";
+        content: "Loading.";
     }
     50% {
-      content: "Loading..";
+        content: "Loading..";
     }
     75% {
-      content: "Loading...";
+        content: "Loading...";
     }
-  }
+}

@@ -9,7 +9,7 @@
                             <div class="col-md-5 text-center d-flex align-items-center justify-content-center">
                                 <div class="">
                                     <div class="addUserLogo rounded-circle mx-auto mb-3">
-                                        <img src="https://img.icons8.com/color/100/000000/bee.png" class="mt-4" />
+                                        <img src="{{ asset('assets/dist/img/logos/transperant-logo.png') }}" class="mt-4" width="100" />
                                     </div>
                                     <h2>Bee <strong>CRM</strong></h2>
                                     <p class="lead mb-5">Marine View, California,<br>
