@@ -13,19 +13,19 @@
 <body>
   <main>
     <div class="big-wrapper light">
-      <img src="{{ asset('assets/dist/img/logos/full-logo.png') }}" alt="watermark" class="shape" />
+      <img src="{{ asset('assets/dist/img/logos/transperant-logo.png') }}" alt="watermark" class="watermark" />
 
       <header>
         <div class="container">
           <div class="logo">
-            <img src="{{ asset('assets/dist/img/logos/full-logo.png') }}" alt="Logo" />
-            <h3>Bee CRM</h3>
+            <img src="{{ asset('assets/dist/img/logos/transperant-logo.png') }}" alt="Logo" />
+            <h3>BEE CRM</h3>
           </div>
 
           <div class="links">
             <ul>
               @auth
-              <li><a href="{{ URL::to('/profile') }}"><i class="far fa-registered"></i> Profile</a></li>
+              <li><a href="{{ URL::to('/profile') }}"><i class="far fa-user"></i> Profile</a></li>
               @else
               <li><a href="{{ URL::to('register') }}"><i class="far fa-registered"></i> Register</a></li>
               <li><a href="{{ URL::to('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
@@ -36,7 +36,7 @@
           <div class="overlay"></div>
 
           <div class="hamburger-menu">
-            <div class="bar"></div>
+            <a href="https://beeonline.xyz/about"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
           </div>
         </div>
       </header>
@@ -45,12 +45,10 @@
         <div class="container">
           <div class="left">
             <div class="big-title">
-              <h1>Your Life's Work, Powered</h1>
-              <h1>By Our Life's Work</h1>
+              <h2>What Is Bee CRM?</h2>
             </div>
             <p class="text">
-              Unique and powerful suite of software to run your entire business, brought to you by a company with the
-              long term vision to transform the way you work.
+              Bee CRM is the world’s #1 customer relationship management (CRM) platform. We help your marketing, sales, commerce, service and IT teams work as one from anywhere — so you can keep your customers happy everywhere.
             </p>
 
             @auth
@@ -58,6 +56,7 @@
             @else
             <div class="cta">
               <a href="{{ URL::to('login') }}" class="btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+              <a href="{{ URL::to('register') }}" class="btn"><i class="far fa-registered"></i> Resgister</a>
             </div>
             @endauth
 
@@ -66,15 +65,6 @@
           <div class="right">
             <img src="{{ asset('assets/dist/img/person.png') }}" alt="Person Image" class="person" />
           </div>
-        </div>
-      </div>
-
-      <div class="bottom-area">
-        <div class="container">
-          <button class="toggle-btn">
-            <i class="far fa-moon"></i>
-            <i class="far fa-sun"></i>
-          </button>
         </div>
       </div>
     </div>

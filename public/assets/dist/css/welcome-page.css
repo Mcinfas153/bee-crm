@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 .light {
-    --mainColor: #64bcf4;
-    --hoverColor: #5bacdf;
+    --mainColor: #fde68a;
+    --hoverColor: #fcd34d;
     --backgroundColor: #f1f8fc;
     --darkOne: #312f3a;
     --darkTwo: #45424b;
@@ -42,6 +42,20 @@ img {
 
 a {
     text-decoration: none;
+}
+
+.link {
+    color: var(--mainColor);
+}
+
+.link:hover {
+    color: var(--hoverColor);
+}
+
+.cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .big-wrapper {
@@ -200,7 +214,7 @@ header .container {
 
 .text {
     color: var(--lightOne);
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin: 1.9rem 0 2.5rem;
     max-width: 600px;
     line-height: 2.3;
@@ -253,7 +267,7 @@ header .container {
     display: none;
 }
 
-.shape {
+.watermark {
     position: absolute;
     z-index: 0;
     width: 500px;
@@ -276,6 +290,15 @@ header .container {
     }
     100% {
         clip-path: circle(150% at 0 0);
+    }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 870px) {
+    .cta {
+        display: none;
     }
 }
 
@@ -353,9 +376,15 @@ header .container {
     .logo h3 {
         font-size: 1.25rem;
     }
-    .shape {
+    .watermark {
         bottom: -180px;
         left: -150px;
+    }
+    .showcase-area {
+        margin-top: 15px;
+    }
+    .watermark {
+        display: none;
     }
 }
 

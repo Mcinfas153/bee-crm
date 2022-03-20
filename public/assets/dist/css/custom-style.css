@@ -1,3 +1,19 @@
+a:hover {
+    color: #fde047;
+}
+
+.brand-link {
+    display: flex;
+    justify-content: center;
+    margin-right: 38px;
+    align-items: center;
+}
+
+[class*=sidebar-dark] .brand-link {
+    border-bottom: none;
+}
+
+
 /* Modal Override */
 
 .modal__success {
@@ -42,6 +58,7 @@
 
 
 /* Button Override */
+
 .btn {
     font-size: 12px !important;
     padding: 5px 15px !important;
@@ -58,8 +75,13 @@
 }
 
 .btn-warning {
-    background: #F1C40F;
-    border-color: #F1C40F;
+    background: #fde047;
+    border-color: #facc15;
+}
+
+.btn-warning:hover {
+    background: #facc15;
+    border-color: #facc15;
 }
 
 .btn-danger {
@@ -70,64 +92,99 @@
 
 /* Button Override */
 
+
 /* card Override */
 
 .card-primary {
     border-color: #2E86C1;
 }
 
+
 /* card Override */
+
 
 /* BG Override */
 
-.bg-primary{
+.bg-primary {
     background-color: #2E86C1 !important;
 }
-.bg-warning{
-    background-color: #F1C40F !important;
+
+.bg-warning {
+    background-color: #fef08a !important;
 }
-.bg-success{
+
+.bg-success {
     background-color: #239B56 !important;
 }
-.bg-danger{
+
+.bg-danger {
     background-color: #dc3545 !important;
 }
 
+
 /* BG Override */
 
-/* Text Override */
-.text-primary{
-    color: #2E86C1 !important;
-}
-.text-warning{
-    color: #F1C40F !important;
-}
-.text-success{
-    color: #239B56 !important;
-}
-.text-danger{
-    color: #dc3545 !important;
-}
-a {
-    color: #f9d020;
-}
+
 /* Text Override */
 
+.text-primary {
+    color: #2E86C1 !important;
+}
+
+.text-warning {
+    color: #F1C40F !important;
+}
+
+.text-success {
+    color: #239B56 !important;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+}
+
+a {
+    color: #fef08a;
+}
+
+.card-warning>.card-header {
+    background-color: #fde047 !important;
+}
+
+.card-warning.card-outline {
+    border-top: 3px solid #fde047;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    background-color: #fde047 !important;
+}
+
+
+/* Text Override */
+
+
 /* customs */
+
 .page-item.active .page-link {
     color: #000;
-    background-color: #fbd949;
+    background-color: #fef08a;
     border-color: #fbd949;
 }
+
 .card-primary.card-outline {
     border-top: 3px solid #2E86C1;
 }
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
     background-color: #2e86c1;
 }
+
 .nav-pills .nav-link:not(.active):hover {
     color: #2e86c1;
 }
+
 .card-primary:not(.card-outline)>.card-header {
     background-color: #2e86c1;
 }
@@ -145,13 +202,13 @@ a {
         padding: 20px;
     }
     .card-body {
-      padding: 0.4rem;
+        padding: 0.4rem;
     }
     .timeline>div>.timeline-item>.timeline-header {
-      font-size: 12px;
+        font-size: 12px;
     }
     .timeline>div>.timeline-item>.time {
-     font-size: 8px;
+        font-size: 8px;
     }
     .timeline>div>.timeline-item {
         margin-right: 0px;
@@ -161,8 +218,6 @@ a {
         height: 250px;
     }
     .optionContent {
-       padding: 10px !important;
+        padding: 10px !important;
     }
 }
-
-

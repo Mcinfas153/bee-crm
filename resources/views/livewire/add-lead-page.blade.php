@@ -84,7 +84,7 @@
 
 
                                     <div class="form-group">
-                                        <button class="btn btn-success float-right"><i class="fas fa-magnet mr-1"></i>
+                                        <button class="btn btn-warning float-right"><i class="fas fa-magnet mr-1"></i>
                                             Add Lead</button>
                                     </div>
                                 </form>

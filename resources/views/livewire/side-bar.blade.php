@@ -22,7 +22,7 @@
                 </div>
             </div> --}}
 
-            {{-- <!-- SidebarSearch Form -->
+            <!-- SidebarSearch Form -->
             <div class="form-inline mt-2">
                 <div class="input-group" data-widget="sidebar-search">
                     <input class="form-control form-control-sidebar" type="search" placeholder="Search"
@@ -33,7 +33,7 @@
                         </button>
                     </div>
                 </div>
-            </div> --}}
+            </div>
 
             <!-- Sidebar Menu -->
             <nav class="mt-3">

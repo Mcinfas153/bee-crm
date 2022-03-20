@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="form-group col-md-12 mt-3">
                                     <div class="mb-1 mr-sm-2 col-md-12 text-center">
-                                        <button class="btn btn-success" type="submit">
+                                        <button class="btn btn-warning" type="submit">
                                             <i class="fas fa-edit mr-1"></i>
                                             Change Password</button>
                                     </div>

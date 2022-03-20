@@ -12,7 +12,7 @@
                     <div class="custom__box">
                         <!-- /.card-header -->
                         <div class="card-body" id="example2_wrapper">
-                            <div class="offset-md-8 col-md-4 col-12">
+                            <div class="offset-md-4 col-md-4 col-12">
                                 <div class="form-group">
                                     <label>Date range:</label>
                                     <div class="input-group">

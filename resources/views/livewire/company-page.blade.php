@@ -84,7 +84,7 @@
                       @error('country') <span class="error error__msg">{{ $message }}</span> @enderror
                     </div>
                   </div>
-                  <button type="button" class="btn btn-primary float-right mt-1 mb-4" onclick="stepper.next()">Next <i
+                  <button type="button" class="btn btn-warning float-right mt-1 mb-4" onclick="stepper.next()">Next <i
                       class="fas fa-arrow-right ml-1" style="font-size: 14px"></i>
                   </button>
                 </div>
@@ -124,9 +124,9 @@
                       <input type="url" class="form-control" name="website" value="{{ $website }}">
                     </div>
                     <div class="stpperButtons mt-4">
-                      <button class="btn btn-primary" onclick="stepper.previous()"><i class="fas fa-arrow-left mr-1"
+                      <button class="btn btn-warning" onclick="stepper.previous()"><i class="fas fa-arrow-left mr-1"
                           style="font-size: 14px"></i> Previous</button>
-                      <button type="submit" class="btn btn-primary">Finish <i class="fas fa-arrow-right ml-1"
+                      <button type="submit" class="btn btn-warning">Finish <i class="fas fa-arrow-right ml-1"
                           style="font-size: 14px"></i></button>
                     </div>
                   </div>

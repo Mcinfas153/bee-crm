@@ -76,7 +76,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <button class="btn btn-success float-right"><i class="fas fa-user-plus mr-1"></i> Add User</button>
+                    <button class="btn btn-warning float-right"><i class="fas fa-user-plus mr-1"></i> Add User</button>
                   </div>
                 </form>
               </div>

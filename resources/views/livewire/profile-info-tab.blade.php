@@ -1,4 +1,4 @@
-<div class="custom__box card-primary card-outline mb-2">
+<div class="custom__box card-warning card-outline mb-2">
     <div class="card-body box-profile">
         <div class="text-center">
             <img src="{{ Auth::user()->profile_url?asset('storage/'.Auth::user()->profile_url.''):generateAvatar(Auth::user()->name) }}"
