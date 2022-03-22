@@ -1,5 +1,5 @@
 a:hover {
-    color: #fde047;
+    color: #004799;
 }
 
 .brand-link {
@@ -132,7 +132,7 @@ a:hover {
 }
 
 .text-warning {
-    color: #F1C40F !important;
+    color: #a78601 !important;
 }
 
 .text-success {
@@ -144,7 +144,7 @@ a:hover {
 }
 
 a {
-    color: #fef08a;
+    color: #005baf;
 }
 
 .card-warning>.card-header {
