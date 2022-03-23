@@ -17,7 +17,7 @@ class EnsureUserIsSubscribed
      */
     public function handle(Request $request, Closure $next)
     {
-        if (! Auth::user()->subscribed('default') && Auth::user()->utype == config('usertypes.admin') && Auth->user()->email != 'mcinfas9394@gmail.com') {
+        if (! Auth::user()->subscribed('default') && Auth::user()->utype == config('usertypes.admin') && Auth::user()->email != 'mcinfas9394@gmail.com') {
             // This user is not a paying customer...
             return redirect('plans');
         }

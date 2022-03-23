@@ -42,7 +42,7 @@ Route::get('/', function () {
 
 Route::middleware(['authUser'])->group(function () {
     
-    //Route::middleware(['subcribeUserValid'])->group(function () { 
+    Route::middleware(['subcribeUserValid'])->group(function () { 
         Route::middleware(['admin'])->group(function () {
             Route::get('/dashboard', Dashboard::class)->name('dashboard');
             Route::get('/users', UserTable::class)->name('users');  
@@ -74,7 +74,7 @@ Route::middleware(['authUser'])->group(function () {
         Route::get('/profile', ProfilePage::class);
         Route::get('/setting', SettingPage::class);
         Route::get('/lead/{id}', LeadPage::class);        
-    //});  
+    });  
 });
 
 Route::middleware(['guestUser'])->group(function () {
