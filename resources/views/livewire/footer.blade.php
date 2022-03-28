@@ -4,9 +4,7 @@
             <b>Version</b> {{ config('application.appVersion') }}
         </div>
         <strong>
-            Copyright &copy; 2014-{{ date('Y') }} <a
-                href="{{ config('application.webUrl') }}">{{ config('application.webAppName') }}</a>.
-        </strong>
-        All rights reserved.
+            Copyright &copy; 2020-{{ date('Y') }}
+        All rights reserved to <a href="https://beeonline.xyz/">{{ config('application.companyName') }}</a></strong>
     </footer>
 </div>

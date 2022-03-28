@@ -10,6 +10,7 @@ use App\Http\Livewire\AllLeadsPage;
 use App\Http\Livewire\CompanyPage;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\EditLeadPage;
+use App\Http\Livewire\ForgotPassword;
 use App\Http\Livewire\InstapagePlans;
 use App\Http\Livewire\InvoiceListPage;
 use App\Http\Livewire\LeadPage;
@@ -48,6 +49,7 @@ Route::middleware(['authUser'])->group(function () {
             Route::get('/users', UserTable::class)->name('users');  
             Route::get('/company', CompanyPage::class)->name('company-profile');
             Route::get('/add-user', AddUserPage::class)->name('user.create');
+            Route::get('/forgot-password', ForgotPassword::class)->name('user.forgot-password');
             Route::post('/add-company', [CompanyController::class,'addCompany']);
             Route::get('/unsubscribe', [PaymentController::class, 'unsubscribe']);
             Route::post('/assign-lead', [LeadController::class, 'assignLead']);

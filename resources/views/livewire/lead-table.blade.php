@@ -27,13 +27,13 @@
                                         <th>Name</th>
                                         <th class="text-center">Mobile</th>
                                         <th class="text-center">Campaign</th>
-                                        <th class="text-center">Lead Source</th>
+                                        
                                         <th class="text-center">Country</th>
                                         <th class="text-center">Lead Status</th>
                                         @can('adminView', App\Models\User::class)
                                         <th class="text-center">Assign to</th>
                                         @endcan
-                                        <th class="text-center">Action</th>
+                                        <th class="text-center mb-5">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -49,7 +49,7 @@
                                         </td>
                                         <td>
                                             {{ Carbon\Carbon::parse($lead->created_at)->settings([
-                                            'toStringFormat' => 'jS \o\f F, Y',
+                                            'toStringFormat' => 'd/m/Y',
                                             ]) }}
                                         </td>
                                         <td>
@@ -61,7 +61,6 @@
                                                 }}</a>
                                         </td>
                                         <td class="text-center">{{ $lead->project }}</td>
-                                        <td class="text-center">{{ $lead->lead_source }}</td>
                                         <td class="text-center">{{ $lead->country }}</td>
                                         <td class="text-center">
                                             <span class="cusom__box p-1 px-3 bg-{{ $lead->leadStatus->class_color }}">{{
@@ -81,7 +80,7 @@
                                         </td>
                                         @endcan
                                         <td class="leadstable__button">
-                                            <a href="tel:{{ $lead->mobile }}" target="_BLANK"
+                                            {{-- <a href="tel:{{ $lead->mobile }}" target="_BLANK"
                                                 wire:click="makeCall({{ $lead->id }})">
                                                 <button class="btn btn-success btn-block btn-flat mb-1">
                                                     <i class="fas fa-phone-alt mr-2"></i>
@@ -92,9 +91,9 @@
                                                 <button class="btn btn-primary btn-block btn-flat mb-1">
                                                     <i class="fas fa-envelope mr-2"></i>
                                                     Email</button>
-                                            </a>
+                                            </a> --}}
                                             <a href="/lead/{{ $lead->id }}">
-                                                <button class="btn btn-secondary btn-flat btn-block mb-1">
+                                                <button class="btn btn-secondary btn-flat btn-block col-12 mb-1 mt-1 px-5">
                                                     <i class="fas fa-info-circle mr-2"></i> Details
                                                 </button>
                                             </a>
@@ -107,7 +106,7 @@
                                                 <div wire:loading wire:target="deleteLead">
                                                     <div class="loading" style="display: block">Processing...</div>
                                                 </div>
-                                                <button class="btn btn-danger btn-flat btn-block">
+                                                <button class="btn btn-danger btn-flat btn-block px-5">
                                                     <i class="fas fa-trash mr-2"></i>Delete
                                                 </button>
                                             </a>
