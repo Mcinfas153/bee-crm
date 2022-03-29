@@ -11,7 +11,7 @@
 
         <div class="card">
             <div class="register-logo mt-3">
-                <img src="{{ asset('assets/dist/img/logos/logo.png') }}" alt="logo" class="logo__img"></a>
+                {{-- <img src="{{ asset('assets/dist/img/logos/logo.png') }}" alt="logo" class="logo__img"></a> --}}
             </div>
             <div class="card-body register-card-body mt-0">
                 <p class="login-box-msg">Register a new membership</p>

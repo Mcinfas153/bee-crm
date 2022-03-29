@@ -87,3 +87,21 @@ Route::middleware(['guestUser'])->group(function () {
 Route::fallback(function () {
     abort(404);
 });
+
+Route::get('/test', function(){
+
+    $lead = [
+        'name' => 'Test',
+        'email' => 'test@test.com',
+        'mobile' => '0876656555',
+        'inquiry' => 'test',
+        'project' => 'Test',
+        'contact_time' => '',
+        'country' => '',
+        'ip_address' => '',
+        'lead_source' => '',
+        'created_by' => '',
+    ];
+
+    sendMail('mcinfas9394@gmail.com', $lead);
+});
