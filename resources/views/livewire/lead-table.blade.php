@@ -27,7 +27,7 @@
                                         <th>Name</th>
                                         <th class="text-center">Mobile</th>
                                         <th class="text-center">Campaign</th>
-                                        
+
                                         <th class="text-center">Country</th>
                                         <th class="text-center">Lead Status</th>
                                         @can('adminView', App\Models\User::class)
@@ -53,7 +53,7 @@
                                             ]) }}
                                         </td>
                                         <td>
-                                            <span title="{{ $lead->name }}">{{ Str::limit($lead->name,10) }}</span>
+                                            <span title="{{ $lead->name }}">{{ $lead->name }}</span>
                                         </td>
                                         <td class="text-center">
                                             <a title="{{ $lead->mobile }}" href="tel:{{ $lead->mobile }}"
@@ -93,7 +93,8 @@
                                                     Email</button>
                                             </a> --}}
                                             <a href="/lead/{{ $lead->id }}">
-                                                <button class="btn btn-secondary btn-flat btn-block col-12 mb-1 mt-1 px-5">
+                                                <button
+                                                    class="btn btn-secondary btn-flat btn-block col-12 mb-1 mt-1 px-5">
                                                     <i class="fas fa-info-circle mr-2"></i> Details
                                                 </button>
                                             </a>
