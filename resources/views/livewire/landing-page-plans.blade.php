@@ -93,6 +93,7 @@
         $(document).ready(function(){
            $('#dashboardPage').removeClass('item-active');
            $('#paymentsPage').addClass('item-active');
+           $('#inportopaymentsPage').addClass('item-active');
        });
      </script>
 </div>

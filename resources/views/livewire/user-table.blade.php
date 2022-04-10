@@ -89,6 +89,7 @@
         $(document).ready(function(){
            $('#dashboardPage').removeClass('item-active');
            $('#usersPage').addClass('item-active');
+           $('#allusersPage').addClass('item-active');
        });
      </script>
 </div>

@@ -106,6 +106,7 @@
         $(document).ready(function(){
            $('#dashboardPage').removeClass('item-active');
            $('#leadsPage').addClass('item-active');
+           $('#addleadPage').addClass('item-active');
        });
      </script>
 </div>

@@ -184,6 +184,7 @@
         $(document).ready(function(){
            $('#dashboardPage').removeClass('item-active');
            $('#leadsPage').addClass('item-active');
+           $('#recentleadPage').addClass('item-active');
        });
      </script>
 </div>

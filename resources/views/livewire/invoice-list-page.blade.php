@@ -53,6 +53,7 @@
         $(document).ready(function(){
            $('#dashboardPage').removeClass('item-active');
            $('#paymentsPage').addClass('item-active');
+           $('#invoicespaymentsPage').addClass('item-active');
        });
      </script>
 </div>
