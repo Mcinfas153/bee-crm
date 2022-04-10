@@ -12,7 +12,7 @@
     <!-- /.login-logo -->
     <div class="card">
         <div class="login-logo mt-3">
-            {{-- <a href="{{ URL::to('/') }}"><img src="{{ asset('assets/dist/img/logos/logo.png') }}" alt=""></a> --}}
+            <a href="{{ URL::to('/') }}"><img src="{{ asset('assets/dist/img/logos/logo.png') }}" alt=""></a>
         </div>
         <div class="card-body login-card-body">
             <p class="login-box-msg">Sign in to start your session</p>
@@ -75,7 +75,7 @@
             <!-- /.social-auth-links -->
 
             <p class="mb-1 text-center">
-                <a href="#" class="hover__underlined">I forgot my password</a>
+                <a href="{{ URL::to('/forgot-password') }}" class="hover__underlined">I forgot my password</a>
             </p>
             <p class="mb-0 text-center">
                 <a href="{{ URL::to('/register') }}" class="hover__underlined">Register a new account</a>

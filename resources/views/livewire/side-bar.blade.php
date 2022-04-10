@@ -2,27 +2,13 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="{{ URL::to('/dashboard') }}" class="brand-link">
-            <img src="{{ asset('assets/dist/img/logos/cp_logo.jpg') }}" alt="Bee Logo"
+            <img src="{{ asset('assets/dist/img/logos/full-logo.png') }}" alt="Bee Logo"
                 class="brand-image img-circle elevation-3 bg-light">
             <span class="brand-text font-weight-semibold">{{ config('application.webAppName') }}</span>
         </a>
 
         <!-- Sidebar -->
         <div class="sidebar">
-            {{--
-            <!-- Sidebar user (optional) -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="image">
-                    <img src="{{ Auth::user()->profile_url?asset('storage/'.Auth::user()->profile_url.''):generateAvatar(Auth::user()->name) }}"
-                        class="img-circle elevation-2" alt="User Image">
-                </div>
-                <div class="info">
-                    @auth
-                    <a href="{{ URL::to('/profile') }}" class="d-block">{{ Auth::user()->name }}</a>
-                    @endauth
-                </div>
-            </div> --}}
-
             <!-- SidebarSearch Form -->
             <div class="form-inline mt-2">
                 <div class="input-group" data-widget="sidebar-search">

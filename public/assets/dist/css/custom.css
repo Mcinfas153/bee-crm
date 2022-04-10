@@ -95,13 +95,13 @@ textarea {
     align-content: center;
     background-color: #ededed;
     padding: 10px 10px;
-    border-radius: 5px !important;
+    border-radius: 3px !important;
 }
 
 .optionContent {
     background-color: #ededed;
     padding: 30px;
-    margin-top: -3px !important;
+    margin-top: -6px !important;
     border-radius: 6px !important;
 }
 
@@ -129,7 +129,6 @@ textarea {
 }
 
 .custom__box {
-    border: 1.5px solid #eaebee;
     background: white;
     border-radius: 6px;
     margin-bottom: 15px;

@@ -6,7 +6,7 @@
             @endcan
             <div class="card-body">
                 @can('adminView', App\Models\User::class)
-                <div class="col-12 settingOption rounded-bottom bg-warning" type="button" data-toggle="collapse"
+                <div class="col-12 settingOption bg-warning" type="button" data-toggle="collapse"
                     data-target="#privacySettings" aria-expanded="false" aria-controls="privacySettings">
                     <h6 class="ml-4 mt-1 font-weight-semibold">
                         <i class="fas fa-shield-alt mr-2"></i>PRIVACY
@@ -38,7 +38,7 @@
                         {{ session('message') }}
                     </div>
                     @endif
-                    <div class="col-12 settingOption rounded-bottom bg-warning" type="button" data-toggle="collapse"
+                    <div class="col-12 settingOption bg-warning" type="button" data-toggle="collapse"
                     data-target="#passwordSettings" aria-expanded="false" aria-controls="passwordSettings">
                         <h6 class="ml-4 mt-1 font-weight-semibold">
                             <i class="fas fa-key mr-1"></i> PASSWORD SETTINGS

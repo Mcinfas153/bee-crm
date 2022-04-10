@@ -49,7 +49,6 @@ Route::middleware(['authUser'])->group(function () {
             Route::get('/users', UserTable::class)->name('users');  
             Route::get('/company', CompanyPage::class)->name('company-profile');
             Route::get('/add-user', AddUserPage::class)->name('user.create');
-            Route::get('/forgot-password', ForgotPassword::class)->name('user.forgot-password');
             Route::post('/add-company', [CompanyController::class,'addCompany']);
             Route::get('/unsubscribe', [PaymentController::class, 'unsubscribe']);
             Route::post('/assign-lead', [LeadController::class, 'assignLead']);
@@ -82,6 +81,7 @@ Route::middleware(['authUser'])->group(function () {
 Route::middleware(['guestUser'])->group(function () {
     Route::get('/login', Login::class)->name('login');
     Route::get('/register', Register::class)->name('register');
+    Route::get('/forgot-password', ForgotPassword::class)->name('forgotPassword');
 });
 
 Route::fallback(function () {

@@ -9,14 +9,15 @@
               <div class="col-md-5 text-center d-flex align-items-center justify-content-center">
                 <div class="">
                   <div class="addUserLogo rounded-circle mx-auto mb-3">
-                    <img src="{{ asset('assets/dist/img/logos/cp_logo.jpg') }}" class="mt-4 rounded-circle"
-                      width="100" />
+                      <img src="{{ asset('assets/dist/img/logos/transperant-logo.png') }}"
+                          class="mt-4 rounded-circle" width="100" />
                   </div>
-                  <h2>CP <strong>CRM</strong></h2>
-                  <p class="lead mb-5">510, IB Tower, Business Bay.<br>
-                    Dubai, UAE.
+                  <h2>Bee <strong>CRM</strong></h2>
+                  <p class="lead mb-5">311/A , Wellawatha Road,<br>
+                      Colombo 2, Sri Lanka.
                   </p>
-                </div>
+                  <img src="https://img.icons8.com/ios/100/000000/trial-version.png" />
+              </div>
               </div>
               <div class="col-md-7">
                 @if (session()->has('message'))
