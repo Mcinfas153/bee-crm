@@ -85,4 +85,10 @@
     <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <script src="{{ asset('assets/dist/js/pages/userTable.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+           $('#dashboardPage').removeClass('item-active');
+           $('#usersPage').addClass('item-active');
+       });
+     </script>
 </div>

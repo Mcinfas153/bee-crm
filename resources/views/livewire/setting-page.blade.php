@@ -86,4 +86,11 @@
         </div>
         <!-- /.card -->
     </section>
+
+    <script>
+        $(document).ready(function(){
+           $('#dashboardPage').removeClass('item-active');
+           $('#settingsPage').addClass('item-active');
+       });
+     </script>
 </div>

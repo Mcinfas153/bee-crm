@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-12 mx-auto">
                         <!-- small box -->
-                        <div class="custom__box p-5">
+                        <div class="custom__box p-5 paymentBox">
                             <div class="inner mb-4">
                                 <h5>Basic</h5>
                                 <h6>1500 AED / Month</h6>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-lg-4 col-12 mx-auto">
                         <!-- small box -->
-                        <div class="custom__box p-5">
+                        <div class="custom__box p-5 paymentBox">
                             <div class="inner mb-4">
                                 <h5>Standard <span>
                                         <p>(User Request)</p>
@@ -60,7 +60,7 @@
                     <!-- ./col -->
                     <div class="col-lg-4 col-12 mx-auto">
                         <!-- small box -->
-                        <div class="custom__box p-5">
+                        <div class="custom__box p-5 paymentBox">
                             <div class="inner mb-4">
                                 <h5>Premium</h5>
                                 <h6>3000 AED / Month</h6>
@@ -89,4 +89,10 @@
             </div>
         </div>
     </section>
+    <script>
+        $(document).ready(function(){
+           $('#dashboardPage').removeClass('item-active');
+           $('#paymentsPage').addClass('item-active');
+       });
+     </script>
 </div>

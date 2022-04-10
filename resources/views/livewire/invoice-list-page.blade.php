@@ -49,4 +49,10 @@
             "responsive": true,
         });
     </script>
+    <script>
+        $(document).ready(function(){
+           $('#dashboardPage').removeClass('item-active');
+           $('#paymentsPage').addClass('item-active');
+       });
+     </script>
 </div>

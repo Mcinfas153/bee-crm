@@ -102,4 +102,10 @@
         </div>
         <!-- /.container-fluid -->
     </section>
+    <script>
+        $(document).ready(function(){
+           $('#dashboardPage').removeClass('item-active');
+           $('#leadsPage').addClass('item-active');
+       });
+     </script>
 </div>

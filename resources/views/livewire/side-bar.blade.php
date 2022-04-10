@@ -30,7 +30,7 @@
            with font-awesome or any other icon font library -->
                     @can('adminView', App\Models\User::class)
                     <li class="nav-item sideNavItem rounded">
-                        <a href="{{ URL::to('/dashboard') }}" class="nav-link">
+                        <a href="{{ URL::to('/dashboard') }}" class="nav-link item-active" id="dashboardPage">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 Dashboard
@@ -39,7 +39,7 @@
                     </li>
                     @endcan
                     <li class="nav-item sideNavItem rounded">
-                        <a href="javascript:void(0)" class="nav-link">
+                        <a href="javascript:void(0)" class="nav-link" id="leadsPage">
                             <i class="nav-icon fas fa-project-diagram"></i>
                             <p>
                                 Leads
@@ -71,7 +71,7 @@
                     </li>
                     @can('adminView', App\Models\User::class)
                     <li class="nav-item sideNavItem rounded">
-                        <a href="javascript:void(0)" class="nav-link">
+                        <a href="javascript:void(0)" class="nav-link" id="usersPage">
                             <i class="nav-icon fas fa-users"></i>
                             <p>
                                 Users
@@ -96,7 +96,7 @@
                     @endcan
                     @can('adminView', App\Models\User::class)
                     <li class="nav-item sideNavItem rounded">
-                        <a href="{{ URL::to('/company') }}" class="nav-link">
+                        <a href="{{ URL::to('/company') }}" class="nav-link" id="companyPage">
                             <i class="fas fa-building nav-icon"></i>
                             <p>
                                 Company Profile
@@ -105,7 +105,7 @@
                     </li>
                     @endcan
                     <li class="nav-item sideNavItem rounded">
-                        <a href="{{ URL::to('/profile') }}" class="nav-link">
+                        <a href="{{ URL::to('/profile') }}" class="nav-link" id="userPage">
                             <i class="nav-icon fas fa-user-circle"></i>
                             <p>
                                 User Profile
@@ -114,7 +114,7 @@
                     </li>
                     @can('adminView', App\Models\User::class)
                     <li class="nav-item sideNavItem rounded">
-                        <a href="javascript:void(0)" class="nav-link">
+                        <a href="javascript:void(0)" class="nav-link" id="paymentsPage">
                             <i class="nav-icon fab fa-cc-mastercard"></i>
                             <p>
                                 Payments
@@ -150,7 +150,7 @@
                     </li>
                     @endcan
                     <li class="nav-item sideNavItem rounded">
-                        <a href="{{ URL::to('/setting') }}" class="nav-link">
+                        <a href="{{ URL::to('/setting') }}" class="nav-link" id="settingsPage">
                             <i class="nav-icon fas fa-cog"></i>
                             <p>
                                 Settings
