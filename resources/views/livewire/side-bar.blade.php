@@ -96,24 +96,6 @@
                     @endcan
                     @can('adminView', App\Models\User::class)
                     <li class="nav-item rounded">
-                        <a href="{{ URL::to('/company') }}" class="nav-link" id="companyPage">
-                            <i class="fas fa-building nav-icon"></i>
-                            <p>
-                                Company Profile
-                            </p>
-                        </a>
-                    </li>
-                    @endcan
-                    <li class="nav-item rounded">
-                        <a href="{{ URL::to('/profile') }}" class="nav-link" id="userPage">
-                            <i class="nav-icon fas fa-user-circle"></i>
-                            <p>
-                                User Profile
-                            </p>
-                        </a>
-                    </li>
-                    @can('adminView', App\Models\User::class)
-                    <li class="nav-item rounded">
                         <a href="javascript:void(0)" class="nav-link" id="paymentsPage">
                             <i class="nav-icon fab fa-cc-mastercard"></i>
                             <p>
@@ -149,6 +131,24 @@
                         </ul>
                     </li>
                     @endcan
+                    @can('adminView', App\Models\User::class)
+                    <li class="nav-item rounded">
+                        <a href="{{ URL::to('/company') }}" class="nav-link" id="companyPage">
+                            <i class="fas fa-building nav-icon"></i>
+                            <p>
+                                Company Profile
+                            </p>
+                        </a>
+                    </li>
+                    @endcan
+                    <li class="nav-item rounded">
+                        <a href="{{ URL::to('/profile') }}" class="nav-link" id="userPage">
+                            <i class="nav-icon fas fa-user-circle"></i>
+                            <p>
+                                User Informations
+                            </p>
+                        </a>
+                    </li>
                     <li class="nav-item rounded">
                         <a href="{{ URL::to('/setting') }}" class="nav-link" id="settingsPage">
                             <i class="nav-icon fas fa-cog"></i>

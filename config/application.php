@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'appVersion' => '1.2 BETA',
+    'appVersion' => '1.3 BETA',
     'webUrl' => 'https://crm.beeonline.xyz/',
     'webAppName' => 'Bee CRM',
     'companyName' => 'Bee Inc.',

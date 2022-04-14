@@ -32,7 +32,7 @@ textarea {
 
 .brand-link {
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 12px;
 }
 
 .user-panel {
@@ -154,10 +154,6 @@ button.close {
 
 .sideNavItem:hover {
     background-color: #fde047;
-}
-
-.sideNavItem>a:hover {
-    color: black !important;
 }
 
 .navDropItem {
@@ -296,8 +292,41 @@ input:checked+.slider:before {
     color: black !important;
 }
 
+.item-active:hover {
+    background-color: #fde047 !important;
+    color: black !important;
+}
+
+.item-active:after {
+    background-color: #fde047 !important;
+    color: black !important;
+}
+
 .paymentBox {
     border: 0.5px solid #e9ecee;
+}
+
+.inputWebsite>span {
+    padding: 0rem 0.75rem !important;
+}
+
+.session>.col-xl-4 {
+    margin-top: 10px;
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+    .session {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .session>.col-xl-4 {
+        display: flex;
+        justify-content: end;
+    }
 }
 
 
