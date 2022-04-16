@@ -131,6 +131,22 @@
                         </ul>
                     </li>
                     @endcan
+                    <li class="nav-item rounded">
+                        <a href="{{ URL::to('/todo') }}" class="nav-link" id="todoPage">
+                            <i class="nav-icon fa fa-check-circle"></i>
+                            <p>
+                                Todo App
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item rounded">
+                        <a href="{{ URL::to('/calendar') }}" class="nav-link" id="calendarPage">
+                            <i class="nav-icon fa fa-calendar"></i>
+                            <p>
+                                Calendar App
+                            </p>
+                        </a>
+                    </li>
                     @can('adminView', App\Models\User::class)
                     <li class="nav-item rounded">
                         <a href="{{ URL::to('/company') }}" class="nav-link" id="companyPage">

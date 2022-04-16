@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Livewire\AddLeadPage;
 use App\Http\Livewire\AddUserPage;
 use App\Http\Livewire\AllLeadsPage;
+use App\Http\Livewire\CalendarPage;
 use App\Http\Livewire\CompanyPage;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\EditLeadPage;
@@ -23,6 +24,7 @@ use App\Http\Livewire\PlansPage;
 use App\Http\Livewire\LandingPagePlans;
 use App\Http\Livewire\ProfilePage;
 use App\Http\Livewire\SettingPage;
+use App\Http\Livewire\TodoPage;
 use App\Http\Livewire\UserTable;
 use App\Http\Middleware\EnsureUserIsSubscribed;
 
@@ -73,6 +75,8 @@ Route::middleware(['authUser'])->group(function () {
         Route::get('/all-leads', AllLeadsPage::class)->name('all-leads.index');
         Route::get('all-leads/get-leads', [LeadController::class, 'getLeads'])->name('leads.getLeads');
         Route::get('/profile', ProfilePage::class);
+        Route::get('/todo', TodoPage::class);
+        Route::get('/calendar', CalendarPage::class);
         Route::get('/setting', SettingPage::class);
         Route::get('/lead/{id}', LeadPage::class);        
     });  
