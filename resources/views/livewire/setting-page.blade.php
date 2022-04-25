@@ -6,10 +6,10 @@
             @endcan
             <div class="card-body">
                 @can('adminView', App\Models\User::class)
-                <div class="col-12 settingOption rounded-bottom bg-warning" type="button" data-toggle="collapse"
+                <div class="col-12 settingOption bg-warning" type="button" data-toggle="collapse"
                     data-target="#privacySettings" aria-expanded="false" aria-controls="privacySettings">
                     <h6 class="ml-4 mt-1 font-weight-semibold">
-                        <i class="fas fa-shield-alt mr-2"></i>PRIVACY
+                        <i class="fas fa-user-secret mr-2"></i>PRIVACY
                     </h6>
                     <i class="fas fa-chevron-down mr-3"></i>
                 </div>
@@ -32,16 +32,16 @@
                     </fieldset>
                 </div>
                 @endcan
-                <div class="mt-4">
+                <div class="mt-2">
                     @if (session()->has('message'))
                     <div class="alert alert-success">
                         {{ session('message') }}
                     </div>
                     @endif
-                    <div class="col-12 settingOption rounded-bottom bg-warning" type="button" data-toggle="collapse"
+                    <div class="col-12 settingOption bg-warning" type="button" data-toggle="collapse"
                     data-target="#passwordSettings" aria-expanded="false" aria-controls="passwordSettings">
                         <h6 class="ml-4 mt-1 font-weight-semibold">
-                            <i class="fas fa-key mr-1"></i> PASSWORD SETTINGS
+                            <i class="fas fa-lock mr-1"></i> PASSWORD SETTINGS
                         </h6>
                         <i class="fas fa-chevron-down mr-3"></i>
                     </div>
@@ -81,9 +81,116 @@
                         </form>
                     </div>
                 </div>
+                <div class="mt-2 col-12 settingOption bg-warning" type="button" data-toggle="collapse"
+                    data-target="#activeSessions" aria-expanded="false" aria-controls="activeSessions">
+                    <h6 class="ml-4 mt-1 font-weight-semibold">
+                        <i class="fas fa-laptop mr-2"></i>ACTIVE SESSIONS
+                    </h6>
+                    <i class="fas fa-chevron-down mr-3"></i>
+                </div>
+                <div class="collapse optionContent" id="activeSessions">
+                    <fieldset>
+                        <p class="mt-1">View and manage all of your active sessions.</p>
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h3 class="card-title">
+                                      <i class="fas fa-laptop mr-1"></i>
+                                      Current Session
+                                    </h3>
+                                  </div>
+                                  <!-- /.card-header -->
+                                  <div class="card-body">
+                                    <blockquote class="session">
+                                      <div class="col-xl-8">
+                                        <h5>Device Name</h5>
+                                        <p>1 hour ago
+                                        <br>
+                                        Windows | Chrome</p>
+                                        <small>Nugegoda, Basnahira Palata, Sri Lanka</small>
+                                        <br>
+                                        <small>123.231.107.113</small>
+                                      </div>
+                                      <div class="col-xl-4">
+                                        <a class="btn btn-danger" href="#"><i class="fa fa-trash mr-1"></i> Delete</a>
+                                      </div>
+                                    </blockquote>
+                                  </div>
+                                  <!-- /.card-body -->
+                                </div>
+                                <!-- /.card -->
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h3 class="card-title">
+                                      <i class="fas fa-laptop mr-1"></i>
+                                      Other Session
+                                    </h3>
+                                  </div>
+                                  <!-- /.card-header -->
+                                  <div class="card-body">
+                                    <blockquote class="session quote-secondary">
+                                      <div class="col-xl-8">
+                                        <h5>Device Name</h5>
+                                        <p>1 hour ago
+                                        <br>
+                                        Windows | Chrome</p>
+                                        <small>Nugegoda, Basnahira Palata, Sri Lanka</small>
+                                        <br>
+                                        <small>123.231.107.113</small>
+                                      </div>
+                                      <div class="col-xl-4">
+                                        <a class="btn btn-danger" href="#"><i class="fa fa-trash mr-1"></i> Delete</a>
+                                      </div>
+                                    </blockquote>
+                                    <blockquote class="session quote-secondary">
+                                        <div class="col-xl-8">
+                                          <h5>Device Name</h5>
+                                          <p>1 hour ago
+                                          <br>
+                                          Windows | Chrome</p>
+                                          <small>Nugegoda, Basnahira Palata, Sri Lanka</small>
+                                          <br>
+                                          <small>123.231.107.113</small>
+                                        </div>
+                                        <div class="col-xl-4">
+                                          <a class="btn btn-danger" href="#"><i class="fa fa-trash mr-1"></i> Delete</a>
+                                        </div>
+                                    </blockquote>
+                                    <blockquote class="session quote-secondary">
+                                        <div class="col-xl-8">
+                                          <h5>Device Name</h5>
+                                          <p>1 hour ago
+                                          <br>
+                                          Windows | Chrome</p>
+                                          <small>Nugegoda, Basnahira Palata, Sri Lanka</small>
+                                          <br>
+                                          <small>123.231.107.113</small>
+                                        </div>
+                                        <div class="col-xl-4">
+                                          <a class="btn btn-danger" href="#"><i class="fa fa-trash mr-1"></i> Delete</a>
+                                        </div>
+                                    </blockquote>
+                                  </div>
+                                  <!-- /.card-body -->
+                                </div>
+                                <!-- /.card -->
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
             </div>
             <!-- /.card-body -->
         </div>
         <!-- /.card -->
     </section>
+
+    <script>
+        $(document).ready(function(){
+           $('#dashboardPage').removeClass('item-active');
+           $('#settingsPage').addClass('item-active');
+       });
+     </script>
 </div>

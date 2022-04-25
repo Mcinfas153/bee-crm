@@ -6,20 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="{{ asset('assets/dist/img/favicon/favicon.png') }}" type="image/x-icon">
-  <title>CP CRM | Home</title>
+  <title>Bee CRM | Home</title>
   <link rel="stylesheet" href="{{ asset('assets/dist/css/welcome-page.css') }}" />
 </head>
 
 <body>
   <main>
     <div class="big-wrapper light">
-      <img src="{{ asset('assets/dist/img/logos/cp_logo.jpg') }}" alt="watermark" class="watermark" />
+      <img src="{{ asset('assets/dist/img/logos/transperant-logo.png') }}" alt="watermark" class="watermark" />
 
       <header>
         <div class="container">
           <div class="logo">
-            {{-- <img src="{{ asset('assets/dist/img/logos/cp_logo.jpg') }}" alt="Logo" /> --}}
-            <h3>CP CRM</h3>
+            <img src="{{ asset('assets/dist/img/logos/transperant-logo.png') }}" alt="Logo" />
+            <h3>BEE CRM</h3>
           </div>
 
           <div class="links">
@@ -45,10 +45,10 @@
         <div class="container">
           <div class="left">
             <div class="big-title">
-              <h2>What Is CP CRM?</h2>
+              <h2>What Is Bee CRM?</h2>
             </div>
             <p class="text">
-              CP CRM is the world’s #1 customer relationship management (CRM) platform. We help your marketing, sales,
+              Bee CRM is the world’s #1 customer relationship management (CRM) platform. We help your marketing, sales,
               commerce, service and IT teams work as one from anywhere — so you can keep your customers happy
               everywhere.
             </p>

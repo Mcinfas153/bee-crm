@@ -147,4 +147,10 @@
         window.stepper = new Stepper(document.querySelector('.bs-stepper'))
       })
   </script>
+  <script>
+     $(document).ready(function(){
+        $('#dashboardPage').removeClass('item-active');
+        $('#companyPage').addClass('item-active');
+    });
+  </script>
 </div>

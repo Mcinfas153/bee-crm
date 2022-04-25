@@ -180,4 +180,11 @@
     <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables-select/js/dataTables.select.min.js') }}"></script>
     <script src="{{ asset('assets/dist/js/pages/leadTable.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+           $('#dashboardPage').removeClass('item-active');
+           $('#leadsPage').addClass('item-active');
+           $('#recentleadPage').addClass('item-active');
+       });
+     </script>
 </div>

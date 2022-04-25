@@ -2,27 +2,13 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="{{ URL::to('/dashboard') }}" class="brand-link">
-            <img src="{{ asset('assets/dist/img/logos/cp_logo.jpg') }}" alt="Bee Logo"
+            <img src="{{ asset('assets/dist/img/logos/full-logo.png') }}" alt="Bee Logo"
                 class="brand-image img-circle elevation-3 bg-light">
             <span class="brand-text font-weight-semibold">{{ config('application.webAppName') }}</span>
         </a>
 
         <!-- Sidebar -->
         <div class="sidebar">
-            {{--
-            <!-- Sidebar user (optional) -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="image">
-                    <img src="{{ Auth::user()->profile_url?asset('storage/'.Auth::user()->profile_url.''):generateAvatar(Auth::user()->name) }}"
-                        class="img-circle elevation-2" alt="User Image">
-                </div>
-                <div class="info">
-                    @auth
-                    <a href="{{ URL::to('/profile') }}" class="d-block">{{ Auth::user()->name }}</a>
-                    @endauth
-                </div>
-            </div> --}}
-
             <!-- SidebarSearch Form -->
             <div class="form-inline mt-2">
                 <div class="input-group" data-widget="sidebar-search">
@@ -43,8 +29,8 @@
                     <!-- Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library -->
                     @can('adminView', App\Models\User::class)
-                    <li class="nav-item sideNavItem rounded">
-                        <a href="{{ URL::to('/dashboard') }}" class="nav-link">
+                    <li class="nav-item rounded">
+                        <a href="{{ URL::to('/dashboard') }}" class="nav-link item-active" id="dashboardPage">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 Dashboard
@@ -52,8 +38,8 @@
                         </a>
                     </li>
                     @endcan
-                    <li class="nav-item sideNavItem rounded">
-                        <a href="javascript:void(0)" class="nav-link">
+                    <li class="nav-item rounded">
+                        <a href="javascript:void(0)" class="nav-link" id="leadsPage">
                             <i class="nav-icon fas fa-project-diagram"></i>
                             <p>
                                 Leads
@@ -68,15 +54,15 @@
                                 </a>
                             </li> --}}
                             <li class="nav-item rounded">
-                                <a href="{{ URL::to('/add-lead') }}" class="nav-link navDropItem">
+                                <a href="{{ URL::to('/add-lead') }}" class="nav-link navDropItem" id="addleadPage">
                                     <i class="fas fa-magnet nav-icon"></i>
                                     <p>Add Lead</p>
                                 </a>
-                                <a href="{{ URL::to('/leads') }}" class="nav-link navDropItem">
+                                <a href="{{ URL::to('/leads') }}" class="nav-link navDropItem" id="recentleadPage">
                                     <i class="fas fa-tasks nav-icon"></i>
                                     <p>Recent Leads</p>
                                 </a>
-                                <a href="{{ URL::to('/all-leads') }}" class="nav-link navDropItem">
+                                <a href="{{ URL::to('/all-leads') }}" class="nav-link navDropItem" id="allleadPage">
                                     <i class="fas fa-tasks nav-icon"></i>
                                     <p>All Leads</p>
                                 </a>
@@ -84,8 +70,8 @@
                         </ul>
                     </li>
                     @can('adminView', App\Models\User::class)
-                    <li class="nav-item sideNavItem rounded">
-                        <a href="javascript:void(0)" class="nav-link">
+                    <li class="nav-item rounded">
+                        <a href="javascript:void(0)" class="nav-link" id="usersPage">
                             <i class="nav-icon fas fa-users"></i>
                             <p>
                                 Users
@@ -94,13 +80,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item rounded">
-                                <a href="{{ URL::to('/add-user') }}" class="nav-link navDropItem">
+                                <a href="{{ URL::to('/add-user') }}" class="nav-link navDropItem" id="addusersPage">
                                     <i class="fas fa-user-plus nav-icon"></i>
                                     <p>Add User</p>
                                 </a>
                             </li>
                             <li class="nav-item rounded">
-                                <a href="{{ URL::to('/users') }}" class="nav-link navDropItem">
+                                <a href="{{ URL::to('/users') }}" class="nav-link navDropItem" id="allusersPage">
                                     <i class="fas fa-address-card nav-icon"></i>
                                     <p>All Users</p>
                                 </a>
@@ -109,26 +95,8 @@
                     </li>
                     @endcan
                     @can('adminView', App\Models\User::class)
-                    <li class="nav-item sideNavItem rounded">
-                        <a href="{{ URL::to('/company') }}" class="nav-link">
-                            <i class="fas fa-building nav-icon"></i>
-                            <p>
-                                Company Profile
-                            </p>
-                        </a>
-                    </li>
-                    @endcan
-                    <li class="nav-item sideNavItem rounded">
-                        <a href="{{ URL::to('/profile') }}" class="nav-link">
-                            <i class="nav-icon fas fa-user-circle"></i>
-                            <p>
-                                User Profile
-                            </p>
-                        </a>
-                    </li>
-                    @can('adminView', App\Models\User::class)
-                    <li class="nav-item sideNavItem rounded">
-                        <a href="javascript:void(0)" class="nav-link">
+                    <li class="nav-item rounded">
+                        <a href="javascript:void(0)" class="nav-link" id="paymentsPage">
                             <i class="nav-icon fab fa-cc-mastercard"></i>
                             <p>
                                 Payments
@@ -137,13 +105,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item rounded">
-                                <a href="{{ URL::to('/plans') }}" class="nav-link navDropItem">
+                                <a href="{{ URL::to('/plans') }}" class="nav-link navDropItem" id="beepaymentsPage">
                                     <i class="fas fa-cubes nav-icon"></i>
                                     <p>Bee Plans</p>
                                 </a>
                             </li>
                             <li class="nav-item rounded">
-                                <a href="{{ URL::to('/landingpage-plans') }}" class="nav-link navDropItem">
+                                <a href="{{ URL::to('/landingpage-plans') }}" class="nav-link navDropItem" id="inportopaymentsPage">
                                     <i class="fas fa-cubes nav-icon"></i>
                                     <p>Inproto Plans</p>
                                 </a>
@@ -154,8 +122,8 @@
                                     <p>Instapage Plans</p>
                                 </a>
                             </li> --}}
-                            <li class="nav-item sideNavItem rounded">
-                                <a href="{{ URL::to('/invoices') }}" class="nav-link navDropItem">
+                            <li class="nav-item rounded">
+                                <a href="{{ URL::to('/invoices') }}" class="nav-link navDropItem" id="invoicespaymentsPage">
                                     <i class="fas fa-file-invoice nav-icon"></i>
                                     <p>Invoices</p>
                                 </a>
@@ -163,15 +131,49 @@
                         </ul>
                     </li>
                     @endcan
-                    <li class="nav-item sideNavItem rounded">
-                        <a href="{{ URL::to('/setting') }}" class="nav-link">
+                    <li class="nav-item rounded">
+                        <a href="{{ URL::to('/todo') }}" class="nav-link" id="todoPage">
+                            <i class="nav-icon fa fa-check-circle"></i>
+                            <p>
+                                Todo App
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item rounded">
+                        <a href="{{ URL::to('/calendar') }}" class="nav-link" id="calendarPage">
+                            <i class="nav-icon fa fa-calendar"></i>
+                            <p>
+                                Calendar App
+                            </p>
+                        </a>
+                    </li>
+                    @can('adminView', App\Models\User::class)
+                    <li class="nav-item rounded">
+                        <a href="{{ URL::to('/company') }}" class="nav-link" id="companyPage">
+                            <i class="fas fa-building nav-icon"></i>
+                            <p>
+                                Company Profile
+                            </p>
+                        </a>
+                    </li>
+                    @endcan
+                    <li class="nav-item rounded">
+                        <a href="{{ URL::to('/profile') }}" class="nav-link" id="userPage">
+                            <i class="nav-icon fas fa-user-circle"></i>
+                            <p>
+                                User Informations
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item rounded">
+                        <a href="{{ URL::to('/setting') }}" class="nav-link" id="settingsPage">
                             <i class="nav-icon fas fa-cog"></i>
                             <p>
                                 Settings
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item sideNavItem rounded" wire:click="logout">
+                    <li class="nav-item rounded" wire:click="logout">
                         <a href="javascript:void(0)" class="nav-link">
                             <i class="nav-icon fas fa-sign-out-alt"></i>
                             <p>

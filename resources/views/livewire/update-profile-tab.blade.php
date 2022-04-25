@@ -16,6 +16,32 @@
             </div>
         </div>
         <div class="form-group row">
+            <label for="exampleInputPhone" class="col-sm-2 col-form-label">Mobile</label>
+            <div class="col-md-8">
+                <input type="number" class="form-control form-control-sm" id="exampleInputPhone" name="phone">
+                @error('phone') <span class="error error__msg">{{ $message }}</span> @enderror
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
+            <div class="col-sm-8">
+                <select name="gender" class="form-control form-control-sm">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="nonBinary">Non Binary</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="website" class="col-sm-2 col-form-label">Website</label>
+            <div class="input-group mb-1 col-md-8">
+                <div class="input-group-prepend inputWebsite">
+                  <span class="input-group-text">www.</span>
+                </div>
+                <input type="url" class="form-control form-control-sm" name="website" id="website">
+            </div>
+        </div>
+        <div class="form-group row">
             <label for="inputEmail" class="col-sm-2 col-form-label">User type</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control form-control-sm" id="inputUtype" placeholder="User type"
@@ -24,7 +50,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="" class="col-sm-2 col-from-label">Preview:</label>
+            <label for="" class="col-sm-2 col-from-label">Preview</label>
             @if ($photo)
             <div class="col-sm-8">
                 <img src="{{ $photo->temporaryUrl() }}" width="130px" class="rounded-circle">

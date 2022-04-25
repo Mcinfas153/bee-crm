@@ -32,7 +32,7 @@ textarea {
 
 .brand-link {
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 12px;
 }
 
 .user-panel {
@@ -95,13 +95,13 @@ textarea {
     align-content: center;
     background-color: #ededed;
     padding: 10px 10px;
-    border-radius: 5px !important;
+    border-radius: 3px !important;
 }
 
 .optionContent {
     background-color: #ededed;
     padding: 30px;
-    margin-top: -3px !important;
+    margin-top: -6px !important;
     border-radius: 6px !important;
 }
 
@@ -129,7 +129,6 @@ textarea {
 }
 
 .custom__box {
-    border: 1.5px solid #eaebee;
     background: white;
     border-radius: 6px;
     margin-bottom: 15px;
@@ -157,10 +156,6 @@ button.close {
     background-color: #fde047;
 }
 
-.sideNavItem>a:hover {
-    color: black !important;
-}
-
 .navDropItem {
     color: white !important;
 }
@@ -173,6 +168,10 @@ button.close {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.nav-treeview {
+    background-color: transparent !important;
 }
 
 
@@ -286,6 +285,48 @@ input:checked+.slider:before {
     font-size: 22px;
     left: 3px;
     color: green;
+}
+
+.item-active {
+    background-color: #fde047;
+    color: black !important;
+}
+
+.item-active:hover {
+    background-color: #fde047 !important;
+    color: black !important;
+}
+
+.item-active:after {
+    background-color: #fde047 !important;
+    color: black !important;
+}
+
+.paymentBox {
+    border: 0.5px solid #e9ecee;
+}
+
+.inputWebsite>span {
+    padding: 0rem 0.75rem !important;
+}
+
+.session>.col-xl-4 {
+    margin-top: 10px;
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+    .session {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .session>.col-xl-4 {
+        display: flex;
+        justify-content: end;
+    }
 }
 
 

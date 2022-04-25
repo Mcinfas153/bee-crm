@@ -9,22 +9,22 @@
             <p class="login-box-msg mb-3">To help keep your account safe, Bee CRM wants to make sure that it’s really you trying to sign in....</p>
 
             <div class="forgot-password-box-content">
-                <h6 class="text-dark mb-2">Get a verification code</h6>
-                <p class="text-dark mb-3">Check your mails and get your verification code.</p>
+                <h6 class="text-dark mb-2">Get a confirmation mail</h6>
+                <p class="text-dark mb-3">Check your mails and get a confirmation mail.</p>
                 <form wire:submit.prevent="login">
                     <div wire:loading wire:target="login">
                         <div class="loading" style="display: block">Processing...</div>
                     </div>
                     <div class="input-group mb-5">
-                        <input type="verificationCode" name="verificationCode" class="form-control" placeholder="Verfication Code" wire:model.lazy="verificationCode">
+                        <input type="email" name="email" class="form-control" placeholder="Email Address" wire:model.lazy="email">
                         <div class="input-group-append">
                             <div class="input-group-text">
-                                <span class="fas fa-key"></span>
+                                <span class="fas fa-envelope"></span>
                             </div>
                         </div>
                     </div>
                     <div class="mb-3 ml-2">
-                        @error('verificationCode') <span class="error error__msg"><i class="fas fa-exclamation-triangle"></i>
+                        @error('email') <span class="error error__msg"><i class="fas fa-exclamation-triangle"></i>
                             {{ $message }}</span> @enderror
                     </div>
                     <div class="row items-center mb-3">

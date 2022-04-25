@@ -46,4 +46,11 @@
     </div><!-- /.container-fluid -->
   </section>
   <!-- /.content -->
+
+  <script>
+    $(document).ready(function(){
+       $('#dashboardPage').removeClass('item-active');
+       $('#userPage').addClass('item-active');
+   });
+ </script>
 </div>

@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Livewire\AddLeadPage;
 use App\Http\Livewire\AddUserPage;
 use App\Http\Livewire\AllLeadsPage;
+use App\Http\Livewire\CalendarPage;
 use App\Http\Livewire\CompanyPage;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\EditLeadPage;
@@ -23,6 +24,7 @@ use App\Http\Livewire\PlansPage;
 use App\Http\Livewire\LandingPagePlans;
 use App\Http\Livewire\ProfilePage;
 use App\Http\Livewire\SettingPage;
+use App\Http\Livewire\TodoPage;
 use App\Http\Livewire\UserTable;
 use App\Http\Middleware\EnsureUserIsSubscribed;
 
@@ -49,7 +51,6 @@ Route::middleware(['authUser'])->group(function () {
             Route::get('/users', UserTable::class)->name('users');  
             Route::get('/company', CompanyPage::class)->name('company-profile');
             Route::get('/add-user', AddUserPage::class)->name('user.create');
-            Route::get('/forgot-password', ForgotPassword::class)->name('user.forgot-password');
             Route::post('/add-company', [CompanyController::class,'addCompany']);
             Route::get('/unsubscribe', [PaymentController::class, 'unsubscribe']);
             Route::post('/assign-lead', [LeadController::class, 'assignLead']);
@@ -73,6 +74,8 @@ Route::middleware(['authUser'])->group(function () {
         Route::get('/all-leads', AllLeadsPage::class)->name('all-leads.index');
         Route::get('all-leads/get-leads', [LeadController::class, 'getLeads'])->name('leads.getLeads');
         Route::get('/profile', ProfilePage::class);
+        Route::get('/todo', TodoPage::class);
+        Route::get('/calendar', CalendarPage::class);
         Route::get('/setting', SettingPage::class);
         Route::get('/lead/{id}', LeadPage::class);    
         Route::post('/update-lead-status', [LeadController::class, 'updateStatus']);    
@@ -82,6 +85,7 @@ Route::middleware(['authUser'])->group(function () {
 Route::middleware(['guestUser'])->group(function () {
     Route::get('/login', Login::class)->name('login');
     Route::get('/register', Register::class)->name('register');
+    Route::get('/forgot-password', ForgotPassword::class)->name('forgotPassword');
 });
 
 Route::fallback(function () {

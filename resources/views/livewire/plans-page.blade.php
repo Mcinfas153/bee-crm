@@ -78,4 +78,11 @@
             </div>
         </div>
     </section>
+    <script>
+        $(document).ready(function(){
+           $('#dashboardPage').removeClass('item-active');
+           $('#paymentsPage').addClass('item-active');
+           $('#beepaymentsPage').addClass('item-active');
+       });
+     </script>
 </div>
