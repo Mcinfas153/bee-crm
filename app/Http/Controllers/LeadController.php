@@ -161,7 +161,7 @@ class LeadController extends Controller
 
             toast(''.config('msg.302').'','success');
 
-            return redirect()->to('/all-leads');            
+            return redirect()->to('/leads');            
 
         } catch (Exception $ex){
 

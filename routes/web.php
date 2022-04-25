@@ -53,7 +53,6 @@ Route::middleware(['authUser'])->group(function () {
             Route::post('/add-company', [CompanyController::class,'addCompany']);
             Route::get('/unsubscribe', [PaymentController::class, 'unsubscribe']);
             Route::post('/assign-lead', [LeadController::class, 'assignLead']);
-            Route::post('/update-lead-status', [LeadController::class, 'updateStatus']);
             Route::post('/user-status-change', [UserController::class, 'updateStatus']);
             Route::get('landingpage-plans', LandingPagePlans::class)->name('landingpage-plans')->withoutMiddleware([EnsureUserIsSubscribed::class]);
             Route::get('instapage-plans', InstapagePlans::class)->name('instapage-plans');
@@ -75,7 +74,8 @@ Route::middleware(['authUser'])->group(function () {
         Route::get('all-leads/get-leads', [LeadController::class, 'getLeads'])->name('leads.getLeads');
         Route::get('/profile', ProfilePage::class);
         Route::get('/setting', SettingPage::class);
-        Route::get('/lead/{id}', LeadPage::class);        
+        Route::get('/lead/{id}', LeadPage::class);    
+        Route::post('/update-lead-status', [LeadController::class, 'updateStatus']);    
     });  
 });
 

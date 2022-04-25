@@ -41,7 +41,7 @@ class Login extends Component
             if(Auth::user()->utype == config('usertypes.user')){
                 return redirect()->intended('leads');
             }
-            return redirect()->intended('dashboard');
+            return redirect()->intended('leads');
 
         } else {
 
