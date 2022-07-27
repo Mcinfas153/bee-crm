@@ -8,6 +8,7 @@ use Livewire\Component;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Mail;
+use Throwable;
 
 class ForgotPassword extends Component
 {
@@ -35,7 +36,17 @@ class ForgotPassword extends Component
 
            $forgotPasswordUrl = URL::to('/forgot-password').'/'.$urlCode;
 
-           Mail::to($this->email)->send(new ResetPassword($forgotPasswordUrl));
+           try{
+
+                Mail::to($this->email)->send(new ResetPassword($forgotPasswordUrl));
+
+               
+
+           } catch (Throwable $er) {
+
+                $this->addError('email', config('msg.100'));
+
+           }
 
         } else{
 
