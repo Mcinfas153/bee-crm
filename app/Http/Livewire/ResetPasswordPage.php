@@ -18,7 +18,6 @@ class ResetPasswordPage extends Component
 
     public function render()
     {
-        //verify code & time & done
         $currentRequest =  DB::table('user_password_reset')->where('code', $this->code)->first();
 
         if($currentRequest){
@@ -26,8 +25,6 @@ class ResetPasswordPage extends Component
             $addedTime = new Carbon($currentRequest->created_at);
 
             $currentTime = new Carbon();
-
-            //if available return view
             
             if($currentTime->diffInMinutes($addedTime) < 30){
                 
