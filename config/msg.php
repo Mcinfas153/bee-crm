@@ -13,6 +13,7 @@ return [
     '10' => 'You reached maximum users limit. If you want to create an another account, you have to update the account',
     '11' => 'User status updated successfully',
     '12' => 'Email not found in our Database',
+    '13' => 'Please check your email. We already sent reset link to your email.',
     '200' => 'Your subscription activated successfully',
     '201' => 'Your subscription deactivated successfully',
     '300' => 'Lead assign successfully',

@@ -26,6 +26,9 @@
                             </div>
                         </div>
                         <div class="mb-3 ml-2">
+                            <p class="text-success">
+                                {{ $msg }}
+                            </p>
                             @error('email') <span class="error error__msg"><i class="fas fa-exclamation-triangle"></i>
                                 {{ $message }}</span> @enderror
                         </div>
@@ -38,7 +41,7 @@
                             </div>
                             <!-- /.col -->
                             <div class="col-4">
-                                <button type="submit" class="btn btn-primary btn-block">Next</button>
+                                <button type="submit" class="btn btn-primary btn-block">Submit</button>
                             </div>
                             <!-- /.col -->
                         </div>

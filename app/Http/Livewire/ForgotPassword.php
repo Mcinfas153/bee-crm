@@ -9,11 +9,14 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Mail;
 use Throwable;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class ForgotPassword extends Component
 {
 
     public $email;
+    public $msg = '';
 
     protected $rules = [
         'email' => 'required|email',
@@ -40,7 +43,7 @@ class ForgotPassword extends Component
 
                 Mail::to($this->email)->send(new ResetPassword($forgotPasswordUrl));
 
-               
+                $this->msg =  config('msg.13');
 
            } catch (Throwable $er) {
 
