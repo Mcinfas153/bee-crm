@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Mail\ResetPassword;
+use App\Models\UserResetPassword;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Illuminate\Support\Str;
@@ -42,6 +43,14 @@ class ForgotPassword extends Component
            try{
 
                 Mail::to($this->email)->send(new ResetPassword($forgotPasswordUrl));
+
+                $resetPassword = new UserResetPassword();
+
+                $resetPassword->code = $urlCode;
+
+                $resetPassword->email = $this->email;
+
+                $resetPassword->save();
 
                 $this->msg =  config('msg.13');
 

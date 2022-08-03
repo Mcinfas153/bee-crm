@@ -32,4 +32,5 @@ class UserController extends Controller
             'msg' => $msg
         ]);
     }
+
 }

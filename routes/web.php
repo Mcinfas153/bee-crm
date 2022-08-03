@@ -23,6 +23,7 @@ use App\Http\Livewire\PaymentPage;
 use App\Http\Livewire\PlansPage;
 use App\Http\Livewire\LandingPagePlans;
 use App\Http\Livewire\ProfilePage;
+use App\Http\Livewire\ResetPasswordPage;
 use App\Http\Livewire\SettingPage;
 use App\Http\Livewire\TodoPage;
 use App\Http\Livewire\UserTable;
@@ -86,26 +87,9 @@ Route::middleware(['guestUser'])->group(function () {
     Route::get('/login', Login::class)->name('login');
     Route::get('/register', Register::class)->name('register');
     Route::get('/forgot-password', ForgotPassword::class)->name('forgotPassword');
+    Route::get('/forgot-password/{code?}', ResetPasswordPage::class)->name('user.resetPassword');
 });
 
 Route::fallback(function () {
     abort(404);
-});
-
-Route::get('/test', function(){
-
-    $lead = [
-        'name' => 'Test',
-        'email' => 'test@test.com',
-        'mobile' => '0876656555',
-        'inquiry' => 'test',
-        'project' => 'Test',
-        'contact_time' => '',
-        'country' => '',
-        'ip_address' => '',
-        'lead_source' => '',
-        'created_by' => '',
-    ];
-
-    sendMail('mcinfas9394@gmail.com', $lead);
 });
